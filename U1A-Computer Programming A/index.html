@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	 <meta charset="UTF-8"><!--定义为中文-->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        html {
+            height: 100%;
+        }
+        body {
+            height: 100%;
+        }
+        .container {
+            height: 100%;
+            background-image: linear-gradient(to right, #fbc2eb, #a6c1ee);
+        }
+        .login-wrapper {
+            background-color: #fff;
+            width: 358px;
+            height: 588px;
+            border-radius: 15px;
+            padding: 0 50px;
+            position: relative;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+        }
+        .header {
+            font-size: 38px;
+            font-weight: bold;
+            text-align: center;
+            line-height: 200px;
+        }
+        .input-item {
+            display: block;
+            width: 100%;
+            margin-bottom: 20px;
+            border: 0;
+            padding: 10px;
+            border-bottom: 1px solid rgb(128, 125, 125);
+            font-size: 15px;
+            outline: none;
+        }
+        .input-item:placeholder {
+            text-transform: uppercase;
+        }
+        .btn {
+            text-align: center;
+            padding: 10px;
+            width: 100%;
+            margin-top: 40px;
+            background-image: linear-gradient(to right, #a6c1ee, #fbc2eb);
+            color: #fff;
+        }
+        .msg {
+            text-align: center;
+            line-height: 88px;
+        }
+        a {
+            text-decoration-line: none;
+            color: #abc1ee;
+        }
+    </style>
+</head>
+<body>
+    <script src="https://blog.hlzyw.cn/style/js/jquery-1.8.3.min.js">
+        //以下为网页特效
+    </script>
+    <script type="text/javascript">
+        /* 鼠标点击特效 */
+    
+        jQuery(function () {
+            $("html").click(function(e) {
+                var a_idx = Math.floor((Math.random() * 26));
+                var a = new Array(
+                    "乐观", "❤", "积极", "向上",  "(*^▽^*)", "快乐","USTC","蜗壳","我科","妮可","Nico","你科",
+                        "善良", "可爱", "❤","富强", "民主", "文明", "和谐", "自由", "平等",
+                        "公正" ,"法治", "爱国", "敬业", "诚信", "友善", "暴富", "暴瘦","元气满满", "自由", "正能量","开心"
+    
+    
+    
+                    );
+                var color1 = Math.floor((Math.random() * 255));
+                var color2 = Math.floor((Math.random() * 255));
+                var color3 = Math.floor((Math.random() * 255));
+    
+                var $i = $("<span />").text(a[a_idx]);
+                a_idx = (a_idx + 1) % a.length;
+                var x = e.pageX,
+                    y = e.pageY;
+                $i.css({　　　　　　
+                    "z-index": 9999999999999 ,
+                    "top": y - 20,
+                    "left": x,
+                    "position": "absolute",
+                    "font-family":"mmm",
+                    "fontSize":Math.floor((Math.random() * 22)+15),
+                    "font-weight": "bold",
+                    "color": "rgb("+color1+","+color2+","+color3+")",
+                    "-webkit-user-select":"none",
+                    "-moz-user-select":"none",
+                    "-ms-user-select":"none",
+                    "user-select":"none",
+                });
+                $("body").append($i);
+                $i.animate({
+                        "top": y - 200,
+                        "opacity": 0
+                    },
+                    1000,
+                    function() {
+                        $i.remove();
+                    });
+            });
+        });//以上为网页特效
+    </script>
+
+    <div class="container">
+        <div class="login-wrapper">
+            <div class="header">Login</div>
+            <div class="form-wrapper">
+                <input type="text" name="username" placeholder="username" class="input-item" id="username">
+                <input type="password" name="password" placeholder="password" class="input-item" id="password">
+                <a href="javascript:click()"><div class="btn">Login</div></a>
+            </div>
+            <div>
+            <p id="alarm" style="color: red;font-size:10px;"></p>
+<script src="js/global.js" type="text/javascript" charset="utf-8"></script>
+  <script type="text/javascript">
+                function changeContent() {
+                    //通过innerHTML方法向页面输出了内容
+                    document.getElementById("alarm").innerHTML = "*账号或密码错误，请查正后再输入！<br>*The account or password is wrong, please check it and enter it again!";
+                }
+                function click(){
+                    var username = document.getElementById("username").value;
+                    var password = document.getElementById("password").value;
+                    if (username == ' ' && password == ' '){
+                        globalData.setUserInfo(1,"page","96178");//用户登录信息
+                        window.open('404.html','_self');
+                    }
+                    else{
+                        changeContent();
+                    }
+                }
+            </script>
+            </div>
+            <div class="msg" style="font-size:15px;">
+                没有账号？
+                <a href="guest.html">点击以使用访客身份访问</a><br>
+                No account? 
+                <a href="guest.html">Click here to access as a visitor.</a>
+            </div>
+        </div>
+    </div>
+    <script>
+        //禁用F12
+        window.onkeydown = window.onkeyup = window.onkeypress = function (event) {
+            // 判断是否按下F12，F12键码为123
+            if (event.keyCode == 123) {
+                event.preventDefault(); // 阻止默认事件行为
+                window.event.returnValue = false;
+            }
+        }
+        //禁用调试工具
+		  function ScreenWidth() {      //获取屏幕尺寸，判断PC端或移动端
+        if (/phone|pad|pod|iPhone|iPod|ios|iPad|Android|Fennec|BlackBerry|Mobile|IEMobile|MQQBrowser|JUC|Fennec|WosBrowser|BrowserNG|WebOS|Symbian|Windows Phone/i.test(navigator.userAgent)) {
+
+        //如果是移动端，则使用移动端对应的条件；否则，使用PC端对应的条件
+
+        var threshold = 160; // 打开控制台的宽或高阈值
+        // 每30秒检查一次
+        var check = setInterval(function() {
+            if (window.outerWidth - window.innerWidth > threshold || 
+                window.outerHeight - window.innerHeight > threshold) {
+                // 如果打开控制台，则刷新页面
+                window.location.reload();
+            }
+        }, 30000)
+        } 
+        else { 
+        var threshold = 160; // 打开控制台的宽或高阈值
+        // 每秒检查一次
+        var check = setInterval(function() {
+            if (window.outerWidth - window.innerWidth > threshold || 
+                window.outerHeight - window.innerHeight > threshold) {
+                // 如果打开控制台，则刷新页面
+                window.location.reload();
+            }
+        }, 1000)
+        } 
+    } 
+        //屏蔽右键菜单
+        document.oncontextmenu = function (event){
+            if(window.event){
+            event = window.event;
+            }
+            try{
+            var the = event.srcElement;
+                if (!((the.tagName == "INPUT" && the.type.toLowerCase() == "text") || the.tagName == "TEXTAREA")){
+                return false;
+                }
+                return true;
+            }
+            catch (e){
+                return false;
+            }
+        }
+        //屏蔽选中
+        document.onselectstart = function (event){
+            if(window.event){
+                event = window.event;
+                }
+            try{
+                var the = event.srcElement;
+                if (!((the.tagName == "INPUT" && the.type.toLowerCase() == "text") || the.tagName == "TEXTAREA")){
+                return false;
+                }
+                return true;
+                } 
+            catch (e) {
+                return false;
+            }
+        }
+        //屏蔽复制
+        document.oncopy = function (event){
+            if(window.event){
+            event = window.event;
+            }
+            try{
+                var the = event.srcElement;
+                if(!((the.tagName == "INPUT" && the.type.toLowerCase() == "text") || the.tagName == "TEXTAREA")){
+                return false;
+                }
+                return true;
+                }
+            catch (e){
+                return false;
+            }
+        }
+        //屏蔽剪贴
+        document.oncut = function (event){
+            if(window.event){
+            event = window.event;
+            }
+            try{
+                var the = event.srcElement;
+                if(!((the.tagName == "INPUT" && the.type.toLowerCase() == "text") || the.tagName == "TEXTAREA")){
+                return false;
+                }
+                return true;
+                }
+            catch (e){
+                return false;
+            }
+        }
+        //屏蔽粘贴
+        document.onpaste = function (event){
+            if(window.event){
+                event = window.event;
+                }
+            try{
+                var the = event.srcElement;
+                if (!((the.tagName == "INPUT" && the.type.toLowerCase() == "text") || the.tagName == "TEXTAREA")){
+                return false;
+                }
+                return true;
+                }
+            catch (e){
+                return false;
+            }
+        }
+    </script>
+</body>
+</html>
+

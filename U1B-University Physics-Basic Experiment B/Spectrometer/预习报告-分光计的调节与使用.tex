@@ -1,0 +1,105 @@
+%预习报告-分光计的调节与使用
+
+%文档类型
+\documentclass[a4paper]{article}%A4纸，文档类型为论文
+
+%宏包
+%文字设置
+\usepackage[UTF8]{ctex}%处理中文
+\usepackage{xeCJK}%处理中文
+\usepackage{fontspec,xunicode,xltxtra}%字体设置
+%文档&排版设置
+\usepackage{titlesec}%自定义章节标题样式
+\usepackage{multicol}%分栏
+\usepackage{hyperref}%超链接设置\daleth 
+\usepackage{multirow,makecell}%制作复杂表格
+\usepackage{booktabs}%画三线表要用
+\usepackage{float}%图片、表格等位置浮动排版
+\usepackage{indentfirst}%首行缩进
+\usepackage{graphicx,subfigure}%图片插入
+\usepackage{listings}%代码高亮
+\usepackage{xcolor}
+\usepackage{appendix}%附录
+\usepackage{fancyhdr}%页眉页脚
+\usepackage{geometry}%页边距
+\usepackage{caption}
+%数学
+\usepackage{amsmath,amssymb}%公式
+\usepackage{amsfonts,mathrsfs,txfonts}%数学字体
+\usepackage{array}%矩阵
+\usepackage{gensymb}%角度单位“度”的命令：\degree
+
+\geometry{a4paper,scale=0.8}%设置了纸张为a4，并且版心占页面长度的比例为80%；scale也可以改为ratio，表示版面边距占页面长度的比例.
+\hypersetup{colorlinks=true,linkcolor=black,citecolor=black}%去掉目录等超链接所带的红框，并让参考文献的引用颜色为黑色
+\setlength{\parindent}{2em}%首行缩进2字符
+\lstset{
+    columns=fixed,
+    numbers=left, % 在左侧显示行号
+    numberstyle=\footnotesize\color{darkgray},% 设定行号格式
+    backgroundcolor=\color[RGB]{245,245,244},% 设定背景颜色
+    keywordstyle=\color[RGB]{40,40,255},% 设定关键字颜色
+    numberstyle=\color[RGB]{0,192,192},%行号数字样式
+    commentstyle=\it\color[RGB]{0,96,96},% 设置代码注释的格式
+    stringstyle=\rmfamily\slshape\color[RGB]{128,0,0},% 设置字符串格式
+}
+\pagestyle{fancy}%页眉页脚
+\fancyhead{}%清空页眉
+\fancyhead[C]{\emph{预习报告：分光计的调节与使用}}
+
+
+\newcommand{\kaiti}{\CJKfamily{STKaiti}} % 楷体：\kaiti或\emph
+\newcommand{\fs}{\CJKfamily{STFangsong}} % 仿宋：\fs或\fangsong
+%黑体：\heiti
+
+\newcommand{\suo}{\indent}%缩进2个字符
+
+\title{\heiti{实验报告}}%标题
+\author{{\emph{李佩哲}}}
+\date{\emph{\small\today}}
+
+\begin{document}
+\begin{center}
+\center{\bf{\LARGE{预习报告}\\\large{分光计的调节与使用}}}\\
+\emph{李佩哲~~~PB21051049~~~\\\today}
+\end{center}
+\section{实验原理}
+一束单色光经三棱镜两次折射后，出射光与入射光之间的会形成夹角$\delta$，称为偏向角。当棱镜顶角$A$一定时，$\delta$随入射角$i_1$的变化而变化。
+由几何关系知，当且仅当入射角$i_1$等于出射角$i_2^\prime$时，有$\delta_{\min}=i_1-i_1^\prime=i_1-\frac{A}{2}$，其中$i_1^\prime$为第一次折射的折射角。
+于是$i_1=\frac{1}{2}\left(\delta_{\min}+A\right)$。
+
+根据折射定律，有$\sin i_1=n\sin i_1^\prime=n\sin \frac{A}{2}$。结合上式可知$$n=\frac{\sin \frac{\left(\delta_{\min}+A\right)}{2}}{\sin\frac{A}{2}}$$
+\subsection{测三棱镜顶角$A$}
+分别读出并记录三棱镜两个光学面各自正对望远镜时的两个游标读数$\theta_1,~\theta_2$与$\theta_1^\prime,~\theta_2^\prime$，则两个光学面法向之间的夹角
+$\Phi =\frac{1}{2}\left(\left|\theta_1-\theta_1^\prime\right|+\left|\theta_2-\theta_2^\prime\right|\right)$，
+故顶角$A=\pi-\Phi$。
+
+\subsection{测最小偏向角$\delta_{\min}$}
+转动载物台，望远镜同时跟随光谱线转动；改变入射角，寻找光谱线即将反向运动的临界点，此时固定载物台，转动望远镜找到绿色光谱线，记录两游标读数$\theta_1,~\theta_2$。
+然后取下三棱镜，保持载物台不动，把望远镜转回与入射光平行原位，记录两游标读数$\theta_1^\prime,~\theta_2^\prime$。
+则最小偏向角$\delta_{\min} =\frac{1}{2}\left(\left|\theta_1-\theta_1^\prime\right|+\left|\theta_2-\theta_2^\prime\right|\right)$
+
+\section{分光计的调节}
+\subsection{调整望远镜}
+\begin{enumerate}
+    \item 进行目镜调焦，使刻度线成像清晰；
+    \item 打开光源，放上双面平面镜，粗调望远镜轴与镜面垂直；
+    \item 继续调焦，使绿色十字成像清晰；
+    \item 调整载物台平面镜后侧螺旋与望远镜仰角螺钉，使绿色十字落在上十字线上，再翻转平面镜，调整另一面。如此反复多次，直至绿色十字始终落在上十字线上；
+\end{enumerate}
+
+\subsection{调整平行光源}
+\begin{enumerate}
+    \item 取下平面镜和照明光源，望远镜转向平行光源方向，调整狭缝筒，使成像清晰；
+    \item 将狭缝转到水平方向，调整水平光源，使狭缝成像在中心轴线上；
+    \item 将狭缝转到纵向，锁紧螺钉。
+\end{enumerate}
+
+\subsection{调整三棱镜}
+\begin{enumerate}
+    \item 将棱镜放到载物台上；
+    \item 打开目镜照明光源，遮住从平行光管来的光，转动载物台，使三棱镜的一个光学平面垂直于望远镜；
+    \item 观察反射回来的十字像，仅调节载物台冷静后面的螺钉，使十字反射像落在上十字线上；
+    \item 同上处理三棱镜另一光学表面，重复多次，直至两个光学表面反射的十字都在上十字线上。
+\end{enumerate}
+
+\end{document}

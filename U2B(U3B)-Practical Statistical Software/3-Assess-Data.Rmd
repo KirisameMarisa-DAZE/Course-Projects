@@ -1,0 +1,956 @@
+---
+title: "R处理数据"
+author: "温灿红"
+institute: "中国科学技术大学管理学院"
+output:
+  xaringan::moon_reader:
+    css: [default, "zh-CN.css", "extra.css"]
+    lib_dir: libs
+    nature:
+      highlightStyle: github
+      highlightLines: true
+      countIncrementalSlides: false
+
+
+
+
+
+---
+# **R**处理数据
+
+- 获取数据
+
+- 导出数据
+
+- 预处理数据
+
+- 汇总数据
+
+- 产生随机数
+
+
+---
+class: center, middle
+
+## 获取数据
+
+---
+### 导入数据——R语言系统格式数据
+
+- 读取**R**二进制文档，格式为".RData"或".Rda"
+  
+  + `load("name")` 读取 `name` 文件到当前**R**工作空间中
+
+
+```{r}
+    load("cats.RData")                    # 读取数据
+```
+
+
+---
+### 导入数据——带有分隔符的文本数据
+
+- 带有分隔符的文本数据形式是常用的数据存储方式之一。
+
+- 列与列之间以固定字符（如逗号、空格、分号等）进行分割
+
+- 用 `read.csv()` ,  `read.table()` ,  `read.delim()` ,  `read.fwf()` 等函数读入。
+
+- 文本文件也可通过 `readLines()` 逐行读取。
+
+- 这些函数读取数据后会在**R**中保存成 `data.frame` 的格式。
+
+- 可通过改变选择来调整是否需要包含列名，是否需要跳过开头的若干行以及指定缺失值符号等等。
+
+---
+### 导入数据——带有分隔符的文本数据
+
+`read.table()`参数设置：
+
+- file:文件名，后缀可以是txt、dat、csv等。
+
+- header:导入数据时是否带有列标题，默认是TRUE。
+
+- sep: 列与列之间的文本分隔符。
+
+- stringsAsFactor: 导入数据时是否奖字符串数据转化成因子类型，默认是TRUE。
+
+- fileEncoding:文本数据的文件编码，如果设计中文字符，根据文本格式更改GBK或UTF-8，默认是UTF-8。
+
+
+---
+### 读取数据的例子（一）
+
+- `header`  是否包括列名，如果原文件中包含列名，则为`TRUE`，否则为`FALSE`。
+
+```{r}
+d <- read.csv("covid19.csv", header = TRUE) #  header = TRUE 包括列名
+head(d)                                     #  查看前面几行，默认是6行。
+```
+
+- 第二个病人的性别没有记载，应认定为缺失值。
+```{r}
+table(d$性别)
+```
+
+
+---
+### 读取数据的例子（二）
+
+- `na.strings = x`   指定 `x` 为缺失值。如在该数据中，空的字符串为缺失值。
+```{r}
+d <- read.csv("covid19.csv", header = TRUE, na.strings = "") #  第二个病人的性别没有记载，应认定为缺失值。
+head(d, n = 3)
+```
+
+```{r}
+table(d$性别)
+table(d$性别, useNA = "always")
+```
+
+---
+### 读取数据的例子（三）
+
+- `row.names = x`   指定列名为 `x` 的列为行名
+
+```{r}
+dim(d)
+d <- read.csv("covid19.csv", header = TRUE, na.strings = "", 
+              row.names = "序号") #  指定第一列为行名
+head(d,3)
+dim(d)
+
+```
+
+---
+### 读取数据的例子（四）
+
+- `skip = x`   跳过前面 `x` 行
+
+```{r}
+d1 <- read.csv("covid19.csv", header = TRUE, na.strings = "", skip = 3) 
+dim(d1)
+dim(d)
+```
+
+
+- `nrows = x`  只读取 `x` 行，若header = TRUE 则不包括列名那一行
+
+```{r}
+d2 <- read.csv("covid19.csv", header = TRUE, na.strings = "", 
+               row.names = "序号", nrows = 10)
+dim(d2)
+```
+
+---
+### 读取数据的例子（五）
+
+
+- CSV文件是文本文件，是有编码问题的， 尤其是中文内容的文件。 `read.csv`默认是GBK格式，如果有时候发现读进去的数据是乱码，可试试看改成”UTF-8“
+
+```{r}
+d2 <- read.csv("covid19.csv", header = TRUE, na.strings = "", 
+               row.names = "序号", fileEncoding="UTF-8") 
+```
+
+---
+### 读取数据的例子（六）
+
+-  `readLines()` 按行读取，每一行记为一个字符串
+
+```{r}
+d3 <- readLines("covid19.csv")
+head(d3, 3)
+```
+
+
+- 若文件太大，可通过 `readLines()` 函数读取前面几行
+```{r}
+d3 <- readLines("covid19.csv", n = 3)
+d3
+```
+
+---
+### 导入数据——excel
+
+- `readxl`包是RStudio内置读取Excel数据文件的专用包。使用`read_excel()`读取。
+
+- `read_excel()`参数设置：
+  
+    + path: 文件名，可以是xls或者是xlsx
+    + sheet: 工作簿名称或序号
+    + range：读取指定区域的数据，如B3:D87表示读取B3至D87区域的数据
+    + col_names:判断第一行是否作为列名称，默认为TRUE
+
+
+---
+### 读取Excel数据的例子
+
+```{r}
+data <- readxl::read_excel("covid19.xlsx", col_names = TRUE) 
+head(data)                                     #  查看前面几行，默认是6行。
+```
+
+
+---
+class: center, middle
+
+## 导出数据
+
+
+---
+### 导出数据
+
+- 导出**R**二进制文档，格式为".RData"或".Rda"
+
+  + `save(thing, file = "name")` 把指定的若干个变量thing（直接用名字，不需要表示成字符串）保存到用 `name` 文件中
+  
+  + `save.image("name")` 把当前工作空间中的所有变量保存到 `name` 文件
+  
+```{r}
+    data(cats,package="MASS")             # 读取扩展包MASS中自带的数据"cats"
+    save(cats, file = "cats.RData")       # 保存数据“cats”到“cats.RData“
+    rm(cats)
+    ls()
+```
+
+
+
+---
+### 导出数据到文本文件
+
+
+- 可用 `write.csv()` ,  `write.table()` ,  `write.delim()` ,  `write.fwf()`  ,   `writeLines()` 等函数输出data.frame至外面文件。
+
+```{r}
+    write.table(d, file="mydata1.txt") # 可能会导致乱码
+    write.table(d, file="mydata2.txt", fileEncoding = "UTF-8")
+```
+
+---
+### 导出数据到Excel文件
+
+
+- openxlsx包的`write.xlsx()` 。
+
+```{r}
+    openxlsx::write.xlsx(d, file="mydata.xlsx", asTable=TRUE) 
+```
+
+---
+class: center, middle
+
+
+## 预处理数据
+
+
+---
+### 查看数据
+
+- 通过行序号选择
+    + `head(x, n)` 选择数据框 `x` 的前 `n` 行
+    + `tail(x, n)` 选择数据框 `x` 的倒数 `n` 行
+- `View(x)`：打开界面查看数据。  
+
+```{r}
+head(d)
+tail(d, n = 2)
+View(d)
+```
+
+
+---
+### 筛选数据
+
+- 按条件选出符合条件的行组成的子集，用逻辑判断语句
+
+- `subset()`：提出子集，参数subset提取行，参数select提取列。
+
+```{r}
+d[d$年龄<18,]
+subset(d, d$年龄<18)
+with(d, d[年龄<18,])
+```
+
+---
+### 筛选数据
+
+- 同时选择行和列的子集
+
+```{r}
+    d[d$年龄<18 & d[,"性别"]=="男", c("性别","年龄","疗程")]
+    subset(d, d$年龄<18 & d[,"性别"]=="男", select = c("性别","年龄","疗程"))
+```
+
+
+---
+### 排序数据
+
+1. 使用`order()`对需要排序的列进行排序，返回排序后各个元素的原位置信息。
+
+2. 基于`order()`函数的输出结果对数据框排序。
+
+```{r}
+    idx1 <- order(d[,"年龄"]) # 按照一列进行排序
+    head(d[idx1,],6)
+    
+    idx2 <- order(as.factor(d[,"性别"]), d[,"年龄"], decreasing = c(T, T), method="radix") # 按照两列进行排序
+    head(d[idx2,],6)
+```
+
+
+
+---
+### 合并数据（一）
+
+- 如果行号都一样，那么使用`data.frame(dat1,dat2)`或者`cbind(dat1,dat2)`直接合并即可。
+
+```{r}
+  hos <- read.csv("covid19.csv", header = TRUE, na.strings = "")
+  cli <- read.csv("covid19-2.csv", header = TRUE) 
+  newdata <- data.frame(hos, cli)
+  head(newdata)
+```
+
+- 有两列是重复的，因此列名改成了“序号”， “序号.1”。
+
+
+---
+### 合并数据（二）
+
+
+- 如果行号不一样，用 `merge(dat1, dat2, by = x)` 按照列名为`x`来合并，只保留`x`元素相同的行，即同时在两个数据框中的行。
+
+```{r}
+  hos <- read.csv("covid19.csv", header = TRUE, na.strings = "")
+  dim(hos)
+  cli <- read.csv("covid19-3.csv", header = TRUE) 
+  dim(cli)
+```
+
+
+
+```{r}
+  newdata <- merge(hos, cli, by = "序号") 
+  dim(newdata)
+```
+ 
+
+---
+### 合并数据（三）
+
+- 用 `merge(dat1, dat2, by.x = x, by.y = y)` 把 `dat1`中的`x`列和 `dat2`中的`y`列作为合并的标准。
+```{r}
+  newdata <- merge(hos, cli, by.x = "序号", by.y = "序号")     
+  dim(newdata)
+```
+
+- 如果想要保留 `dat1` 中的所有行，则指定 `all.x = TRUE`。
+
+```{r}
+  newdata <- merge(hos, cli, by.x = "序号", by.y = "序号", all.x = TRUE)     
+  dim(newdata)
+```
+
+---
+### 标准化数据
+
+- `scale()` 把每一列都标准化， 即每一列都减去该列的平均值，然后除以该列的样本标准差。 
+
+- `scale(x, center=TRUE, scale=FALSE)` 仅中心化而不标准化。
+
+- 仅适用于数值型的变量
+
+```{r}
+    ds <- scale(d[,3])
+    head(ds)
+```
+
+---
+class: center, middle
+## 案例分析
+
+---
+### 初看数据
+
+```{r}
+summary(d)
+```
+
+---
+### 调整数据的类型
+
+- 日期数据没有正确读入
+```{r}
+    class(d$出院时间)
+    d[,"入院时间"] <- as.Date(as.character(d[,"入院时间"]), format = "%Y%m%d")
+    d[,"出院时间"] <- as.Date(as.character(d[,"出院时间"]), format = "%Y%m%d")
+    class(d$出院时间)
+    summary(d[, 4:5])
+```
+
+
+---
+### 增加新的列变量（一）
+
+- 可以为数据框计算新变量， 返回含有新变量以及原变量的新数据框
+
+```{r}
+    d[,"住院时间"] <- as.numeric(d[,"出院时间"] - d[,"入院时间"]) + 1
+    summary(d[, 4:7])
+```
+- 增加的新变量有异常值，最小值竟然为.red[负数！！！]
+
+
+---
+### 增加新的列变量（二）
+
+
+
+```{r}
+    d[d$住院时间<0,]
+```
+
+- 发现是原始数据输入有误，入院时间写成了"2022-02-05"，通过查看原始文档，调整为“2020-02-05”。
+
+```{r}
+    d[d$住院时间<0,"入院时间"] <- as.Date("2020-02-05")
+    d[,"住院时间"] <- as.numeric(d[,"出院时间"] - d[,"入院时间"]) + 1
+    summary(d[, 4:7])
+```
+
+---
+### 有缺失值的行
+
+```{r}
+    idx.na <- apply(is.na(d), 1, any)
+    d[idx.na, ]
+```
+
+
+---
+
+class: center, middle
+
+# 汇总数据
+
+
+---
+### 汇总数据
+
+常用的汇总函数有：
+
+- 总体信息： `summary()`，`table()`
+
+- 位置度量： `mean()` ,  `median()` 。
+
+- 分散程度（变异性）度量： `sd()` ,  `IQR()` ,  `mad()` 。
+
+- 分位数： `min()` ,  `max()` ,  `quantile()` 。
+
+---
+### 汇总数据之例子（一）
+
+```{r}
+summary(d)
+```
+
+
+---
+### 汇总数据之例子（二）
+
+-对于因子类型的变量，可以通过`table()`查看其在每一类的频数分布。
+
+```{r}
+table(d$分型)
+table(d$性别)
+```
+
+
+---
+### 汇总数据之例子（三）
+
+-对于数值型变量，则可以通过一些数字特征来描绘它的分布。
+
+```{r}
+summary(d$年龄)
+cat("平均年龄为", mean(d$年龄), "中位数为", median(d$年龄), "标准差为", 
+    sd(d$年龄), "下90%的分位数为", quantile(d$年龄,0.9))
+cat("平均疗程为", mean(d$疗程), "标准差为", sd(d$疗程))
+```
+
+- .red[汇总出错了！！！]
+
+
+---
+### 汇总数据之例子（四）
+
+- 可通过 `na.rm = TRUE` 将其中`NA`的数值去除来计算平均值、标准差、中位数等。
+
+```{r}
+cat("平均疗程为", mean(d$疗程, na.rm=TRUE), "标准差为", sd(d$疗程, na.rm=TRUE))
+```
+
+
+- 在`quantile()`, `IQR()`等函数中，如果输入有缺失值，则直接报错，错误如下：
+
+> Error in quantile.default(as.numeric(x), c(0.25, 0.75), na.rm = na.rm,  : 
+>  'na.rm'如果设为FALSE的话不允许有遺漏值和NaN
+
+---
+### 汇总数据之例子（五）
+
+-对于时间日期型变量，可类似于数值型变量进行汇总。
+
+```{r}
+mean(d$入院时间)
+min(d$入院时间)
+max(d$入院时间)
+sd(d$入院时间)
+```
+
+---
+### 分组汇总数据（一）
+
+- `aggregate()` 函数对输入的数据框用指定的分组变量（或交叉分组） 分组进行概括统计。
+
+```{r}
+    aggregate(d[,c(3:5,7)], by = d["分型"], mean)
+```
+
+
+```{r}
+    aggregate(d[,c(3:5,7)], by = d[c("分型","性别")], mean)
+```
+
+
+
+---
+### 分组汇总数据（二）
+
+
+- `tapply()` 函数对向量进行分组概括
+
+
+```{r}
+    tapply(d[,"性别"], INDEX = d["分型"], table)
+```
+
+- 并没有把 `NA`计算在内。
+
+---
+### 分组汇总数据（三）
+
+- 通过 `useNA = "always"` 或`useNA = "ifany"`来把 `NA`计算在内。
+
+.pull-left[
+
+```{r}
+tapply(d[,"性别"], INDEX = d["分型"], 
+       table, useNA="always")
+```
+]
+
+.pull-right[
+```{r}
+tapply(d[,"性别"], INDEX = d["分型"], 
+       table, useNA="ifany")
+```
+]
+
+---
+### 分组汇总数据（四）
+
+- 对两个分类变量进行交叉分组计算频数
+
+```{r}
+    table( d[,"分型"], d[,"性别"])
+    table( d[,"分型"], d[,"性别"], useNA="ifany")
+    table( d[,"分型"], d[,"性别"], useNA="always")
+```
+
+
+---
+class: center, middle
+
+
+## dplyr包
+
+
+---
+### dplyr包
+
+- `filter()`：按行筛选数据
+
+- `select()`：按名称选取变量/列
+
+- `arrange()`：对行排序数据
+
+- `mutate()`：创建新变量（列）
+
+- `summarise()`：汇总数据
+
+- `group_by()`：分组汇总数据
+
+- `xxx_joins()`：合并数据
+
+- `%>%`：管道 
+
+
+---
+### 导入需要的R包和数据集
+
+```{r}
+library(dplyr)
+
+d <- readxl::read_excel("covid19.xlsx", col_names = TRUE) 
+
+```
+
+
+---
+### `filter()`筛选数据
+
+  - `filter(x,...)`：对数据框按照后面的参数来筛选行，后面的参数是用来筛选数据的判断表达式
+
+
+```{r}
+    filter(d, d$年龄<18)
+    filter(d, d$年龄<18, 性别=="男")
+```
+
+---
+### `select()`按名称选取变量/列
+
+```{r}
+filter(select(d, 性别,年龄, 疗程), d$年龄<18)
+```
+
+
+---
+### `arrange()`排序数据（一）
+
+- `arrange(x, ...)`：对数据框x排序，后面的参数为一组作为排序依据的列名。如果列名不止一个，那么就后面的列是在前面排序的基础上继续排序。
+
+- `desc()`降序排序
+
+- 缺失值总是排在最后。
+
+```{r}
+    head(arrange(d, 年龄),6)
+```
+
+---
+### `arrange()`排序数据（二）
+
+```{r}
+    head(arrange(d, 性别, desc(年龄)),6) #按两列进行排序
+```
+---
+### `mutate()`新增变量
+
+- 可以为数据框计算新变量， 返回含有新变量以及原变量的新数据框。
+
+```{r}
+    tmp <- mutate(d, 住院时间 = 出院时间 - 入院时间 + 1)
+    head(tmp)
+```
+
+---
+### `summarise()`汇总数据（一）
+
+- 按照分型来进行分组汇总
+
+```{r}
+    summarise(group_by(d, 分型), mean(年龄), mean(入院时间), mean(出院时间))
+```
+
+---
+### `summarise()`汇总数据（二）
+
+- 按照分型和性别来进行分组汇总
+
+```{r}
+    summarise(group_by(d, 分型,性别), mean(年龄), mean(入院时间), mean(出院时间))
+```
+
+---
+### 管道 `%>%`
+
+- 管道 `%>%`帮助你以清晰易懂的方式编写代码
+
+- `x%>% f(y)`转换为`f(x, y)`
+
+```{r}
+d %>%
+  mutate(住院时间 = 出院时间 - 入院时间 + 1) %>%
+  filter(年龄<18)
+```
+
+---
+### 管道 `%>%`和画图函数结合
+
+```{r}
+library(ggplot2)
+iris %>%
+  mutate(Sepal.Size = Sepal.Length*Sepal.Width, 
+         Petal.Size = Petal.Length*Petal.Width) %>%
+  filter(Species != 'virginica') %>% 
+  ggplot(aes(x=Sepal.Size, y=Petal.Size, colour=Species)) + 
+  geom_point(size=2) + 
+  geom_smooth(method = "lm") +
+  labs(title = 'Iris Flower Size (setosa vs. versicolor)')
+```
+
+
+---
+class: center, middle
+
+
+## 随机数
+
+---
+### 随机数
+
+- 在计算机中，所谓随机数，实际是“伪随机数”，是从一组起始值（称为种子），按照某种递推算法向前递推得到的。所以，从同一种子出发，得到的随机数序列是相同的。
+
+- 为了得到可重现的结果，随机模拟应该从固定不变的种子开始模拟。用 `set.seed(k)` 来实现固定模拟实验中的种子。
+
+- 语法如下：
+
+```{r eval=FALSE}
+  set.seed(seed, kind = NULL, normal.kind = NULL, sample.kind = NULL)
+```
+
+  - `seed = k` 指定一个编号为 `k`的种子，这样每次从编号 `k` 种子运行相同的模拟程序就可以得到相同的结果;
+    
+  - `kind = `指定后续程序要使用的随机数发生器名称;
+
+  - `normal.kind=` 指定要使用的正态分布随机数发生器名称。
+
+
+---
+### 例子
+```{r}
+    runif(5)
+    runif(5)
+
+    set.seed(5)
+    runif(5)
+    
+    set.seed(5)
+    runif(5)
+```
+
+
+---
+### 从古典概型开始： `sample()`
+
+
+- `sample()` 函数从一个有限集合中无放回或有放回地随机抽取，产生随机结果。
+
+- 语法如下：
+
+```{r eval=FALSE}
+  sample(x, size, replace = FALSE, prob = NULL)
+```
+
+  - `x` 用以存储有限集合的向量，也可以为一个正整数（此时集合为`1:x`）；
+    
+  - `size` 指定抽样个数，即样本数;
+    
+  - `replace = `指定是否为有放回抽样，`TRUE`是有放回抽样, `FALSE`是无放回抽样；
+    
+  - `prob = `指定以各种权重抽取，默认是等概率。
+
+
+
+---
+### 例子（一）
+
+- 有放回抽样
+
+```{r}
+sample(0:1, size = 10, replace = TRUE) 
+```
+
+- 无放回等概率抽样：
+
+
+```{r}
+set.seed(1)
+sample(1:100, size = 6, replace = FALSE)
+```
+
+- 以下为等价命令：
+
+```{r}
+set.seed(1)
+sample(1:100, size = 6)
+```
+
+
+---
+### 例子（二）
+
+- 随机排序：
+
+```{r}
+sample(10)
+sample(letters) 
+```
+
+
+- 多项分布的随机抽样
+
+```{r}
+x <- sample(1:3, size = 100, replace = TRUE, prob = c(.2, .3, .5)) 
+table(x)
+```
+
+
+
+
+
+---
+### **R**的随机数函数（一）
+
+- 提供了多种分布的随机数函数，如:
+
+- `runif(n)` 产生 `n` 个标准均匀分布随机数;
+    
+```{r}
+    round(rnorm(5), 2)
+```
+
+- `rnorm(n)` 产生 `n` 个标准正态分布随机数。
+    
+```{r}
+    round(rnorm(5), 2)
+```
+
+
+---
+###  **R**的随机数函数（二）
+
+- 每一种分布都有自己的名字，在其前面添加如下的字母分别代表不同的功能：
+
+    - `p`：probability，分布函数
+    
+    - `q`：quantile, 分位数
+    
+    - `d`：density, 概率密度函数
+    
+    - `r`：random，随机数
+
+- 查看**R**中支持的概率分布
+
+```{r, eval = FALSE}
+    ?Distributions
+```
+
+---
+###  常用分布表
+
+| Distribution        | cdf           | parameter          |
+  |:-------------------:|:-------------:|:------------------:|
+  | 二项分布            | `pbinom`      | `size`, `prob`     |
+  | 卡方分布          | `pchisq`      | `df`               |
+  | 指数分布         | `pexp`        | `rate`             |
+  | F分布                   | `pf`          | `df1`, `df2`       |
+  | 伽玛分布               | `pgamma`      | `shape`, `rate` or `shape` |
+  | 几何分布           | `pgeom`       | `prob`             |
+  | 对数正态分布          | `plnorm`      | `meanlog`, `sdlog` |
+  | 负二项分布   | `pnbinom`     | `size`, `prob`     |
+  | 正态分布              | `pnorm`       | `mean`, `sd`       |
+  | Poisson分布             | `ppois`       | `lambda`           |
+  | t 分布          | `pt`          | `df`               |
+  | 均匀分布             | `punif`       | `min`, `max`       |
+ 
+  
+---
+### 例子：指数分布的概率密度函数
+
+
+  
+```{r, fig.width=6, fig.height=6}
+x <- seq(0, 8, .05)
+plot (x, dexp(x), ty="l", main="指数分布的概率密度函数", xlab="x", ylab="f(x)")
+lines (x, dexp(x, rate=0.5), col="red") 
+lines (x, dexp(x, rate=0.2), col="blue")
+legend("topright", legend = paste("lambda = ", c(1, 0.5, 0.2)), col=c("black", "red", "blue"), lty=1, inset = .02)
+```
+
+---
+### 例子：指数分布的分布函数
+
+```{r, fig.width=6, fig.height=6}
+x <- seq(0, 8, .05)
+plot (x, pexp(x), ty="l", main="指数分布的分布函数", xlab="x", ylab="F(x)")
+lines (x, pexp(x, rate=0.5), col="red") 
+lines (x, pexp(x, rate=0.2), col="blue")
+legend("bottomright", legend = paste("lambda = ", c(1, 0.5, 0.2)), col=c("black", "red", "blue"), lty=1, inset = .02)
+```
+
+---
+### 例子：指数分布的随机数
+
+
+```{r, fig.width=6, fig.height=6}
+x <- seq(0, 16, .05)
+hist(rexp(1000, 0.5), freq = FALSE,  xlab="x", main="指数分布的随机数")
+lines (x, dexp(x, 0.5), col="red", lwd=2)
+
+```
+
+
+---
+### 例子：大数定律
+
+.pull-left[
+```{r}
+for(n in 2^c(1:20)){
+  x <- rnorm(n, 0, 1)
+  cat(abs(mean(x) - 0), "\n")
+}
+
+```
+]
+
+.pull-right[
+```{r}
+for(n in 2^c(1:20)){
+  x <- rt(n, df = 1)
+  cat(abs(mean(x) - 0), "\n")
+}
+
+```
+]
+
+---
+### 例子：中心极限定理
+
+
+```{r, fig.align='center', fig.height=4, fig.width=12}
+iter <- 1000
+
+op <- par(mfrow=c(1, 3))
+for(n in c(1, 10, 100)){
+  x <- replicate(iter, mean(runif(n)))
+  stat <- (x-0.5)*sqrt(12*n)
+  hist(stat, freq = FALSE, xlim = c(-4, 4))
+  curve(dnorm(x),  col="red", add = TRUE)
+}
+par(op)
+
+```
+
+
+
+---
+
+class: center, middle
+
+# 谢  谢
+
+

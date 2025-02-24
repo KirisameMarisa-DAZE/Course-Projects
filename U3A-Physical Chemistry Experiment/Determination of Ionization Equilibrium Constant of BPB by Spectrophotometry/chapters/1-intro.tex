@@ -1,0 +1,56 @@
+% !TeX root = ../main.tex
+
+\chapter{序言}
+
+\section{实验原理\cite{huaxe23}}
+根据贝尔-郎比定律，溶液对于单色光的吸收，遵守下列关系式
+\begin{equation}\label{1.1}
+  D=\lg\frac{I_0}{I}=K\cdot l\cdot C
+\end{equation}
+其中$D$为消光度（或光密度）；$\frac{I}{I_0}$为透光率，$K$为摩尔消光系数，
+它是溶液的特性常数；$l$为被测溶液的厚度，即吸收槽的长度；
+$C$为溶液浓度.~
+
+从式(\ref{1.1})可以看出，对于固定长度的吸收槽，在对应最大吸收峰的波长（$\lambda$）下，测定不同浓度$C$的消光，就可以作出线性的$D-C$线，这就是定量分析的基础.~也就是说，在该波长时，若溶液遵守贝尔-郎比定律，则可以选择这一波长来进行定量分析.~
+
+溴酚蓝在有机溶剂中存在着以下的电离平衡
+\begin{equation}
+  \text{HA}\rightleftharpoons \text{H}^++\text{A}^-
+\end{equation}
+其平衡常数
+\begin{equation}
+  K_a=\frac{\left[\text H^+\right]\left[\text A^-\right]}{\left[\text{HA}\right]}
+\end{equation}
+
+溶液的颜色是由显色物质HA与$\text{A}^-$引起的，其变色范围pH在3.1～4.6之间，当pH$\leqslant $3.1时，溶液的颜色主要由HA引起的，呈黄色；在pH$\geqslant $4.6时，溶液的颜色主要由A$^-$引起，呈蓝色.~
+用对A$^-$产生最大吸收波长的单色光测定电离后的混合溶液的消光，可求出A$^-$的浓度.~令A$^-$在显色物质中所占的分数为$X$，则HA所占的摩尔分数为$1-X$，所以
+\begin{equation}
+  K_a=\frac{X}{1-X}\left[\text{A}^-\right]
+\end{equation}
+即
+\begin{equation}\label{1.5}
+  \lg\frac{X}{1-X}=\text{pH}+\lg K_a
+\end{equation}
+根据上式可知，只要测定溶液的pH值及溶液中的$\left[\text{HA}\right]$和$\left[\text{A}^-\right]$，就可以计算出电离平衡常数$K_a$.~
+
+在极酸条件下，HA未电离，此时体系的颜色完全由HA引起，溶液呈黄色.~设此时体系的消光度为$D_1$；在极碱条件下，HA完全电离，此时体系的颜色完全由A$^-$引起，此时的消光度为$D_2$，$D$为两种极端条件之间的诸溶液的消光度，它随着溶液的pH而变化，即
+\begin{equation}
+  D=\left(1-X\right)D_1+XD_2
+\end{equation}
+也即
+\begin{equation}
+  X=\frac{D-D_1}{D_2-D_1}
+\end{equation}
+代入式(\ref{1.5})中得
+\begin{equation}
+  \lg\frac{D-D_1}{D_2-D}=\text{pH}-\text pK_a
+\end{equation}
+
+在测定$D_1$、$D_2$后，再测一系列pH下的溶液的光密度，以$\lg\frac{D-D_1}{D_2-D}$对pH作图应为一直线，由其在横轴上的截距可求出p$K_a$，从而可得该物质的电离平衡常数.~
+
+\section{实验目的}
+\begin{enumerate}
+  \item 掌握一种测定酸碱指示剂电离平衡常数的方法；
+  \item 熟悉并掌握722型分光光度计的性能和使用方法，并利用分光光度计测量BPB的最大吸收波长，了解溶液浓度对max的影响；
+  \item 解酸度对BPB的影响，学会用缓冲溶液调节溶液酸度的方法.~
+\end{enumerate}

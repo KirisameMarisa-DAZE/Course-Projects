@@ -1,0 +1,652 @@
+33.3144 	WARNING 	User requested fullscreen with size [1920 1080], but screen is actually [1600, 900]. Using actual size
+33.9988 	EXP 	Created window1 = Window(allowGUI=True, allowStencil=False, autoLog=True, backendConf=UNKNOWN, backgroundFit=<method-wrapper '__getattribute__' of attributeSetter object at 0x0000027B852B0C40>, backgroundImage=<method-wrapper '__getattribute__' of attributeSetter object at 0x0000027B852B0BE0>, bitsMode=UNKNOWN, blendMode='avg', bpc=(8, 8, 8), color=array([-1., -1., -1.]), colorSpace='rgb', depthBits=8, fullscr=<method-wrapper '__getattribute__' of attributeSetter object at 0x0000027B852B0A30>, gamma=None, gammaErrorPolicy='raise', lms=UNKNOWN, monitor=<psychopy.monitors.calibTools.Monitor object at 0x0000027B85639FD0>, multiSample=False, name='window1', numSamples=2, pos=(0, 0), screen=0, size=array([1600,  900]), stencilBits=0, stereo=False, title='PsychoPy', units='height', useFBO=True, useRetina=False, viewOri=0.0, viewPos=None, viewScale=None, waitBlanking=True, winType='pyglet')
+33.9988 	EXP 	window1: mouseVisible = True
+33.9988 	EXP 	window1: backgroundImage = ''
+33.9988 	EXP 	window1: backgroundFit = 'none'
+33.9997 	EXP 	window1: Attempting to measure frame rate of screen (0) ...
+33.9997 	EXP 	window1: recordFrameIntervals = False
+34.1651 	EXP 	window1: recordFrameIntervals = True
+34.3485 	EXP 	Screen (0) actual frame rate measured at 59.99Hz
+34.3485 	EXP 	window1: recordFrameIntervals = False
+34.3486 	EXP 	window1: mouseVisible = False
+35.5555 	EXP 	stroop: status = STARTED
+35.5559 	EXP 	window1: mouseVisible = True
+35.6666 	EXP 	Created WelcomeMessage = TextStim(__class__=<class 'psychopy.visual.text.TextStim'>, alignHoriz=method-wrapper(...), alignText='center', alignVert=method-wrapper(...), anchorHoriz='center', anchorVert='center', antialias=True, autoDraw=False, autoLog=True, bold=False, color=array([1., 1., 1.]), colorSpace='rgb', contrast=1.0, depth=0.0, draggable=False, flipHoriz=False, flipVert=False, font='Open Sans', fontFiles=[], height=0.04, italic=False, languageStyle='LTR', name='WelcomeMessage', opacity=1.0, ori=0.0, pos=array([0., 0.]), rgb=UNKNOWN, text=str(...), units='height', win=Window(...), wrapWidth=1)
+35.6667 	EXP 	window1: mouseVisible = True
+35.6677 	EXP 	Created textBlank500 = TextStim(__class__=<class 'psychopy.visual.text.TextStim'>, alignHoriz=method-wrapper(...), alignText='center', alignVert=method-wrapper(...), anchorHoriz='center', anchorVert='center', antialias=True, autoDraw=False, autoLog=True, bold=False, color=array([1., 1., 1.]), colorSpace='rgb', contrast=1.0, depth=0.0, draggable=False, flipHoriz=False, flipVert=False, font='Open Sans', fontFiles=[], height=0.05, italic=False, languageStyle='LTR', name='textBlank500', opacity=1.0, ori=0.0, pos=array([0., 0.]), rgb=UNKNOWN, text='', units='height', win=Window(...), wrapWidth=1)
+35.6678 	EXP 	window1: mouseVisible = True
+35.6687 	EXP 	Created polygon = ShapeStim(__class__=<class 'psychopy.visual.shape.ShapeStim'>, anchor=('center', 'center'), autoDraw=False, autoLog=True, closeShape=True, color=method-wrapper(...), colorSpace='rgb', contrast=None, depth=-1.0, draggable=False, fillColor=array([1, 1, 1]), fillColorSpace='rgb', fillRGB=array([1, 1, 1]), interpolate=True, lineColor=array([1., 1., 1.]), lineColorSpace='rgb', lineRGB=array([1, 1, 1]), lineWidth=0.3, name='polygon', opacity=1.0, ori=0.0, pos=array([0., 0.]), size=array([0.06, 0.06]), units='height', vertices=ndarray(...), win=Window(...), windingRule=None)
+35.6688 	EXP 	window1: mouseVisible = True
+35.6702 	EXP 	Created textStroopWord = TextStim(__class__=<class 'psychopy.visual.text.TextStim'>, alignHoriz=method-wrapper(...), alignText='center', alignVert=method-wrapper(...), anchorHoriz='center', anchorVert='center', antialias=True, autoDraw=False, autoLog=True, bold=False, color=array([1., 1., 1.]), colorSpace='rgb', contrast=1.0, depth=0.0, draggable=False, flipHoriz=False, flipVert=False, font='Open Sans', fontFiles=[], height=0.1, italic=False, languageStyle='LTR', name='textStroopWord', opacity=1.0, ori=0.0, pos=array([0., 0.]), rgb=UNKNOWN, text='', units='height', win=Window(...), wrapWidth=1)
+35.6702 	EXP 	window1: mouseVisible = True
+35.6709 	EXP 	Created textBlank500 = TextStim(__class__=<class 'psychopy.visual.text.TextStim'>, alignHoriz=method-wrapper(...), alignText='center', alignVert=method-wrapper(...), anchorHoriz='center', anchorVert='center', antialias=True, autoDraw=False, autoLog=True, bold=False, color=array([1., 1., 1.]), colorSpace='rgb', contrast=1.0, depth=0.0, draggable=False, flipHoriz=False, flipVert=False, font='Open Sans', fontFiles=[], height=0.05, italic=False, languageStyle='LTR', name='textBlank500', opacity=1.0, ori=0.0, pos=array([0., 0.]), rgb=UNKNOWN, text='', units='height', win=Window(...), wrapWidth=1)
+35.6710 	EXP 	window1: mouseVisible = True
+35.6719 	EXP 	Created polygon = ShapeStim(__class__=<class 'psychopy.visual.shape.ShapeStim'>, anchor=('center', 'center'), autoDraw=False, autoLog=True, closeShape=True, color=method-wrapper(...), colorSpace='rgb', contrast=None, depth=-1.0, draggable=False, fillColor=array([1, 1, 1]), fillColorSpace='rgb', fillRGB=array([1, 1, 1]), interpolate=True, lineColor=array([1., 1., 1.]), lineColorSpace='rgb', lineRGB=array([1, 1, 1]), lineWidth=0.3, name='polygon', opacity=1.0, ori=0.0, pos=array([0., 0.]), size=array([0.06, 0.06]), units='height', vertices=ndarray(...), win=Window(...), windingRule=None)
+35.6719 	EXP 	window1: mouseVisible = True
+35.6799 	EXP 	Created Goodbye = TextStim(__class__=<class 'psychopy.visual.text.TextStim'>, alignHoriz=method-wrapper(...), alignText='center', alignVert=method-wrapper(...), anchorHoriz='center', anchorVert='center', antialias=True, autoDraw=False, autoLog=True, bold=False, color=array([1., 1., 1.]), colorSpace='rgb', contrast=1.0, depth=0.0, draggable=False, flipHoriz=False, flipVert=False, font='Open Sans', fontFiles=[], height=0.05, italic=False, languageStyle='LTR', name='Goodbye', opacity=1.0, ori=0.0, pos=array([0., 0.]), rgb=UNKNOWN, text='任务结束，谢谢你的参加！\n\n请按“空格键”退出', units='height', win=Window(...), wrapWidth=1)
+0.0358 	EXP 	WelcomeMessage: autoDraw = True
+1.3032 	EXP 	WelcomeMessage: autoDraw = False
+1.3032 	EXP 	textBlank500: autoDraw = True
+1.3032 	EXP 	polygon: autoDraw = True
+1.8179 	EXP 	Imported stroop_stimuli.xlsx as conditions, 24 conditions, 4 params
+1.8186 	EXP 	Created sequence: random, trialTypes=24, nReps=2, seed=None
+1.8188 	EXP 	New trial (rep=0, index=0): {'type': 'congruent', 'word': 'BLUE', 'colour': 'blue', 'correct_key': 'b'}
+1.8279 	EXP 	textBlank500: autoDraw = False
+1.8279 	EXP 	polygon: autoDraw = False
+1.8279 	EXP 	textBlank500: autoDraw = False
+1.8279 	EXP 	polygon: autoDraw = False
+1.8279 	EXP 	textStroopWord: foreColor = <psychopy.colors.Color: blue, alpha=1.0>
+1.8279 	EXP 	textStroopWord: height = 0.1
+1.8279 	EXP 	textStroopWord: height = 0.1
+1.8279 	EXP 	textStroopWord: height = 0.1
+1.8279 	EXP 	textStroopWord: text = 'BLUE'
+1.8279 	EXP 	textStroopWord: autoDraw = True
+3.9365 	EXP 	textStroopWord: autoDraw = False
+3.9365 	EXP 	textBlank500: autoDraw = True
+3.9365 	EXP 	polygon: autoDraw = True
+4.4212 	EXP 	New trial (rep=0, index=1): {'type': 'congruent', 'word': 'YELLOW', 'colour': 'yellow', 'correct_key': 'y'}
+4.4362 	EXP 	textBlank500: autoDraw = False
+4.4362 	EXP 	polygon: autoDraw = False
+4.4362 	EXP 	textBlank500: autoDraw = False
+4.4362 	EXP 	polygon: autoDraw = False
+4.4362 	EXP 	textStroopWord: foreColor = <psychopy.colors.Color: yellow, alpha=1.0>
+4.4362 	EXP 	textStroopWord: height = 0.1
+4.4362 	EXP 	textStroopWord: height = 0.1
+4.4362 	EXP 	textStroopWord: height = 0.1
+4.4362 	EXP 	textStroopWord: text = 'YELLOW'
+4.4362 	EXP 	textStroopWord: autoDraw = True
+5.3689 	EXP 	textStroopWord: autoDraw = False
+5.3689 	EXP 	textBlank500: autoDraw = True
+5.3689 	EXP 	polygon: autoDraw = True
+5.8542 	EXP 	New trial (rep=0, index=2): {'type': 'incongruent', 'word': 'RED', 'colour': 'yellow', 'correct_key': 'y'}
+5.8698 	EXP 	textBlank500: autoDraw = False
+5.8698 	EXP 	polygon: autoDraw = False
+5.8698 	EXP 	textBlank500: autoDraw = False
+5.8698 	EXP 	polygon: autoDraw = False
+5.8698 	EXP 	textStroopWord: foreColor = <psychopy.colors.Color: yellow, alpha=1.0>
+5.8698 	EXP 	textStroopWord: height = 0.1
+5.8698 	EXP 	textStroopWord: height = 0.1
+5.8698 	EXP 	textStroopWord: height = 0.1
+5.8698 	EXP 	textStroopWord: text = 'RED'
+5.8698 	EXP 	textStroopWord: autoDraw = True
+6.9862 	EXP 	textStroopWord: autoDraw = False
+6.9862 	EXP 	textBlank500: autoDraw = True
+6.9862 	EXP 	polygon: autoDraw = True
+7.4711 	EXP 	New trial (rep=0, index=3): {'type': 'congruent', 'word': 'RED', 'colour': 'red', 'correct_key': 'r'}
+7.4867 	EXP 	textBlank500: autoDraw = False
+7.4867 	EXP 	polygon: autoDraw = False
+7.4867 	EXP 	textBlank500: autoDraw = False
+7.4867 	EXP 	polygon: autoDraw = False
+7.4867 	EXP 	textStroopWord: foreColor = <psychopy.colors.Color: red, alpha=1.0>
+7.4867 	EXP 	textStroopWord: text = 'RED'
+7.4867 	EXP 	textStroopWord: autoDraw = True
+8.2864 	EXP 	textStroopWord: autoDraw = False
+8.2864 	EXP 	textBlank500: autoDraw = True
+8.2864 	EXP 	polygon: autoDraw = True
+8.7708 	EXP 	New trial (rep=0, index=4): {'type': 'incongruent', 'word': 'BLUE', 'colour': 'red', 'correct_key': 'r'}
+8.7863 	EXP 	textBlank500: autoDraw = False
+8.7863 	EXP 	polygon: autoDraw = False
+8.7863 	EXP 	textBlank500: autoDraw = False
+8.7863 	EXP 	polygon: autoDraw = False
+8.7863 	EXP 	textStroopWord: foreColor = <psychopy.colors.Color: red, alpha=1.0>
+8.7863 	EXP 	textStroopWord: height = 0.1
+8.7863 	EXP 	textStroopWord: height = 0.1
+8.7863 	EXP 	textStroopWord: height = 0.1
+8.7863 	EXP 	textStroopWord: text = 'BLUE'
+8.7863 	EXP 	textStroopWord: autoDraw = True
+9.9029 	EXP 	textStroopWord: autoDraw = False
+9.9029 	EXP 	textBlank500: autoDraw = True
+9.9029 	EXP 	polygon: autoDraw = True
+10.3879 	EXP 	New trial (rep=0, index=5): {'type': 'congruent', 'word': 'RED', 'colour': 'red', 'correct_key': 'r'}
+10.4347 	EXP 	textBlank500: autoDraw = False
+10.4347 	EXP 	polygon: autoDraw = False
+10.4347 	EXP 	textBlank500: autoDraw = False
+10.4347 	EXP 	polygon: autoDraw = False
+10.4347 	EXP 	textStroopWord: foreColor = <psychopy.colors.Color: red, alpha=1.0>
+10.4347 	EXP 	textStroopWord: height = 0.1
+10.4347 	EXP 	textStroopWord: height = 0.1
+10.4347 	EXP 	textStroopWord: height = 0.1
+10.4347 	EXP 	textStroopWord: text = 'RED'
+10.4347 	EXP 	textStroopWord: autoDraw = True
+11.1535 	EXP 	textStroopWord: autoDraw = False
+11.1535 	EXP 	textBlank500: autoDraw = True
+11.1535 	EXP 	polygon: autoDraw = True
+11.6377 	EXP 	New trial (rep=0, index=6): {'type': 'congruent', 'word': 'YELLOW', 'colour': 'yellow', 'correct_key': 'y'}
+11.6531 	EXP 	textBlank500: autoDraw = False
+11.6531 	EXP 	polygon: autoDraw = False
+11.6531 	EXP 	textBlank500: autoDraw = False
+11.6531 	EXP 	polygon: autoDraw = False
+11.6531 	EXP 	textStroopWord: foreColor = <psychopy.colors.Color: yellow, alpha=1.0>
+11.6531 	EXP 	textStroopWord: height = 0.1
+11.6531 	EXP 	textStroopWord: height = 0.1
+11.6531 	EXP 	textStroopWord: height = 0.1
+11.6531 	EXP 	textStroopWord: text = 'YELLOW'
+11.6531 	EXP 	textStroopWord: autoDraw = True
+12.6198 	EXP 	textStroopWord: autoDraw = False
+12.6198 	EXP 	textBlank500: autoDraw = True
+12.6198 	EXP 	polygon: autoDraw = True
+13.1043 	EXP 	New trial (rep=0, index=7): {'type': 'congruent', 'word': 'GREEN', 'colour': 'green', 'correct_key': 'g'}
+13.1196 	EXP 	textBlank500: autoDraw = False
+13.1196 	EXP 	polygon: autoDraw = False
+13.1196 	EXP 	textBlank500: autoDraw = False
+13.1196 	EXP 	polygon: autoDraw = False
+13.1196 	EXP 	textStroopWord: foreColor = <psychopy.colors.Color: green, alpha=1.0>
+13.1196 	EXP 	textStroopWord: height = 0.1
+13.1196 	EXP 	textStroopWord: height = 0.1
+13.1196 	EXP 	textStroopWord: height = 0.1
+13.1196 	EXP 	textStroopWord: text = 'GREEN'
+13.1196 	EXP 	textStroopWord: autoDraw = True
+13.7694 	EXP 	textStroopWord: autoDraw = False
+13.7694 	EXP 	textBlank500: autoDraw = True
+13.7694 	EXP 	polygon: autoDraw = True
+14.2544 	EXP 	New trial (rep=0, index=8): {'type': 'incongruent', 'word': 'GREEN', 'colour': 'yellow', 'correct_key': 'y'}
+14.2701 	EXP 	textBlank500: autoDraw = False
+14.2701 	EXP 	polygon: autoDraw = False
+14.2701 	EXP 	textBlank500: autoDraw = False
+14.2701 	EXP 	polygon: autoDraw = False
+14.2701 	EXP 	textStroopWord: foreColor = <psychopy.colors.Color: yellow, alpha=1.0>
+14.2701 	EXP 	textStroopWord: text = 'GREEN'
+14.2701 	EXP 	textStroopWord: autoDraw = True
+15.6366 	EXP 	textStroopWord: autoDraw = False
+15.6366 	EXP 	textBlank500: autoDraw = True
+15.6366 	EXP 	polygon: autoDraw = True
+16.1212 	EXP 	New trial (rep=0, index=9): {'type': 'congruent', 'word': 'GREEN', 'colour': 'green', 'correct_key': 'g'}
+16.1372 	EXP 	textBlank500: autoDraw = False
+16.1372 	EXP 	polygon: autoDraw = False
+16.1372 	EXP 	textBlank500: autoDraw = False
+16.1372 	EXP 	polygon: autoDraw = False
+16.1372 	EXP 	textStroopWord: foreColor = <psychopy.colors.Color: green, alpha=1.0>
+16.1372 	EXP 	textStroopWord: text = 'GREEN'
+16.1372 	EXP 	textStroopWord: autoDraw = True
+17.4029 	EXP 	textStroopWord: autoDraw = False
+17.4029 	EXP 	textBlank500: autoDraw = True
+17.4029 	EXP 	polygon: autoDraw = True
+17.8879 	EXP 	New trial (rep=0, index=10): {'type': 'incongruent', 'word': 'GREEN', 'colour': 'red', 'correct_key': 'r'}
+17.9035 	EXP 	textBlank500: autoDraw = False
+17.9035 	EXP 	polygon: autoDraw = False
+17.9035 	EXP 	textBlank500: autoDraw = False
+17.9035 	EXP 	polygon: autoDraw = False
+17.9035 	EXP 	textStroopWord: foreColor = <psychopy.colors.Color: red, alpha=1.0>
+17.9035 	EXP 	textStroopWord: text = 'GREEN'
+17.9035 	EXP 	textStroopWord: autoDraw = True
+19.0697 	EXP 	textStroopWord: autoDraw = False
+19.0697 	EXP 	textBlank500: autoDraw = True
+19.0697 	EXP 	polygon: autoDraw = True
+19.5547 	EXP 	New trial (rep=0, index=11): {'type': 'incongruent', 'word': 'YELLOW', 'colour': 'blue', 'correct_key': 'b'}
+19.5699 	EXP 	textBlank500: autoDraw = False
+19.5699 	EXP 	polygon: autoDraw = False
+19.5699 	EXP 	textBlank500: autoDraw = False
+19.5699 	EXP 	polygon: autoDraw = False
+19.5699 	EXP 	textStroopWord: foreColor = <psychopy.colors.Color: blue, alpha=1.0>
+19.5699 	EXP 	textStroopWord: height = 0.1
+19.5699 	EXP 	textStroopWord: height = 0.1
+19.5699 	EXP 	textStroopWord: height = 0.1
+19.5699 	EXP 	textStroopWord: text = 'YELLOW'
+19.5699 	EXP 	textStroopWord: autoDraw = True
+21.0199 	EXP 	textStroopWord: autoDraw = False
+21.0199 	EXP 	textBlank500: autoDraw = True
+21.0199 	EXP 	polygon: autoDraw = True
+21.5047 	EXP 	New trial (rep=0, index=12): {'type': 'congruent', 'word': 'GREEN', 'colour': 'green', 'correct_key': 'g'}
+21.5198 	EXP 	textBlank500: autoDraw = False
+21.5198 	EXP 	polygon: autoDraw = False
+21.5198 	EXP 	textBlank500: autoDraw = False
+21.5198 	EXP 	polygon: autoDraw = False
+21.5198 	EXP 	textStroopWord: foreColor = <psychopy.colors.Color: green, alpha=1.0>
+21.5198 	EXP 	textStroopWord: height = 0.1
+21.5198 	EXP 	textStroopWord: height = 0.1
+21.5198 	EXP 	textStroopWord: height = 0.1
+21.5198 	EXP 	textStroopWord: text = 'GREEN'
+21.5198 	EXP 	textStroopWord: autoDraw = True
+22.6196 	EXP 	textStroopWord: autoDraw = False
+22.6196 	EXP 	textBlank500: autoDraw = True
+22.6196 	EXP 	polygon: autoDraw = True
+23.1047 	EXP 	New trial (rep=0, index=13): {'type': 'congruent', 'word': 'RED', 'colour': 'red', 'correct_key': 'r'}
+23.1198 	EXP 	textBlank500: autoDraw = False
+23.1198 	EXP 	polygon: autoDraw = False
+23.1198 	EXP 	textBlank500: autoDraw = False
+23.1198 	EXP 	polygon: autoDraw = False
+23.1198 	EXP 	textStroopWord: foreColor = <psychopy.colors.Color: red, alpha=1.0>
+23.1198 	EXP 	textStroopWord: height = 0.1
+23.1198 	EXP 	textStroopWord: height = 0.1
+23.1198 	EXP 	textStroopWord: height = 0.1
+23.1198 	EXP 	textStroopWord: text = 'RED'
+23.1198 	EXP 	textStroopWord: autoDraw = True
+23.7700 	EXP 	textStroopWord: autoDraw = False
+23.7700 	EXP 	textBlank500: autoDraw = True
+23.7700 	EXP 	polygon: autoDraw = True
+24.2547 	EXP 	New trial (rep=0, index=14): {'type': 'incongruent', 'word': 'BLUE', 'colour': 'green', 'correct_key': 'g'}
+24.2699 	EXP 	textBlank500: autoDraw = False
+24.2699 	EXP 	polygon: autoDraw = False
+24.2699 	EXP 	textBlank500: autoDraw = False
+24.2699 	EXP 	polygon: autoDraw = False
+24.2699 	EXP 	textStroopWord: foreColor = <psychopy.colors.Color: green, alpha=1.0>
+24.2699 	EXP 	textStroopWord: height = 0.1
+24.2699 	EXP 	textStroopWord: height = 0.1
+24.2699 	EXP 	textStroopWord: height = 0.1
+24.2699 	EXP 	textStroopWord: text = 'BLUE'
+24.2699 	EXP 	textStroopWord: autoDraw = True
+25.5368 	EXP 	textStroopWord: autoDraw = False
+25.5368 	EXP 	textBlank500: autoDraw = True
+25.5368 	EXP 	polygon: autoDraw = True
+26.0210 	EXP 	New trial (rep=0, index=15): {'type': 'congruent', 'word': 'YELLOW', 'colour': 'yellow', 'correct_key': 'y'}
+26.0364 	EXP 	textBlank500: autoDraw = False
+26.0364 	EXP 	polygon: autoDraw = False
+26.0364 	EXP 	textBlank500: autoDraw = False
+26.0364 	EXP 	polygon: autoDraw = False
+26.0364 	EXP 	textStroopWord: foreColor = <psychopy.colors.Color: yellow, alpha=1.0>
+26.0364 	EXP 	textStroopWord: height = 0.1
+26.0364 	EXP 	textStroopWord: height = 0.1
+26.0364 	EXP 	textStroopWord: height = 0.1
+26.0364 	EXP 	textStroopWord: text = 'YELLOW'
+26.0364 	EXP 	textStroopWord: autoDraw = True
+26.9689 	EXP 	textStroopWord: autoDraw = False
+26.9689 	EXP 	textBlank500: autoDraw = True
+26.9689 	EXP 	polygon: autoDraw = True
+27.4546 	EXP 	New trial (rep=0, index=16): {'type': 'incongruent', 'word': 'YELLOW', 'colour': 'green', 'correct_key': 'g'}
+27.4716 	EXP 	textBlank500: autoDraw = False
+27.4716 	EXP 	polygon: autoDraw = False
+27.4716 	EXP 	textBlank500: autoDraw = False
+27.4716 	EXP 	polygon: autoDraw = False
+27.4716 	EXP 	textStroopWord: foreColor = <psychopy.colors.Color: green, alpha=1.0>
+27.4716 	EXP 	textStroopWord: text = 'YELLOW'
+27.4716 	EXP 	textStroopWord: autoDraw = True
+28.6190 	EXP 	textStroopWord: autoDraw = False
+28.6190 	EXP 	textBlank500: autoDraw = True
+28.6190 	EXP 	polygon: autoDraw = True
+29.1042 	EXP 	New trial (rep=0, index=17): {'type': 'incongruent', 'word': 'GREEN', 'colour': 'blue', 'correct_key': 'b'}
+29.1200 	EXP 	textBlank500: autoDraw = False
+29.1200 	EXP 	polygon: autoDraw = False
+29.1200 	EXP 	textBlank500: autoDraw = False
+29.1200 	EXP 	polygon: autoDraw = False
+29.1200 	EXP 	textStroopWord: foreColor = <psychopy.colors.Color: blue, alpha=1.0>
+29.1200 	EXP 	textStroopWord: height = 0.1
+29.1200 	EXP 	textStroopWord: height = 0.1
+29.1200 	EXP 	textStroopWord: height = 0.1
+29.1200 	EXP 	textStroopWord: text = 'GREEN'
+29.1200 	EXP 	textStroopWord: autoDraw = True
+30.0533 	EXP 	textStroopWord: autoDraw = False
+30.0533 	EXP 	textBlank500: autoDraw = True
+30.0533 	EXP 	polygon: autoDraw = True
+30.5380 	EXP 	New trial (rep=0, index=18): {'type': 'incongruent', 'word': 'YELLOW', 'colour': 'red', 'correct_key': 'r'}
+30.5532 	EXP 	textBlank500: autoDraw = False
+30.5532 	EXP 	polygon: autoDraw = False
+30.5532 	EXP 	textBlank500: autoDraw = False
+30.5532 	EXP 	polygon: autoDraw = False
+30.5532 	EXP 	textStroopWord: foreColor = <psychopy.colors.Color: red, alpha=1.0>
+30.5532 	EXP 	textStroopWord: height = 0.1
+30.5532 	EXP 	textStroopWord: height = 0.1
+30.5532 	EXP 	textStroopWord: height = 0.1
+30.5532 	EXP 	textStroopWord: text = 'YELLOW'
+30.5532 	EXP 	textStroopWord: autoDraw = True
+32.1698 	EXP 	textStroopWord: autoDraw = False
+32.1698 	EXP 	textBlank500: autoDraw = True
+32.1698 	EXP 	polygon: autoDraw = True
+32.6546 	EXP 	New trial (rep=0, index=19): {'type': 'incongruent', 'word': 'RED', 'colour': 'green', 'correct_key': 'g'}
+32.6699 	EXP 	textBlank500: autoDraw = False
+32.6699 	EXP 	polygon: autoDraw = False
+32.6699 	EXP 	textBlank500: autoDraw = False
+32.6699 	EXP 	polygon: autoDraw = False
+32.6699 	EXP 	textStroopWord: foreColor = <psychopy.colors.Color: green, alpha=1.0>
+32.6699 	EXP 	textStroopWord: height = 0.1
+32.6699 	EXP 	textStroopWord: height = 0.1
+32.6699 	EXP 	textStroopWord: height = 0.1
+32.6699 	EXP 	textStroopWord: text = 'RED'
+32.6699 	EXP 	textStroopWord: autoDraw = True
+34.0201 	EXP 	textStroopWord: autoDraw = False
+34.0201 	EXP 	textBlank500: autoDraw = True
+34.0201 	EXP 	polygon: autoDraw = True
+34.5046 	EXP 	New trial (rep=0, index=20): {'type': 'incongruent', 'word': 'RED', 'colour': 'blue', 'correct_key': 'b'}
+34.5202 	EXP 	textBlank500: autoDraw = False
+34.5202 	EXP 	polygon: autoDraw = False
+34.5202 	EXP 	textBlank500: autoDraw = False
+34.5202 	EXP 	polygon: autoDraw = False
+34.5202 	EXP 	textStroopWord: foreColor = <psychopy.colors.Color: blue, alpha=1.0>
+34.5202 	EXP 	textStroopWord: text = 'RED'
+34.5202 	EXP 	textStroopWord: autoDraw = True
+35.7200 	EXP 	textStroopWord: autoDraw = False
+35.7200 	EXP 	textBlank500: autoDraw = True
+35.7200 	EXP 	polygon: autoDraw = True
+36.2043 	EXP 	New trial (rep=0, index=21): {'type': 'congruent', 'word': 'BLUE', 'colour': 'blue', 'correct_key': 'b'}
+36.2199 	EXP 	textBlank500: autoDraw = False
+36.2199 	EXP 	polygon: autoDraw = False
+36.2199 	EXP 	textBlank500: autoDraw = False
+36.2199 	EXP 	polygon: autoDraw = False
+36.2199 	EXP 	textStroopWord: foreColor = <psychopy.colors.Color: blue, alpha=1.0>
+36.2199 	EXP 	textStroopWord: height = 0.1
+36.2199 	EXP 	textStroopWord: height = 0.1
+36.2199 	EXP 	textStroopWord: height = 0.1
+36.2199 	EXP 	textStroopWord: text = 'BLUE'
+36.2199 	EXP 	textStroopWord: autoDraw = True
+37.0864 	EXP 	textStroopWord: autoDraw = False
+37.0864 	EXP 	textBlank500: autoDraw = True
+37.0864 	EXP 	polygon: autoDraw = True
+37.5713 	EXP 	New trial (rep=0, index=22): {'type': 'congruent', 'word': 'BLUE', 'colour': 'blue', 'correct_key': 'b'}
+37.5869 	EXP 	textBlank500: autoDraw = False
+37.5869 	EXP 	polygon: autoDraw = False
+37.5869 	EXP 	textBlank500: autoDraw = False
+37.5869 	EXP 	polygon: autoDraw = False
+37.5869 	EXP 	textStroopWord: foreColor = <psychopy.colors.Color: blue, alpha=1.0>
+37.5869 	EXP 	textStroopWord: text = 'BLUE'
+37.5869 	EXP 	textStroopWord: autoDraw = True
+38.1866 	EXP 	textStroopWord: autoDraw = False
+38.1866 	EXP 	textBlank500: autoDraw = True
+38.1866 	EXP 	polygon: autoDraw = True
+38.6711 	EXP 	New trial (rep=0, index=23): {'type': 'incongruent', 'word': 'BLUE', 'colour': 'yellow', 'correct_key': 'y'}
+38.6869 	EXP 	textBlank500: autoDraw = False
+38.6869 	EXP 	polygon: autoDraw = False
+38.6869 	EXP 	textBlank500: autoDraw = False
+38.6869 	EXP 	polygon: autoDraw = False
+38.6869 	EXP 	textStroopWord: foreColor = <psychopy.colors.Color: yellow, alpha=1.0>
+38.6869 	EXP 	textStroopWord: text = 'BLUE'
+38.6869 	EXP 	textStroopWord: autoDraw = True
+39.5200 	EXP 	textStroopWord: autoDraw = False
+39.5200 	EXP 	textBlank500: autoDraw = True
+39.5200 	EXP 	polygon: autoDraw = True
+40.0068 	EXP 	New trial (rep=1, index=0): {'type': 'incongruent', 'word': 'BLUE', 'colour': 'yellow', 'correct_key': 'y'}
+40.0205 	EXP 	textBlank500: autoDraw = False
+40.0205 	EXP 	polygon: autoDraw = False
+40.0205 	EXP 	textBlank500: autoDraw = False
+40.0205 	EXP 	polygon: autoDraw = False
+40.0205 	EXP 	textStroopWord: foreColor = <psychopy.colors.Color: yellow, alpha=1.0>
+40.0205 	EXP 	textStroopWord: text = 'BLUE'
+40.0205 	EXP 	textStroopWord: autoDraw = True
+40.7033 	EXP 	textStroopWord: autoDraw = False
+40.7033 	EXP 	textBlank500: autoDraw = True
+40.7033 	EXP 	polygon: autoDraw = True
+41.1878 	EXP 	New trial (rep=1, index=1): {'type': 'incongruent', 'word': 'RED', 'colour': 'green', 'correct_key': 'g'}
+41.2032 	EXP 	textBlank500: autoDraw = False
+41.2032 	EXP 	polygon: autoDraw = False
+41.2032 	EXP 	textBlank500: autoDraw = False
+41.2032 	EXP 	polygon: autoDraw = False
+41.2032 	EXP 	textStroopWord: foreColor = <psychopy.colors.Color: green, alpha=1.0>
+41.2032 	EXP 	textStroopWord: height = 0.1
+41.2032 	EXP 	textStroopWord: height = 0.1
+41.2032 	EXP 	textStroopWord: height = 0.1
+41.2032 	EXP 	textStroopWord: text = 'RED'
+41.2032 	EXP 	textStroopWord: autoDraw = True
+42.5201 	EXP 	textStroopWord: autoDraw = False
+42.5201 	EXP 	textBlank500: autoDraw = True
+42.5201 	EXP 	polygon: autoDraw = True
+43.0040 	EXP 	New trial (rep=1, index=2): {'type': 'incongruent', 'word': 'RED', 'colour': 'blue', 'correct_key': 'b'}
+43.0201 	EXP 	textBlank500: autoDraw = False
+43.0201 	EXP 	polygon: autoDraw = False
+43.0201 	EXP 	textBlank500: autoDraw = False
+43.0201 	EXP 	polygon: autoDraw = False
+43.0201 	EXP 	textStroopWord: foreColor = <psychopy.colors.Color: blue, alpha=1.0>
+43.0201 	EXP 	textStroopWord: text = 'RED'
+43.0201 	EXP 	textStroopWord: autoDraw = True
+44.1202 	EXP 	textStroopWord: autoDraw = False
+44.1202 	EXP 	textBlank500: autoDraw = True
+44.1202 	EXP 	polygon: autoDraw = True
+44.6048 	EXP 	New trial (rep=1, index=3): {'type': 'congruent', 'word': 'YELLOW', 'colour': 'yellow', 'correct_key': 'y'}
+44.6199 	EXP 	textBlank500: autoDraw = False
+44.6199 	EXP 	polygon: autoDraw = False
+44.6199 	EXP 	textBlank500: autoDraw = False
+44.6199 	EXP 	polygon: autoDraw = False
+44.6199 	EXP 	textStroopWord: foreColor = <psychopy.colors.Color: yellow, alpha=1.0>
+44.6199 	EXP 	textStroopWord: height = 0.1
+44.6199 	EXP 	textStroopWord: height = 0.1
+44.6199 	EXP 	textStroopWord: height = 0.1
+44.6199 	EXP 	textStroopWord: text = 'YELLOW'
+44.6199 	EXP 	textStroopWord: autoDraw = True
+45.2525 	EXP 	textStroopWord: autoDraw = False
+45.2525 	EXP 	textBlank500: autoDraw = True
+45.2525 	EXP 	polygon: autoDraw = True
+45.7377 	EXP 	New trial (rep=1, index=4): {'type': 'incongruent', 'word': 'GREEN', 'colour': 'red', 'correct_key': 'r'}
+45.7537 	EXP 	textBlank500: autoDraw = False
+45.7537 	EXP 	polygon: autoDraw = False
+45.7537 	EXP 	textBlank500: autoDraw = False
+45.7537 	EXP 	polygon: autoDraw = False
+45.7537 	EXP 	textStroopWord: foreColor = <psychopy.colors.Color: red, alpha=1.0>
+45.7537 	EXP 	textStroopWord: height = 0.1
+45.7537 	EXP 	textStroopWord: height = 0.1
+45.7537 	EXP 	textStroopWord: height = 0.1
+45.7537 	EXP 	textStroopWord: text = 'GREEN'
+45.7537 	EXP 	textStroopWord: autoDraw = True
+46.3873 	EXP 	textStroopWord: autoDraw = False
+46.3873 	EXP 	textBlank500: autoDraw = True
+46.3873 	EXP 	polygon: autoDraw = True
+46.8713 	EXP 	New trial (rep=1, index=5): {'type': 'congruent', 'word': 'GREEN', 'colour': 'green', 'correct_key': 'g'}
+46.8870 	EXP 	textBlank500: autoDraw = False
+46.8870 	EXP 	polygon: autoDraw = False
+46.8870 	EXP 	textBlank500: autoDraw = False
+46.8870 	EXP 	polygon: autoDraw = False
+46.8870 	EXP 	textStroopWord: foreColor = <psychopy.colors.Color: green, alpha=1.0>
+46.8870 	EXP 	textStroopWord: text = 'GREEN'
+46.8870 	EXP 	textStroopWord: autoDraw = True
+48.0867 	EXP 	textStroopWord: autoDraw = False
+48.0867 	EXP 	textBlank500: autoDraw = True
+48.0867 	EXP 	polygon: autoDraw = True
+48.5703 	EXP 	New trial (rep=1, index=6): {'type': 'incongruent', 'word': 'GREEN', 'colour': 'yellow', 'correct_key': 'y'}
+48.5867 	EXP 	textBlank500: autoDraw = False
+48.5867 	EXP 	polygon: autoDraw = False
+48.5867 	EXP 	textBlank500: autoDraw = False
+48.5867 	EXP 	polygon: autoDraw = False
+48.5867 	EXP 	textStroopWord: foreColor = <psychopy.colors.Color: yellow, alpha=1.0>
+48.5867 	EXP 	textStroopWord: text = 'GREEN'
+48.5867 	EXP 	textStroopWord: autoDraw = True
+49.2535 	EXP 	textStroopWord: autoDraw = False
+49.2535 	EXP 	textBlank500: autoDraw = True
+49.2535 	EXP 	polygon: autoDraw = True
+49.7390 	EXP 	New trial (rep=1, index=7): {'type': 'incongruent', 'word': 'GREEN', 'colour': 'blue', 'correct_key': 'b'}
+49.7539 	EXP 	textBlank500: autoDraw = False
+49.7539 	EXP 	polygon: autoDraw = False
+49.7539 	EXP 	textBlank500: autoDraw = False
+49.7539 	EXP 	polygon: autoDraw = False
+49.7539 	EXP 	textStroopWord: foreColor = <psychopy.colors.Color: blue, alpha=1.0>
+49.7539 	EXP 	textStroopWord: text = 'GREEN'
+49.7539 	EXP 	textStroopWord: autoDraw = True
+50.8035 	EXP 	textStroopWord: autoDraw = False
+50.8035 	EXP 	textBlank500: autoDraw = True
+50.8035 	EXP 	polygon: autoDraw = True
+51.2882 	EXP 	New trial (rep=1, index=8): {'type': 'incongruent', 'word': 'YELLOW', 'colour': 'blue', 'correct_key': 'b'}
+51.3035 	EXP 	textBlank500: autoDraw = False
+51.3035 	EXP 	polygon: autoDraw = False
+51.3035 	EXP 	textBlank500: autoDraw = False
+51.3035 	EXP 	polygon: autoDraw = False
+51.3035 	EXP 	textStroopWord: foreColor = <psychopy.colors.Color: blue, alpha=1.0>
+51.3035 	EXP 	textStroopWord: height = 0.1
+51.3035 	EXP 	textStroopWord: height = 0.1
+51.3035 	EXP 	textStroopWord: height = 0.1
+51.3035 	EXP 	textStroopWord: text = 'YELLOW'
+51.3035 	EXP 	textStroopWord: autoDraw = True
+52.2535 	EXP 	textStroopWord: autoDraw = False
+52.2535 	EXP 	textBlank500: autoDraw = True
+52.2535 	EXP 	polygon: autoDraw = True
+52.7382 	EXP 	New trial (rep=1, index=9): {'type': 'congruent', 'word': 'BLUE', 'colour': 'blue', 'correct_key': 'b'}
+52.7537 	EXP 	textBlank500: autoDraw = False
+52.7537 	EXP 	polygon: autoDraw = False
+52.7537 	EXP 	textBlank500: autoDraw = False
+52.7537 	EXP 	polygon: autoDraw = False
+52.7537 	EXP 	textStroopWord: foreColor = <psychopy.colors.Color: blue, alpha=1.0>
+52.7537 	EXP 	textStroopWord: height = 0.1
+52.7537 	EXP 	textStroopWord: height = 0.1
+52.7537 	EXP 	textStroopWord: height = 0.1
+52.7537 	EXP 	textStroopWord: text = 'BLUE'
+52.7537 	EXP 	textStroopWord: autoDraw = True
+53.5197 	EXP 	textStroopWord: autoDraw = False
+53.5197 	EXP 	textBlank500: autoDraw = True
+53.5197 	EXP 	polygon: autoDraw = True
+54.0041 	EXP 	New trial (rep=1, index=10): {'type': 'congruent', 'word': 'RED', 'colour': 'red', 'correct_key': 'r'}
+54.0200 	EXP 	textBlank500: autoDraw = False
+54.0200 	EXP 	polygon: autoDraw = False
+54.0200 	EXP 	textBlank500: autoDraw = False
+54.0200 	EXP 	polygon: autoDraw = False
+54.0200 	EXP 	textStroopWord: foreColor = <psychopy.colors.Color: red, alpha=1.0>
+54.0200 	EXP 	textStroopWord: height = 0.1
+54.0200 	EXP 	textStroopWord: height = 0.1
+54.0200 	EXP 	textStroopWord: height = 0.1
+54.0200 	EXP 	textStroopWord: text = 'RED'
+54.0200 	EXP 	textStroopWord: autoDraw = True
+54.7032 	EXP 	textStroopWord: autoDraw = False
+54.7032 	EXP 	textBlank500: autoDraw = True
+54.7032 	EXP 	polygon: autoDraw = True
+55.1880 	EXP 	New trial (rep=1, index=11): {'type': 'congruent', 'word': 'RED', 'colour': 'red', 'correct_key': 'r'}
+55.2037 	EXP 	textBlank500: autoDraw = False
+55.2037 	EXP 	polygon: autoDraw = False
+55.2037 	EXP 	textBlank500: autoDraw = False
+55.2037 	EXP 	polygon: autoDraw = False
+55.2037 	EXP 	textStroopWord: foreColor = <psychopy.colors.Color: red, alpha=1.0>
+55.2037 	EXP 	textStroopWord: text = 'RED'
+55.2037 	EXP 	textStroopWord: autoDraw = True
+55.6866 	EXP 	textStroopWord: autoDraw = False
+55.6866 	EXP 	textBlank500: autoDraw = True
+55.6866 	EXP 	polygon: autoDraw = True
+56.1713 	EXP 	New trial (rep=1, index=12): {'type': 'incongruent', 'word': 'RED', 'colour': 'yellow', 'correct_key': 'y'}
+56.1871 	EXP 	textBlank500: autoDraw = False
+56.1871 	EXP 	polygon: autoDraw = False
+56.1871 	EXP 	textBlank500: autoDraw = False
+56.1871 	EXP 	polygon: autoDraw = False
+56.1871 	EXP 	textStroopWord: foreColor = <psychopy.colors.Color: yellow, alpha=1.0>
+56.1871 	EXP 	textStroopWord: text = 'RED'
+56.1871 	EXP 	textStroopWord: autoDraw = True
+57.0532 	EXP 	textStroopWord: autoDraw = False
+57.0532 	EXP 	textBlank500: autoDraw = True
+57.0532 	EXP 	polygon: autoDraw = True
+57.5381 	EXP 	New trial (rep=1, index=13): {'type': 'congruent', 'word': 'GREEN', 'colour': 'green', 'correct_key': 'g'}
+57.5534 	EXP 	textBlank500: autoDraw = False
+57.5534 	EXP 	polygon: autoDraw = False
+57.5534 	EXP 	textBlank500: autoDraw = False
+57.5534 	EXP 	polygon: autoDraw = False
+57.5534 	EXP 	textStroopWord: foreColor = <psychopy.colors.Color: green, alpha=1.0>
+57.5534 	EXP 	textStroopWord: height = 0.1
+57.5534 	EXP 	textStroopWord: height = 0.1
+57.5534 	EXP 	textStroopWord: height = 0.1
+57.5534 	EXP 	textStroopWord: text = 'GREEN'
+57.5534 	EXP 	textStroopWord: autoDraw = True
+58.3533 	EXP 	textStroopWord: autoDraw = False
+58.3533 	EXP 	textBlank500: autoDraw = True
+58.3533 	EXP 	polygon: autoDraw = True
+58.8372 	EXP 	New trial (rep=1, index=14): {'type': 'incongruent', 'word': 'BLUE', 'colour': 'red', 'correct_key': 'r'}
+58.8535 	EXP 	textBlank500: autoDraw = False
+58.8535 	EXP 	polygon: autoDraw = False
+58.8535 	EXP 	textBlank500: autoDraw = False
+58.8535 	EXP 	polygon: autoDraw = False
+58.8535 	EXP 	textStroopWord: foreColor = <psychopy.colors.Color: red, alpha=1.0>
+58.8535 	EXP 	textStroopWord: height = 0.1
+58.8535 	EXP 	textStroopWord: height = 0.1
+58.8535 	EXP 	textStroopWord: height = 0.1
+58.8535 	EXP 	textStroopWord: text = 'BLUE'
+58.8535 	EXP 	textStroopWord: autoDraw = True
+59.8197 	EXP 	textStroopWord: autoDraw = False
+59.8197 	EXP 	textBlank500: autoDraw = True
+59.8197 	EXP 	polygon: autoDraw = True
+60.3049 	EXP 	New trial (rep=1, index=15): {'type': 'congruent', 'word': 'BLUE', 'colour': 'blue', 'correct_key': 'b'}
+60.3210 	EXP 	textBlank500: autoDraw = False
+60.3210 	EXP 	polygon: autoDraw = False
+60.3210 	EXP 	textBlank500: autoDraw = False
+60.3210 	EXP 	polygon: autoDraw = False
+60.3210 	EXP 	textStroopWord: foreColor = <psychopy.colors.Color: blue, alpha=1.0>
+60.3210 	EXP 	textStroopWord: text = 'BLUE'
+60.3210 	EXP 	textStroopWord: autoDraw = True
+61.3700 	EXP 	textStroopWord: autoDraw = False
+61.3700 	EXP 	textBlank500: autoDraw = True
+61.3700 	EXP 	polygon: autoDraw = True
+61.8552 	EXP 	New trial (rep=1, index=16): {'type': 'congruent', 'word': 'RED', 'colour': 'red', 'correct_key': 'r'}
+61.8706 	EXP 	textBlank500: autoDraw = False
+61.8706 	EXP 	polygon: autoDraw = False
+61.8706 	EXP 	textBlank500: autoDraw = False
+61.8706 	EXP 	polygon: autoDraw = False
+61.8706 	EXP 	textStroopWord: foreColor = <psychopy.colors.Color: red, alpha=1.0>
+61.8706 	EXP 	textStroopWord: height = 0.1
+61.8706 	EXP 	textStroopWord: height = 0.1
+61.8706 	EXP 	textStroopWord: height = 0.1
+61.8706 	EXP 	textStroopWord: text = 'RED'
+61.8706 	EXP 	textStroopWord: autoDraw = True
+62.4867 	EXP 	textStroopWord: autoDraw = False
+62.4867 	EXP 	textBlank500: autoDraw = True
+62.4867 	EXP 	polygon: autoDraw = True
+62.9716 	EXP 	New trial (rep=1, index=17): {'type': 'congruent', 'word': 'GREEN', 'colour': 'green', 'correct_key': 'g'}
+62.9872 	EXP 	textBlank500: autoDraw = False
+62.9872 	EXP 	polygon: autoDraw = False
+62.9872 	EXP 	textBlank500: autoDraw = False
+62.9872 	EXP 	polygon: autoDraw = False
+62.9872 	EXP 	textStroopWord: foreColor = <psychopy.colors.Color: green, alpha=1.0>
+62.9872 	EXP 	textStroopWord: height = 0.1
+62.9872 	EXP 	textStroopWord: height = 0.1
+62.9872 	EXP 	textStroopWord: height = 0.1
+62.9872 	EXP 	textStroopWord: text = 'GREEN'
+62.9872 	EXP 	textStroopWord: autoDraw = True
+63.8532 	EXP 	textStroopWord: autoDraw = False
+63.8532 	EXP 	textBlank500: autoDraw = True
+63.8532 	EXP 	polygon: autoDraw = True
+64.3379 	EXP 	New trial (rep=1, index=18): {'type': 'incongruent', 'word': 'YELLOW', 'colour': 'green', 'correct_key': 'g'}
+64.3534 	EXP 	textBlank500: autoDraw = False
+64.3534 	EXP 	polygon: autoDraw = False
+64.3534 	EXP 	textBlank500: autoDraw = False
+64.3534 	EXP 	polygon: autoDraw = False
+64.3534 	EXP 	textStroopWord: foreColor = <psychopy.colors.Color: green, alpha=1.0>
+64.3534 	EXP 	textStroopWord: height = 0.1
+64.3534 	EXP 	textStroopWord: height = 0.1
+64.3534 	EXP 	textStroopWord: height = 0.1
+64.3534 	EXP 	textStroopWord: text = 'YELLOW'
+64.3534 	EXP 	textStroopWord: autoDraw = True
+65.6706 	EXP 	textStroopWord: autoDraw = False
+65.6706 	EXP 	textBlank500: autoDraw = True
+65.6706 	EXP 	polygon: autoDraw = True
+66.1547 	EXP 	New trial (rep=1, index=19): {'type': 'congruent', 'word': 'YELLOW', 'colour': 'yellow', 'correct_key': 'y'}
+66.1703 	EXP 	textBlank500: autoDraw = False
+66.1703 	EXP 	polygon: autoDraw = False
+66.1703 	EXP 	textBlank500: autoDraw = False
+66.1703 	EXP 	polygon: autoDraw = False
+66.1703 	EXP 	textStroopWord: foreColor = <psychopy.colors.Color: yellow, alpha=1.0>
+66.1703 	EXP 	textStroopWord: text = 'YELLOW'
+66.1703 	EXP 	textStroopWord: autoDraw = True
+66.7527 	EXP 	textStroopWord: autoDraw = False
+66.7527 	EXP 	textBlank500: autoDraw = True
+66.7527 	EXP 	polygon: autoDraw = True
+67.2376 	EXP 	New trial (rep=1, index=20): {'type': 'incongruent', 'word': 'YELLOW', 'colour': 'red', 'correct_key': 'r'}
+67.2542 	EXP 	textBlank500: autoDraw = False
+67.2542 	EXP 	polygon: autoDraw = False
+67.2542 	EXP 	textBlank500: autoDraw = False
+67.2542 	EXP 	polygon: autoDraw = False
+67.2542 	EXP 	textStroopWord: foreColor = <psychopy.colors.Color: red, alpha=1.0>
+67.2542 	EXP 	textStroopWord: text = 'YELLOW'
+67.2542 	EXP 	textStroopWord: autoDraw = True
+67.9873 	EXP 	textStroopWord: autoDraw = False
+67.9873 	EXP 	textBlank500: autoDraw = True
+67.9873 	EXP 	polygon: autoDraw = True
+68.4715 	EXP 	New trial (rep=1, index=21): {'type': 'congruent', 'word': 'YELLOW', 'colour': 'yellow', 'correct_key': 'y'}
+68.4872 	EXP 	textBlank500: autoDraw = False
+68.4872 	EXP 	polygon: autoDraw = False
+68.4872 	EXP 	textBlank500: autoDraw = False
+68.4872 	EXP 	polygon: autoDraw = False
+68.4872 	EXP 	textStroopWord: foreColor = <psychopy.colors.Color: yellow, alpha=1.0>
+68.4872 	EXP 	textStroopWord: text = 'YELLOW'
+68.4872 	EXP 	textStroopWord: autoDraw = True
+69.3193 	EXP 	textStroopWord: autoDraw = False
+69.3193 	EXP 	textBlank500: autoDraw = True
+69.3193 	EXP 	polygon: autoDraw = True
+69.8042 	EXP 	New trial (rep=1, index=22): {'type': 'incongruent', 'word': 'BLUE', 'colour': 'green', 'correct_key': 'g'}
+69.8203 	EXP 	textBlank500: autoDraw = False
+69.8203 	EXP 	polygon: autoDraw = False
+69.8203 	EXP 	textBlank500: autoDraw = False
+69.8203 	EXP 	polygon: autoDraw = False
+69.8203 	EXP 	textStroopWord: foreColor = <psychopy.colors.Color: green, alpha=1.0>
+69.8203 	EXP 	textStroopWord: height = 0.1
+69.8203 	EXP 	textStroopWord: height = 0.1
+69.8203 	EXP 	textStroopWord: height = 0.1
+69.8203 	EXP 	textStroopWord: text = 'BLUE'
+69.8203 	EXP 	textStroopWord: autoDraw = True
+70.7371 	EXP 	textStroopWord: autoDraw = False
+70.7371 	EXP 	textBlank500: autoDraw = True
+70.7371 	EXP 	polygon: autoDraw = True
+71.2213 	EXP 	New trial (rep=1, index=23): {'type': 'congruent', 'word': 'BLUE', 'colour': 'blue', 'correct_key': 'b'}
+71.2371 	EXP 	textBlank500: autoDraw = False
+71.2371 	EXP 	polygon: autoDraw = False
+71.2371 	EXP 	textBlank500: autoDraw = False
+71.2371 	EXP 	polygon: autoDraw = False
+71.2371 	EXP 	textStroopWord: foreColor = <psychopy.colors.Color: blue, alpha=1.0>
+71.2371 	EXP 	textStroopWord: text = 'BLUE'
+71.2371 	EXP 	textStroopWord: autoDraw = True
+72.3033 	EXP 	textStroopWord: autoDraw = False
+72.3033 	EXP 	textBlank500: autoDraw = True
+72.3033 	EXP 	polygon: autoDraw = True
+72.8041 	EXP 	textBlank500: autoDraw = False
+72.8041 	EXP 	polygon: autoDraw = False
+72.8041 	EXP 	textBlank500: autoDraw = False
+72.8041 	EXP 	polygon: autoDraw = False
+72.8041 	EXP 	Goodbye: autoDraw = True
+73.5878 	EXP 	Goodbye: autoDraw = False
+73.5879 	EXP 	stroop: status = STOPPED
+73.6173 	EXP 	window1: mouseVisible = True

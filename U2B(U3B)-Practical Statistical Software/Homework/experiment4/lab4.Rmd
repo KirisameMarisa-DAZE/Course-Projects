@@ -1,0 +1,132 @@
+---
+title: "lab4"
+output: 
+  html_document: 
+    toc: true
+    number_sections: true
+date: "2024-04-21"
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(lubridate)
+library(dplyr)
+library(ggplot2)
+library(foreach)
+library(doParallel)
+```
+
+#
+```{r}
+pat1 <- read.csv('covid19.csv', na.strings = c('NA', ''))
+na.omit(pat1) -> pat1
+pat1$'住院时间'=pat1$'出院时间'-pat1$'入院时间'+1
+ggplot(pat1, aes(x = 分型, y = 住院时间)) +
+  geom_boxplot() +
+  stat_summary(fun = mean, geom = "point", shape = 3, size = 3, color = "red") +
+  stat_summary(fun.data = mean_se, geom = "errorbar", width = 0.2, color = "blue") +
+  labs(title = "1", x = "分型", y = "住院时间")
+ggplot(pat1, aes(x = 年龄, y = 住院时间)) +
+  geom_jitter() +
+  labs(title = "2", x = "年龄", y = "住院时间")
+```
+
+#
+##
+```{r}
+absolute <- function(x) {
+  ifelse(x >= 0, x, -x)
+}
+x <- seq(-1, 1, 0.2)
+y <- absolute(x)
+y
+```
+##
+```{r}
+dates <- as.POSIXct(c("1981-05-31", "2020-02-22"))
+for (date in dates) {
+  print(date)
+}
+n <- length(dates)
+for (i in 1:n) {
+  print(dates[i])
+}
+```
+##
+```{r}
+i <- 1
+while (log(i) <= 2) {
+  print(log(i))
+  i <- i + 1
+}
+i <- 1
+repeat {
+  if (log(i) > 2) {
+    break
+  }
+  print(log(i))
+  i <- i + 1
+}
+```
+##
+```{r}
+result <- replicate(1, rnorm(100))
+mean_value <- mean(result)
+variance_value <- var(result)
+print(paste("均值：", mean_value))
+print(paste("方差：", variance_value))
+```
+
+#
+##
+```{r}
+segmented_function <- function(x) {
+  y <- ifelse(abs(x) <= 1, x^2, 2 * abs(x) - 1)
+  return(y)
+}
+x_values <- seq(-5, 5, length.out = 100)
+y_values <- segmented_function(x_values)
+data <- data.frame(x = x_values, y = y_values)
+ggplot(data, aes(x = x, y = y)) +
+  geom_line() +
+  labs(title = "3", x = "x", y = "y")
+```
+
+##
+```{r}
+# 设置并行计算的核心数
+cores <- detectCores()
+registerDoParallel(cores)
+
+# 定义函数来计算 S_{k,n}
+calculate_S_k_n <- function(k, n) {
+  result <- sum(1/(1:n)^k)
+  return(result)
+}
+
+# 定义参数
+n <- 5000000
+ks <- 2:21
+
+# 串行计算
+start_time_serial <- Sys.time()
+results_serial <- foreach(k = ks, .combine = "c") %do% {
+  calculate_S_k_n(k, n)
+}
+end_time_serial <- Sys.time()
+time_serial <- end_time_serial - start_time_serial
+
+# 并行计算
+start_time_parallel <- Sys.time()
+results_parallel <- foreach(k = ks, .combine = "c") %dopar% {
+  calculate_S_k_n(k, n)
+}
+end_time_parallel <- Sys.time()
+time_parallel <- end_time_parallel - start_time_parallel
+
+# 输出结果和运行时间
+cat("串行计算结果：", results_serial, "\n")
+cat("串行计算时间：", time_serial, "\n")
+cat("并行计算结果：", results_parallel, "\n")
+cat("并行计算时间：", time_parallel, "\n")
+```

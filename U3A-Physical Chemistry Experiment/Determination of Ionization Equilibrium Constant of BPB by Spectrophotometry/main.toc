@@ -1,0 +1,44 @@
+\boolfalse {citerequest}\boolfalse {citetracker}\boolfalse {pagetracker}\boolfalse {backtracker}\relax 
+\defcounter {refsection}{0}\relax 
+\contentsline {chapter}{中文内容摘要}{I}{chapter*.2}%
+\defcounter {refsection}{0}\relax 
+\contentsline {chapter}{英文内容摘要}{II}{chapter*.3}%
+\defcounter {refsection}{0}\relax 
+\addvspace {12bp}
+\defcounter {refsection}{0}\relax 
+\contentsline {chapter}{\numberline {第一章}序言}{3}{chapter.1}%
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {第一节}实验原理\cite {huaxe23}}{3}{section.1.1}%
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {第二节}实验目的}{4}{section.1.2}%
+\defcounter {refsection}{0}\relax 
+\addvspace {12bp}
+\defcounter {refsection}{0}\relax 
+\contentsline {chapter}{\numberline {第二章}实验内容}{5}{chapter.2}%
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {第一节}仪器与药品}{5}{section.2.1}%
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {第二节}实验步骤}{5}{section.2.2}%
+\defcounter {refsection}{0}\relax 
+\addvspace {12bp}
+\defcounter {refsection}{0}\relax 
+\contentsline {chapter}{\numberline {第三章}结果与讨论}{6}{chapter.3}%
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {第一节}图表数据}{6}{section.3.1}%
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {第二节}结果讨论}{7}{section.3.2}%
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {第三节}误差来源}{7}{section.3.3}%
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {第四节}体会认识}{7}{section.3.4}%
+\defcounter {refsection}{0}\relax 
+\contentsline {chapter}{参考文献}{8}{chapter*.9}%
+\defcounter {refsection}{0}\relax 
+\contentsline {chapter}{\numberline {附录 A}原始数据及数据处理}{9}{appendix.A}%
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {第一节}原始数据}{9}{section.A.1}%
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {第二节}原始图像}{10}{section.A.2}%
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {第三节}数据处理}{10}{section.A.3}%
+\contentsfinish 

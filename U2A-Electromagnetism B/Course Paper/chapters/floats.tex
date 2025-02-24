@@ -1,0 +1,294 @@
+% !TeX root = ../main.tex
+
+\chapter{构建方法}
+
+\section{莫比乌斯带参数方程及模型的构建}
+\subsection{莫比乌斯带的参数方程\cite{ref1}}
+认为莫比乌斯带是通过一条长为$2t_0$线段$AB$绕自身中点$M$旋转，同时中点$M$以$R$为半径绕坐标原点$O$旋转而成。那么在此过程中，线段$AB$绕自身中点$M$旋转了$\pi$，
+同时中点$M$绕坐标原点$O$旋转了$2\pi$。通常认为旋转是均匀进行的，那么线段$AB$旋转的转角$\theta$与中点$M$转过的极角$\phi$满足如下关系
+\begin{equation}
+  \theta=\frac{1}{2}\phi
+\end{equation}
+那么线段$AB$中点$M$的坐标可用参数方程表示为
+\begin{equation}
+  \begin{cases}
+    x=R\cos \phi\\
+    y=R\sin\phi\\
+    z=0
+  \end{cases}
+\end{equation}
+
+另设一参量$t$表示线段上某点$P\left(x_0,y_0,z_0\right)$到线段$AB$中点$M$的距离，那么，$P$点的坐标可以通过$M$点的坐标写出为
+\begin{equation}
+  \begin{cases}
+    x_0=R\cos \phi+t\cos\theta\cos\phi=\left(R+t\cos\frac{\phi}{2}\right)\cos\phi\\
+    y_0=R\sin\phi+t\cos\theta\sin\phi=\left(R+t\cos\frac{\phi}{2}\right)\sin\phi\\
+    z_0=0+t\sin\theta=t\sin\frac{\phi}{2}
+  \end{cases}
+\end{equation}
+其中$t\in\left[-t_0,t_0\right]$，$\phi\in\left[0,2\pi\right)$。由此可以得出莫比乌斯带的参数方程
+\begin{equation}\label{canshufangcheng}
+  \begin{cases}
+    x=\left(R+t\cos\frac{\phi}{2}\right)\cos\phi\\
+    y=\left(R+t\cos\frac{\phi}{2}\right)\sin\phi\\
+    z=t\sin\frac{\phi}{2}
+  \end{cases}
+\end{equation}
+
+\subsection{莫比乌斯带模型的生成}
+根据方程（\ref{canshufangcheng}），可以通过如下Matlab程序绘制莫比乌斯带的图像
+\begin{lstlisting}[language={Matlab},
+  numbers=left,
+  numberstyle=\tiny\menlo,
+  basicstyle=\small\menlo][H]
+clear;
+clc;
+t=linspace(-0.5,0.5,40);
+phi=linspace(0,2.*pi,40);
+[T,Phi]=meshgrid(t,phi);
+x=(1+T.*cos(Phi./2)).*cos(Phi);
+y=(1+T.*cos(Phi./2)).*sin(Phi);
+z=T.*sin(Phi./2);
+surf(x,y,z);
+colormap spring;
+\end{lstlisting}
+
+
+\section{电场强度及电势的计算\cite{ref2}}
+\subsection{电场强度的计算}
+\begin{equation}
+  E=\left(\frac{\partial x}{\partial t}\right)^2+\left(\frac{\partial y}{\partial t}\right)^2+\left(\frac{\partial z}{\partial t}\right)^2=1
+\end{equation}
+\begin{equation}
+  G=\left(\frac{\partial x}{\partial \phi}\right)^2+\left(\frac{\partial y}{\partial \phi}\right)^2+\left(\frac{\partial z}{\partial \phi}\right)^2
+\end{equation}
+\begin{equation}
+  F=\frac{\partial x}{\partial t}\frac{\partial x}{\partial \phi}+\frac{\partial y}{\partial t}\frac{\partial y}{\partial \phi}+\frac{\partial z}{\partial t}\frac{\partial z}{\partial \phi}
+\end{equation}
+所以场强
+\begin{equation}
+  E=\frac{\sigma}{4\pi\epsilon_0}\iint_D\frac{\sqrt{EG-F^2}}{\sqrt{x_0^2+y_0^2+z_0^2}}\dif t\dif \phi
+\end{equation}
+其中$D=\left\{-\frac{1}{2}\le t\le \frac{1}{2},~0\le \phi\le\ 2\pi\right\}$。
+\begin{lstlisting}[language={Matlab},
+  numbers=left,
+  numberstyle=\tiny\menlo,
+  basicstyle=\small\menlo][H]
+function [Ex,Ey,Ez,E] = Ee(R,x0,y0,z0)
+% 输入莫比乌斯带半径R及空间中某点坐标(x0,y0,z0)
+% 输出该点场强E及其分量Ex,Ey,Ez
+
+% 给出莫比乌斯带的参数方程
+syms t phi;
+x=(1+t.*cos(phi./2)).*cos(phi);
+y=(1+t.*cos(phi./2)).*sin(phi);
+z=t.*sin(phi./2);
+% 给出空间中一点到面上某点的距离r
+r=sqrt((x-x0).^2+(y-y0).^2+(z-z0).^2);
+% 面元dS的面积元素(E==1)
+G=(-sin(phi)-0.5.*t.*sin(phi./2).*cos(phi)-t.*cos(phi./2).*sin(phi)).^2+(cos(phi)-0.5.*t.*sin(phi./2)+t.*cos(phi./2).*cos(phi)).^2+(0.5.*t.*cos(phi./2)).^2;
+F=-0.5.*t.*sin(phi).*(cos(phi).^2);
+
+% 各个分量的需要积分的部分
+funx=sqrt(G-F.^2).*(x0-x)./(r.^3);
+fx=matlabFunction(funx);% 参数化
+funy=sqrt(G-F.^2).*(y0-y)./(r.^3);
+fy=matlabFunction(funy);
+funz=sqrt(G-F.^2).*(z0-z)./(r.^3);
+fz=matlabFunction(funz);
+
+% 各个分量需要积分的部分的积分
+Funx=integral2(fx,-0.5,0.5,0,2.*pi);
+Funy=integral2(fy,-0.5,0.5,0,2.*pi);
+Funz=integral2(fz,-0.5,0.5,0,2.*pi);
+% 总场强需要积分的部分的积分
+Fun=sqrt(Funx.^2+Funy.^2+Funz.^2);
+
+% σ, ε_0
+sigma=1;
+epsilon_0=8.854187817e-12;
+
+% 场强及其分量
+Ex=sigma./(4.*pi.*epsilon_0).*Funx;
+Ey=sigma./(4.*pi.*epsilon_0).*Funy;
+Ez=sigma./(4.*pi.*epsilon_0).*Funz;
+E=sigma./(4.*pi.*epsilon_0).*Fun;
+end  
+\end{lstlisting}
+
+\subsection{电势的计算}
+同理，电势
+\begin{equation}
+  U=\frac{\sigma}{4\pi\epsilon_0}\iint_D\frac{\sqrt{EG-F^2}}{\left[\left(x-x_0\right)^2+\left(y-y_0\right)^2+\left(z-z_0\right)^2\right]^\frac{3}{2}}\dif t\dif \phi
+\end{equation}
+其中$D=\left\{-\frac{1}{2}\le t\le \frac{1}{2},~0\le \phi\le\ 2\pi\right\}$。
+\begin{lstlisting}[language={Matlab},
+numbers=left,
+numberstyle=\tiny\menlo,
+basicstyle=\small\menlo][H]
+function [U] = Uu(R,x0,y0,z0)
+% 输入莫比乌斯带半径R及空间中某点坐标(x0,y0,z0)
+% 输出该点电势U
+
+% 给出莫比乌斯带的参数方程
+syms t phi;
+x=(R+t.*cos(phi./2)).*cos(phi);
+y=(R+t.*cos(phi./2)).*sin(phi);
+z=t.*sin(phi./2);
+% 给出空间中一点到面上某点的距离r
+r=sqrt((x-x0).^2+(y-y0).^2+(z-z0).^2);
+
+% 面元dS的面积元素(E==1)
+G=(-sin(phi)-0.5.*t.*sin(phi./2).*cos(phi)-t.*cos(phi./2).*sin(phi)).^2+(cos(phi)-0.5.*t.*sin(phi./2)+t.*cos(phi./2).*cos(phi)).^2+(0.5.*t.*cos(phi./2)).^2;
+F=-0.5.*t.*sin(phi).*(cos(phi).^2);
+
+% 电势的需要积分的部分
+fun=sqrt(G-F.^2)./r;
+f=matlabFunction(fun);% 参数化
+
+% 电势需要积分的部分的积分
+Fun=integral2(f,-0.5,0.5,0,2.*pi);
+
+% σ, ε_0
+sigma=1;
+epsilon_0=8.854187817e-12;
+
+% 电势
+U=sigma./(4.*pi.*epsilon_0).*Fun;
+end  
+\end{lstlisting}
+
+\section{电场强度与电势的可视化}
+\subsection{电场强度的可视化}
+在$\left[-5,5\right]\cap\left[-5,5\right]\cap\left[-5,5\right]$以1为间隔取125个点，分别计算他们的电场强度，并画在图上
+\begin{lstlisting}[language={Matlab},
+  numbers=left,
+  numberstyle=\tiny\menlo,
+  basicstyle=\small\menlo][H]
+clear;clc;
+
+R=1;i=1;j=1;k=1;
+Ex=zeros(5,5,5);
+Ey=zeros(5,5,5);
+Ez=zeros(5,5,5);
+E=zeros(5,5,5);
+
+for x=-2:1:2
+    for y=-2:1:2
+        for z=-2:1:2
+            [ex,ey,ez,e]=Ee(R,x,y,z);
+            Ex(i,j,k)=ex;
+            Ey(i,j,k)=ey;
+            Ez(i,j,k)=ez;
+            E(i,j,k)=e;
+            if (e>10e10)
+                Ex(i,j,k)=0;
+                Ey(i,j,k)=0;
+                Ez(i,j,k)=0;
+                E(i,j,k)=0;
+            end
+            disp(i)
+            disp(j)
+            disp(k)
+            fprintf('\n');
+            k=k+1;
+        end
+        j=j+1;
+        k=1;
+    end
+    i=i+1;
+    j=1;
+    k=1;
+end
+
+
+x=[-2:1:2];
+y=[-2:1:2];
+z=[-2:1:2];
+[X,Y,Z] = meshgrid(x,y,z);
+hold on
+quiver3(X,Y,Z,Ex,Ey,Ez);
+grid on;
+axis equal;
+
+t=linspace(-0.5,0.5,40);
+phi=linspace(0,2.*pi,40);
+[T,Phi]=meshgrid(t,phi);
+x=(1+T.*cos(Phi./2)).*cos(Phi);
+y=(1+T.*cos(Phi./2)).*sin(Phi);
+z=T.*sin(Phi./2);
+surf(x,y,z);
+colormap spring;
+
+grid on;%网格线
+xlabel('x');%x轴名称
+ylabel('y');%y轴名称
+zlabel('z');%z轴名称
+hold off
+\end{lstlisting}
+
+\subsection{电势的可视化}
+在$\left[-5,5\right]\cap\left[-5,5\right]\cap\left[-5,5\right]$以1为间隔取125个点，分别计算他们的电势，并画在图上
+\begin{lstlisting}[language={Matlab},
+  numbers=left,
+  numberstyle=\tiny\menlo,
+  basicstyle=\small\menlo][H]
+clear;clc;
+
+R=1;i=1;j=1;k=1;
+
+U=zeros(1,125);
+for x=-2:1:2
+    for y=-2:1:2
+        for z=-2:1:2
+            [u]=Uu(R,x,y,z);
+            U((i-1)*25+(j-1)*5+k)=u;
+            disp(i)
+            disp(j)
+            disp(k)
+            fprintf('\n');
+            k=k+1;
+        end
+        j=j+1;
+        k=1;
+    end
+    i=i+1;
+    j=1;
+    k=1;
+end
+
+X=zeros(1,125);
+Y=zeros(1,125);
+Z=zeros(1,125);
+for i=1:1:5
+    for j=1:1:5
+        for k=1:1:5
+            X((i-1)*25+(j-1)*5+k)=i-3;
+            Y((i-1)*25+(j-1)*5+k)=j-3;
+            Z((i-1)*25+(j-1)*5+k)=k-3;
+        end
+    end
+end
+
+
+hold on
+scatter3(X,Y,Z,U.*(10.^(-8.5)),U,'filled');
+axis equal;
+
+t=linspace(-0.5,0.5,40);
+phi=linspace(0,2.*pi,40);
+[T,Phi]=meshgrid(t,phi);
+x=(1+T.*cos(Phi./2)).*cos(Phi);
+y=(1+T.*cos(Phi./2)).*sin(Phi);
+z=T.*sin(Phi./2);
+surf(x,y,z);
+colormap spring;
+
+
+colorbar;%颜色栏图例
+grid on;%网格线
+xlabel('x');%x轴名称
+ylabel('y');%y轴名称
+zlabel('z');%z轴名称
+hold off
+\end{lstlisting}

@@ -1,0 +1,84 @@
+
+--------------------------------------------------------------------------------
+                Assertion detected at 2023-05-10 22:34:52 +0800
+--------------------------------------------------------------------------------
+
+Configuration:
+  Crash Decoding           : Disabled - No sandbox or build area path
+  Crash Mode               : continue (default)
+  Default Encoding         : UTF-8
+  Java Version             : Java 1.8.0_202-b08 with Oracle Corporation Java HotSpot(TM) 64-Bit Server VM mixed mode
+  MATLAB Architecture      : maci64
+  MATLAB Root              : /Applications/MATLAB_R2023a.app
+  MATLAB Version           : 9.14.0.2239454 (R2023a) Update 1
+  Operating System         : Mac OS 版本13.2.1（版号22D68）
+  Process ID               : 22923
+  Processor ID             : x86 Family 6 Model 158 Stepping 13, GenuineIntel
+  Session Key              : 31a96b2c-5661-4b8d-a013-ffad98e67260
+  Window System            : Quartz
+
+Fault Count: 1
+
+
+Additional Log Files:
+  Java Crash Report        : /Users/page/hs_error_pid22923.log
+
+
+Assertion in void (anonymous namespace)::mwJavaAbort() at javainit.cpp line 1458:
+Fatal Java Exception. See this file for details: /Users/page/hs_error_pid22923.log
+
+Current Thread: 'Java: PathDataService:publishFoldersInRootLocation' id 0x70000e30f000
+
+Register State (captured):
+  RAX = 0000000000000000  RBX = 000070000e30bec8
+  RCX = 0000000000000000  RDX = 0000000000000000
+  RSP = 000070000e30bec0  RBP = 000070000e30c1e0
+  RSI = 0000000000000000  RDI = 0000000000000000
+
+   R8 = 0000000000000000   R9 = 0000000000000000
+  R10 = 0000000000000000  R11 = 0000000000000000
+  R12 = 0000600003089700  R13 = 000000012b21d4e6
+  R14 = 000070000e30c200  R15 = 00000000000005b2
+
+  RIP = 000000010c9bb1ab  RFL = 0000000000000000
+
+   CS = 0000000000000000   FS = 0000000000000000   GS = 0000000000000000
+
+Stack Trace (captured):
+[  0] 0x000000010c9b3ed4 /Applications/MATLAB_R2023a.app/bin/maci64/libmwfl.dylib+00007892 _ZN10foundation4core4diag15stacktrace_base7captureEm+00000020
+[  1] 0x000000010c9b795a /Applications/MATLAB_R2023a.app/bin/maci64/libmwfl.dylib+00022874 _ZN10foundation4core4test17terminate_handledERKNSt3__112basic_stringIcNS2_11char_traitsIcEENS2_9allocatorIcEEEE+00004842
+[  2] 0x000000010c9b5d6f /Applications/MATLAB_R2023a.app/bin/maci64/libmwfl.dylib+00015727 _ZN10foundation4core4diag9terminateERKNSt3__112basic_stringIcNS2_11char_traitsIcEENS2_9allocatorIcEEEEPKciSC_+00000191
+[  3] 0x000000010c9b5cdd /Applications/MATLAB_R2023a.app/bin/maci64/libmwfl.dylib+00015581 _ZN10foundation4core4diag9terminateERKNSt3__112basic_stringIcNS2_11char_traitsIcEENS2_9allocatorIcEEEEPKciSC_+00000045
+[  4] 0x000000012b18e82e /Applications/MATLAB_R2023a.app/bin/maci64/libmwjmi.dylib+00419886 _ZN7jmitest16closeJavaLogFileEv+00015038
+[  5] 0x00000001305d4a98 /Applications/MATLAB_R2023a.app/sys/java/jre/maci64/jre/lib/server/libjvm.dylib+04778648 _ZN2os5abortEb+00000016
+[  6] 0x00000001306fce96 /Applications/MATLAB_R2023a.app/sys/java/jre/maci64/jre/lib/server/libjvm.dylib+05992086 _ZN7VMError14report_and_dieEv+00002304
+[  7] 0x00000001305d66e6 /Applications/MATLAB_R2023a.app/sys/java/jre/maci64/jre/lib/server/libjvm.dylib+04785894 JVM_handle_bsd_signal+00001131
+[  8] 0x00000001305d292b /Applications/MATLAB_R2023a.app/sys/java/jre/maci64/jre/lib/server/libjvm.dylib+04770091 _Z13signalHandleriP9__siginfoPv+00000047
+[  9] 0x00007ff819f68c1d           /usr/lib/system/libsystem_platform.dylib+00015389 _sigtramp+00000029
+[ 10] 0x000000012b83b800                                   <unknown-module>+00000000
+[ 11] 0x00007ff819c422cb                                      /usr/lib/dyld+00250571 _ZN3lsl9UniquePtrIN5dyld45Atlas5ImageEED2Ev+00000059
+[ 12] 0x00007ff819c19807                                      /usr/lib/dyld+00083975 _ZN3lsl5BTreeINS_9UniquePtrIN5dyld45Atlas5ImageEEENSt3__14lessIS5_EELb0EE8NodeCoreILj31ELj15EE18deallocateChildrenEv+00000101
+[ 13] 0x00007ff819c197d3                                      /usr/lib/dyld+00083923 _ZN3lsl5BTreeINS_9UniquePtrIN5dyld45Atlas5ImageEEENSt3__14lessIS5_EELb0EE8NodeCoreILj31ELj15EE18deallocateChildrenEv+00000049
+[ 14] 0x00007ff819c197d3                                      /usr/lib/dyld+00083923 _ZN3lsl5BTreeINS_9UniquePtrIN5dyld45Atlas5ImageEEENSt3__14lessIS5_EELb0EE8NodeCoreILj31ELj15EE18deallocateChildrenEv+00000049
+[ 15] 0x00007ff819c19764                                      /usr/lib/dyld+00083812 _ZN3lsl5BTreeINS_9UniquePtrIN5dyld45Atlas5ImageEEENSt3__14lessIS5_EELb0EE5clearEv+00000022
+[ 16] 0x00007ff819c1928d                                      /usr/lib/dyld+00082573 _ZN5dyld412RuntimeState19freeProcessSnapshotEv+00000061
+[ 17] 0x00007ff819c3c80c                                      /usr/lib/dyld+00227340 _ZN5dyld44APIs11dlopen_fromEPKciPv+00000858
+[ 18] 0x000000010d007127 /Applications/MATLAB_R2023a.app/bin/maci64/libCppMicroServices.3.7.4.dylib+00184615 _ZN16cppmicroservices13SharedLibrary4LoadEi+00000087
+[ 19] 0x00000001152d45fc /Applications/MATLAB_R2023a.app/bin/maci64/libDeclarativeServices.1.5.0.dylib+00218620 _ZN5boost4asio6detail11executor_opINS1_15work_dispatcherIZN16cppmicroservices7scrimpl24FallbackAsyncWorkService4postEONSt3__113packaged_taskIFvvEEEEUlvE_EENS7_9allocatorIvEENS1_19scheduler_operationEE11do_completeEPvPSG_RKNS_6system10error_codeEm+00085260
+[ 20] 0x00000001152eccd2 /Applications/MATLAB_R2023a.app/bin/maci64/libDeclarativeServices.1.5.0.dylib+00318674 _ZN5boost4asio6detail11executor_opINS1_15work_dispatcherIZN16cppmicroservices7scrimpl24FallbackAsyncWorkService4postEONSt3__113packaged_taskIFvvEEEEUlvE_EENS7_9allocatorIvEENS1_19scheduler_operationEE11do_completeEPvPSG_RKNS_6system10error_codeEm+00185314
+[ 21] 0x00000001152ecec9 /Applications/MATLAB_R2023a.app/bin/maci64/libDeclarativeServices.1.5.0.dylib+00319177 _ZN5boost4asio6detail11executor_opINS1_15work_dispatcherIZN16cppmicroservices7scrimpl24FallbackAsyncWorkService4postEONSt3__113packaged_taskIFvvEEEEUlvE_EENS7_9allocatorIvEENS1_19scheduler_operationEE11do_completeEPvPSG_RKNS_6system10error_codeEm+00185817
+[ 22] 0x00000001152ed08c /Applications/MATLAB_R2023a.app/bin/maci64/libDeclarativeServices.1.5.0.dylib+00319628 _ZN5boost4asio6detail11executor_opINS1_15work_dispatcherIZN16cppmicroservices7scrimpl24FallbackAsyncWorkService4postEONSt3__113packaged_taskIFvvEEEEUlvE_EENS7_9allocatorIvEENS1_19scheduler_operationEE11do_completeEPvPSG_RKNS_6system10error_codeEm+00186268
+[ 23] 0x000000011530aaa9 /Applications/MATLAB_R2023a.app/bin/maci64/libDeclarativeServices.1.5.0.dylib+00441001 _ZN5boost4asio6detail11executor_opINS1_15work_dispatcherIZN16cppmicroservices7scrimpl24FallbackAsyncWorkService4postEONSt3__113packaged_taskIFvvEEEEUlvE_EENS7_9allocatorIvEENS1_19scheduler_operationEE11do_completeEPvPSG_RKNS_6system10error_codeEm+00307641
+[ 24] 0x000000011531005b /Applications/MATLAB_R2023a.app/bin/maci64/libDeclarativeServices.1.5.0.dylib+00462939 _ZN5boost4asio6detail11executor_opINS1_15work_dispatcherIZN16cppmicroservices7scrimpl24FallbackAsyncWorkService4postEONSt3__113packaged_taskIFvvEEEEUlvE_EENS7_9allocatorIvEENS1_19scheduler_operationEE11do_completeEPvPSG_RKNS_6system10error_codeEm+00329579
+[ 25] 0x00000001153124b3 /Applications/MATLAB_R2023a.app/bin/maci64/libDeclarativeServices.1.5.0.dylib+00472243 _ZN5boost4asio6detail11executor_opINS1_15work_dispatcherIZN16cppmicroservices7scrimpl24FallbackAsyncWorkService4postEONSt3__113packaged_taskIFvvEEEEUlvE_EENS7_9allocatorIvEENS1_19scheduler_operationEE11do_completeEPvPSG_RKNS_6system10error_codeEm+00338883
+[ 26] 0x00000001152ec8b6 /Applications/MATLAB_R2023a.app/bin/maci64/libDeclarativeServices.1.5.0.dylib+00317622 _ZN5boost4asio6detail11executor_opINS1_15work_dispatcherIZN16cppmicroservices7scrimpl24FallbackAsyncWorkService4postEONSt3__113packaged_taskIFvvEEEEUlvE_EENS7_9allocatorIvEENS1_19scheduler_operationEE11do_completeEPvPSG_RKNS_6system10error_codeEm+00184262
+[ 27] 0x000000011530b277 /Applications/MATLAB_R2023a.app/bin/maci64/libDeclarativeServices.1.5.0.dylib+00442999 _ZN5boost4asio6detail11executor_opINS1_15work_dispatcherIZN16cppmicroservices7scrimpl24FallbackAsyncWorkService4postEONSt3__113packaged_taskIFvvEEEEUlvE_EENS7_9allocatorIvEENS1_19scheduler_operationEE11do_completeEPvPSG_RKNS_6system10error_codeEm+00309639
+[ 28] 0x000000011530b733 /Applications/MATLAB_R2023a.app/bin/maci64/libDeclarativeServices.1.5.0.dylib+00444211 _ZN5boost4asio6detail11executor_opINS1_15work_dispatcherIZN16cppmicroservices7scrimpl24FallbackAsyncWorkService4postEONSt3__113packaged_taskIFvvEEEEUlvE_EENS7_9allocatorIvEENS1_19scheduler_operationEE11do_completeEPvPSG_RKNS_6system10error_codeEm+00310851
+[ 29] 0x000000010d02878a /Applications/MATLAB_R2023a.app/bin/maci64/libCppMicroServices.3.7.4.dylib+00321418 _ZN16cppmicroserviceslsERNSt3__113basic_ostreamIcNS0_11char_traitsIcEEEERKNS_20ServiceReferenceBaseE+00002170
+[ 30] 0x000000010d02ac3a /Applications/MATLAB_R2023a.app/bin/maci64/libCppMicroServices.3.7.4.dylib+00330810 _ZN16cppmicroserviceslsERNSt3__113basic_ostreamIcNS0_11char_traitsIcEEEERKNS_20ServiceReferenceBaseE+00011562
+[ 31] 0x000000010d024b7c /Applications/MATLAB_R2023a.app/bin/maci64/libCppMicroServices.3.7.4.dylib+00306044 _ZNK16cppmicroservices18ServiceObjectsBase10GetServiceEv+00001212
+[ 32] 0x000000010d024705 /Applications/MATLAB_R2023a.app/bin/maci64/libCppMicroServices.3.7.4.dylib+00304901 _ZNK16cppmicroservices18ServiceObjectsBase10GetServiceEv+00000069
+[ 33] 0x000000014f94af5d /Applications/MATLAB_R2023a.app/bin/maci64/libnativemldrivedesktop.dylib+00028509 Java_com_mathworks_storage_matlabdrivedesktop_NativeMatlabDriveAccess_isSharingIntegrationEnabledNative+00003021
+[ 34] 0x000000014f9482d0 /Applications/MATLAB_R2023a.app/bin/maci64/libnativemldrivedesktop.dylib+00017104 Java_com_mathworks_storage_matlabdrivedesktop_NativeMatlabDriveAccess_getMATLABDriveLocationNative+00001008
+[ 35] 0x000000013981a667                                   <unknown-module>+00000000
+

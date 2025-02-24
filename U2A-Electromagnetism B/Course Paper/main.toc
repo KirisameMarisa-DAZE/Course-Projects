@@ -1,0 +1,14 @@
+\contentsline {chapter}{\numberline {第1章}绪论}{1}{chapter.1}%
+\contentsline {chapter}{\numberline {第2章}构建方法}{2}{chapter.2}%
+\contentsline {section}{\numberline {2.1}莫比乌斯带参数方程及模型的构建}{2}{section.2.1}%
+\contentsline {subsection}{\numberline {2.1.1}莫比乌斯带的参数方程\cite {ref1}}{2}{subsection.2.1.1}%
+\contentsline {subsection}{\numberline {2.1.2}莫比乌斯带模型的生成}{2}{subsection.2.1.2}%
+\contentsline {section}{\numberline {2.2}电场强度及电势的计算\cite {ref2}}{3}{section.2.2}%
+\contentsline {subsection}{\numberline {2.2.1}电场强度的计算}{3}{subsection.2.2.1}%
+\contentsline {subsection}{\numberline {2.2.2}电势的计算}{4}{subsection.2.2.2}%
+\contentsline {section}{\numberline {2.3}电场强度与电势的可视化}{5}{section.2.3}%
+\contentsline {subsection}{\numberline {2.3.1}电场强度的可视化}{5}{subsection.2.3.1}%
+\contentsline {subsection}{\numberline {2.3.2}电势的可视化}{6}{subsection.2.3.2}%
+\contentsline {chapter}{\numberline {第3章}结果结论}{8}{chapter.3}%
+\contentsline {chapter}{参考文献}{9}{chapter*.10}%
+\contentsfinish 

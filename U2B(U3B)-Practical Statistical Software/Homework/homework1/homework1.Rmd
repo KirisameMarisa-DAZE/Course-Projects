@@ -1,0 +1,239 @@
+---
+title: "Homework1"
+output: 
+  html_document: 
+    toc: true
+    number_sections: true
+date: "2024-03-21"
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(lubridate)
+```
+
+## 数值型数据
+
+1. 判断`1L`的数据类型，并解释结果。
+```{r}
+typeof(1L)
+```
+2. 计算$\log_2{\sin(\pi/3)}$,向下取整，判断数据类型，并将最终结果转换为字符类型。
+```{r}
+log2(sin(pi/3))->x
+x
+typeof(x)
+str(x)
+```
+3. 分别使用`==`, `all.equal()`和`identical()`判断$\sqrt3,tan(\frac{\pi}{3})$两者是否相等，并解释结果。
+```{r}
+x<-sqrt(3)
+y<-tan(pi/3)
+x==y
+all.equal(x,y)
+identical(x,y)
+```
+4. 找出1:100中既能被2整除，也能被3整除的数。
+```{r}
+for(i in 1:100){
+  if (i %% 2 == 0 && i %% 3 == 0){
+    print(i)
+  }
+}
+```
+
+
+## 字符型数据
+
+1. 请把字符串`University of Science and Technology of China`中的'a'到'f'的所有字母删除。
+```{r}
+string<-'University of Science and Technology of China'
+gsub('[a,b,c,d,e,f]','',string)
+```
+2. 计算字符串`中国科学技术大学中的实用统计软件课程appstat2024`的长度，并提取字串`实用统计软件`。
+```{r}
+string<-'中国科学技术大学中的实用统计软件课程appstat2024'
+nchar(string)
+substr(string,11,16)
+```
+3. 运行以下命令，并解释出现的结果。如果出错，请修正。
+```{r,eval=FALSE}
+c(1, 1, 2, 3, "1") + 2000
+```
+```
+Error in c(1, 1, 2, 3, "1") + 2000 : 二进列运算符中有非数值参数
+```
+```{r}
+c(1, 1, 2, 3, 1) + 2000
+```
+4. 有字符串`x`定义如下：
+```{r}
+x <- '1A3c5d'
+```
+    请把`x`按照字母进行拆分，并将结果转化成数值型变量。
+```{r}
+x <- '1A3c5d'
+y <- unlist(strsplit(x,split='A'))
+z <- unlist(strsplit(y,split='c'))
+p <- unlist(strsplit(z,split='d'))
+as.numeric(p)
+```
+
+
+## 日期时间类型数据
+
+定义出生日期变量`date_bir`和发病日期变量`date_dis`如下：
+
+```{r}
+date_bir <- "1961/3/1"
+date_dis <- "2022年1月1日"
+```
+
+1. 把上述变量分别转换成`Date` 和`POSIXct`日期型。
+```{r}
+date_bir <- as.Date(date_bir, format='%Y/%m/%d')
+date_dis <- as.POSIXct(date_dis, format='%Y年%m月%d日')
+```
+2. 输出出生年和月份。
+```{r}
+format(date_bir, '%Y %m')
+```
+3. 计算发病时的年龄，以周岁论，即过了生日才算；并通过`sink()`函数将发病年龄保存在`test.txt`文件中。
+```{r}
+date_bir <- as.POSIXct(date_bir, format='%Y/%m/%d')
+time_length(date_dis - date_bir, 'year')
+```
+4. 把`date_dis`中发病年月转换成`monyy`格式，这里`mon`是指如SEP的英文三字母缩写， `yy`是两数字的年份。
+```{r}
+as.character(date_dis, format='%B %y')
+```
+5. 从发病日开始计算，需要每隔一个星期进行复诊，请计算未来10次的复诊时间。
+```{r}
+for(i in 1:10){
+  date_dis <- date_dis + weeks(1)
+  print(date_dis)
+}
+```
+
+
+## 因子类型数据
+
+```{r}
+x <- factor(c("男", "女", "男", "女"))
+```
+1. 变量`x`有几个水平值，分别是什么？
+```
+2个
+```
+```{r}
+x
+```
+2. 通过`levels()`函数把`x`中的“男”改成“M”，“女”改成“F”，并将`x`通过`cat()`函数输出到`factor.txt`文档中。
+```{r}
+levels(x) <- c('M', 'F')
+x
+```
+3. 将以下因子类型数据
+```{r}
+y <- factor(c("大一", "大四", "大三", "大二"))
+```
+按照年级从低到高进行排序。
+```{r}
+y <- factor(c("大一", "大四", "大三", "大二"), levels = c('大一','大二','大三','大四'))
+y
+```
+
+
+
+## 向量
+
+现有10个人的期末考试成绩为
+
+> 100, 65, 80, 79, 88, 95, 93, 35, 56, 68
+
+1. 创建向量`x`来存储上述数据；
+```{r}
+x <- c(100, 65, 80, 79, 88, 95, 93, 35, 56, 68)
+x
+```
+2. 将`x`从大到小排序，并分别找出最大值、最小值、中位数、第三大和第三小的元素；
+```{r}
+xx <- sort(x, decreasing = TRUE)
+xx
+range(x)
+median(x)
+xx[c(3,8)]
+```
+3. 计算平均值、标准差和方差；
+```{r}
+mean(x)
+sd(x)
+var(x)
+```
+4. 60分以上为及格，计算及格的人数；
+```{r}
+sum(x >= 60, na.rm=TRUE)
+```
+5. 给`x`命名，名字为学号，分别为"PB1", "PB2", ... "PB10"（提示，可以先创建以名字为元素的字符型向量`y`，然后进行赋值）；
+```{r}
+names(x) <- c('PB1','PB2','PB3','PB4','PB5','PB6','PB7','PB8','PB9','PB10')
+x
+```
+6. 提取奇数位置的元素并显示；
+```{r}
+x[seq(1,length(x),2)]
+```
+7. 返回偶数（不包含缺失值）。
+```{r}
+x[x %% 2 == 0]
+```
+
+## 矩阵和数组
+
+1. 创建一个$10\times 10$的矩阵`m`，其对角线元素分别为1, 2, ..., 10；
+```{r}
+m <- diag(c(1:10))
+m
+```
+2. 计算`m`的逆，并求解关于$y$的线性方程组$my=x$；
+```{r}
+solve(m)
+solve(m,x)
+```
+3. 将上述矩阵的第2行除对角线外的所有元素赋值为100；
+```{r}
+temp <- m[2,2]
+m[2,]=100
+m[2,2] <- temp
+m
+```
+4. 提取`m`的第5行第9列的元素并输出到命令行，然后将其重新赋值为`NA`；
+```{r}
+m[5,9]
+m[5,9]=NA
+m
+```
+5. 给`m`的列命名为"c1", "c2",..."c10"；
+```{r}
+colnames(m) <- c('c1','c2','c3','c4','c5','c6','c7','c8','c9','c10')
+m
+```
+6. 给`m`增加一行，元素为上面定义的向量`x`，存为新的矩阵`m2`;
+```{r}
+rbind(m,x) -> m2
+m2
+```
+7. 计算`m2`的行数、列数，核对是否正确；
+```{r}
+nrow(m2)
+ncol(m2)
+```
+8. 对`m2`按行计算平均值，输出的结果不能包含`NA`；
+```{r}
+rowMeans(m2, na.rm = TRUE)
+```
+9. 构造一个$10\times 10 \times 3$的数组`arr`，其中`arr[,,1]`为`m`，`arr[,,2]`为`2*m`，`arr[,,3]`为`3*m`。
+```{r}
+array(c(m,2*m,3*m), dim = c(10,10,3)) -> arr
+arr
+```

@@ -1,0 +1,43 @@
+\relax 
+\providecommand\hyper@newdestlabel[2]{}
+\providecommand\HyperFirstAtBeginDocument{\AtBeginDocument}
+\HyperFirstAtBeginDocument{\ifx\hyper@anchor\@undefined
+\global\let\oldcontentsline\contentsline
+\gdef\contentsline#1#2#3#4{\oldcontentsline{#1}{#2}{#3}}
+\global\let\oldnewlabel\newlabel
+\gdef\newlabel#1#2{\newlabelxx{#1}#2}
+\gdef\newlabelxx#1#2#3#4#5#6{\oldnewlabel{#1}{{#2}{#3}}}
+\AtEndDocument{\ifx\hyper@anchor\@undefined
+\let\contentsline\oldcontentsline
+\let\newlabel\oldnewlabel
+\fi}
+\fi}
+\global\let\hyper@last\relax 
+\gdef\HyperFirstAtBeginDocument#1{#1}
+\providecommand*\HyPL@Entry[1]{}
+\HyPL@Entry{0<</S/D>>}
+\@writefile{toc}{\contentsline {section}{\numberline {1}实验目的}{1}{section.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {2}原理}{1}{section.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {3}实验仪器}{1}{section.3}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {4}测量记录}{1}{section.4}\protected@file@percent }
+\@writefile{lot}{\contentsline {table}{\numberline {1}{\ignorespaces 100$\nobreakspace  {}\mu $m单缝\relax }}{1}{table.caption.1}\protected@file@percent }
+\providecommand*\caption@xref[2]{\@setref\relax\@undefined{#1}}
+\newlabel{1}{{1}{1}{100$~\mu $m单缝\relax }{table.caption.1}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {2}{\ignorespaces 200$\nobreakspace  {}\mu $m单缝\relax }}{1}{table.caption.1}\protected@file@percent }
+\@writefile{lot}{\contentsline {table}{\numberline {3}{\ignorespaces 300$\nobreakspace  {}\mu $m单缝\relax }}{1}{table.caption.1}\protected@file@percent }
+\@writefile{lot}{\contentsline {table}{\numberline {4}{\ignorespaces 100$\nobreakspace  {}\mu $m双缝\relax }}{1}{table.caption.1}\protected@file@percent }
+\@writefile{lot}{\contentsline {table}{\numberline {5}{\ignorespaces 150$\nobreakspace  {}\mu $m双缝\relax }}{1}{table.caption.1}\protected@file@percent }
+\@writefile{lot}{\contentsline {table}{\numberline {6}{\ignorespaces 190$\nobreakspace  {}\mu $m双缝\relax }}{1}{table.caption.1}\protected@file@percent }
+\newlabel{2}{{6}{1}{190$~\mu $m双缝\relax }{table.caption.1}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {5}分析与讨论}{2}{section.5}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.1}图样特点}{2}{subsection.5.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.2}变化规律}{2}{subsection.5.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.3}单缝缝宽与双缝中心间距的计算}{2}{subsection.5.3}\protected@file@percent }
+\@writefile{lot}{\contentsline {table}{\numberline {7}{\ignorespaces 100$\nobreakspace  {}\mu $m单缝\relax }}{2}{table.caption.2}\protected@file@percent }
+\newlabel{3}{{7}{2}{100$~\mu $m单缝\relax }{table.caption.2}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {8}{\ignorespaces 190$\nobreakspace  {}\mu $m双缝\relax }}{2}{table.caption.2}\protected@file@percent }
+\newlabel{4}{{8}{2}{190$~\mu $m双缝\relax }{table.caption.2}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {1}{\ignorespaces $k-x_k$图\relax }}{2}{figure.caption.3}\protected@file@percent }
+\newlabel{0}{{1}{2}{$k-x_k$图\relax }{figure.caption.3}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.4}思考题}{2}{subsection.5.4}\protected@file@percent }
+\gdef \@abspage@last{2}

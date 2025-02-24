@@ -1,0 +1,5 @@
+[0] Config.pm:311> INFO - This is Biber 2.16
+[0] Config.pm:314> INFO - Logfile is 'thesis.blg'
+[127] biber-darwin:340> INFO - === 日 11 19, 2023, 17:50:33
+[372] Utils.pm:411> ERROR - Cannot find 'thesis.bcf'!
+[372] Biber.pm:132> INFO - ERRORS: 1

@@ -1,0 +1,50 @@
+% !TeX root = ../main.tex
+
+\chapter{序言}
+
+\section{实验原理}
+表面张力$\sigma$满足关系式
+\begin{equation}
+  -W=\sigma \increment A
+\end{equation}
+其中$\increment A$为一体系表面增加的面积，$W$为该体系表面增加$\increment A$所需耗费的功.~
+因此表面张力$\sigma$单位为$\text{N}\cdot \text{m}^{-1}$.
+
+对于溶液体系，根据能量最低原理，会在溶液表面出现吸附现象，满足关系式
+\begin{equation}
+  \Gamma = -\frac{c}{RT}\left(\frac{\partial \sigma}{\partial c}\right)_T
+\end{equation}
+其中$\Gamma~\left(\text{mol}\cdot\text{m}^{-2}\right)~$为气-液界面上的吸附量，
+$\sigma~\left(\text{N}\cdot \text{m}^{-1}\right)~$为溶液的表面张力，
+$T~\left(\text{K}\right)~$为开尔文温度，$c~\left(\text{mol}\cdot\text{m}^{-3}\right)~$为溶液浓度
+$R~\left(=8.314~\text{J}\cdot\text{mol}^{-1}\cdot\text{K}^{-1}\right)~$为气体常数.~
+
+正丁醇为一种表面活性物质$\left(\Gamma>0\right)$，满足其特定的$\sigma-c$曲线.~可根据该曲线切线斜率求出吸附量$\Gamma$，
+再根据Langmuir等温方程式
+\begin{equation}
+  \Gamma=\Gamma_{\infty}\frac{KC}{1+KC}
+\end{equation}
+可作出$\frac{C}{\Gamma}\sim C$直线
+\begin{equation}
+  \frac{C}{\Gamma}=\frac{C}{\Gamma_{\infty}}+\frac{1}{K\Gamma_{\infty}}
+\end{equation}
+由直线斜率即可求出$\Gamma_{\infty}$.~
+
+在饱和吸附时，可求出正丁醇分子横截面积
+\begin{equation}
+  S_0=\frac{1}{\Gamma_{\infty}\widetilde{N}}
+\end{equation}
+其中$\widetilde{N}$为阿伏伽德罗常数.
+
+可以通过最大气泡压力法测量表面张力.~最大的压力差$P_{\max}$可在数字式微压差测量仪上读出，满足
+\begin{equation}
+  P_{\max}=\increment h\rho g
+\end{equation}
+其中$\increment h$为微压差测量仪读数，$g$为重力加速度，$\rho$为液体的密度.~
+因此对两种溶液而言，有
+\begin{equation}
+  \sigma_1=\frac{\sigma_2}{\increment h_2}\increment h_1=K'\increment h_1.
+\end{equation}
+
+\section{实验目的}
+通过测定不同浓度正丁醇水溶液的表面张力，由曲线求溶液界面上的吸附量和单个正丁醇分子的横截面积.

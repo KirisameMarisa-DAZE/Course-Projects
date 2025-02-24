@@ -1,0 +1,137 @@
+% !TeX root = ./main.tex
+
+\ustcsetup{
+  title              = {人民币兑日元汇率走势及影响因素分析：\\基于时间序列与波动性模型的研究},
+  title*             = {Analysis of RMB/JPY Exchange Rate Trends and Influencing Factors: 
+                        A Study Based on Time Series and Volatility Models},
+  author             = {李佩哲},
+  author*            = {Li Peizhe},
+  speciality         = {生物科学},
+  speciality*        = {Mathematics and Applied Mathematics},
+  supervisor         = {吴遵~教授},
+  % supervisor*        = {Prof. XXX, Prof. XXX},
+  % date               = {2017-05-01},  % 默认为今日
+  % professional-type  = {专业学位类型},
+  % professional-type* = {Professional degree type},
+  department         = {生命科学学院},  % 院系，本科生需要填写
+  student-id         = {PB21051049},  % 学号，本科生需要填写
+  % secret-level       = {秘密},     % 绝密|机密|秘密|控阅，注释本行则公开
+  % secret-level*      = {Secret},  % Top secret | Highly secret | Secret
+  % secret-year        = {10},      % 保密/控阅期限
+  % reviewer           = true,      % 声明页显示“评审专家签名”
+  %
+  % 数学字体
+  % math-style         = GB,  % 可选：GB, TeX, ISO
+  math-font          = xits,  % 可选：stix, xits, libertinus
+}
+
+
+% 加载宏包
+
+% 定理类环境宏包
+\usepackage{amsthm}
+
+% 插图
+\usepackage{graphicx}
+
+% 三线表
+\usepackage{booktabs}
+
+% 跨页表格
+\usepackage{longtable}
+
+% 算法
+\usepackage[ruled,linesnumbered]{algorithm2e}
+
+% SI 量和单位
+\usepackage{siunitx}
+
+% 参考文献使用 BibTeX + natbib 宏包
+% 顺序编码制
+\usepackage[sort]{natbib}
+\bibliographystyle{ustcthesis-numerical}
+
+% 著者-出版年制
+% \usepackage{natbib}
+% \bibliographystyle{ustcthesis-authoryear}
+
+% 本科生参考文献的著录格式
+% \usepackage[sort]{natbib}
+% \bibliographystyle{ustcthesis-bachelor}
+
+% 参考文献使用 BibLaTeX 宏包
+% \usepackage[style=ustcthesis-numeric]{biblatex}
+% \usepackage[bibstyle=ustcthesis-numeric,citestyle=ustcthesis-inline]{biblatex}
+% \usepackage[style=ustcthesis-authoryear]{biblatex}
+% \usepackage[style=ustcthesis-bachelor]{biblatex}
+% 声明 BibLaTeX 的数据库
+% \addbibresource{bib/ustc.bib}
+
+% 配置图片的默认目录
+\graphicspath{{figures/}}
+
+% 数学命令
+\makeatletter
+\newcommand\dif{%  % 微分符号
+  \mathop{}\!%
+  \ifustc@math@style@TeX
+    d%
+  \else
+    \mathrm{d}%
+  \fi
+}
+\makeatother
+\newcommand\eu{{\symup{e}}}
+\newcommand\iu{{\symup{i}}}
+
+% 用于写文档的命令
+\DeclareRobustCommand\cs[1]{\texttt{\char`\\#1}}
+\DeclareRobustCommand\env[1]{\texttt{#1}}
+\DeclareRobustCommand\pkg[1]{\textsf{#1}}
+\DeclareRobustCommand\file[1]{\nolinkurl{#1}}
+
+% hyperref 宏包在最后调用
+\usepackage{hyperref}
+\usepackage{float}
+
+\usepackage{listings}
+\usepackage{xcolor}
+
+\definecolor{background}{rgb}{0.95,0.95,0.92}
+\definecolor{string}{rgb}{0.58,0,0.82}
+\definecolor{comment}{rgb}{0.25,0.5,0.35}
+\definecolor{keyword}{rgb}{0.37,0.05,0.64}
+
+\lstdefinestyle{mystyle}{
+    backgroundcolor=\color{background},   % 背景颜色
+    commentstyle=\color{comment}\itshape, % 注释样式
+    keywordstyle=\color{keyword}\bfseries, % 关键词样式
+    numberstyle=\tiny\color{gray},        % 行号样式
+    stringstyle=\color{string},           % 字符串样式
+    basicstyle=\ttfamily\footnotesize,    % 基本字体样式
+    breakatwhitespace=false,              % 自动断行
+    breaklines=true,                      % 自动换行
+    captionpos=b,                         % 标题位置
+    keepspaces=true,                      % 保持空格
+    numbers=left,                         % 行号位置
+    numbersep=10pt,                       % 行号与代码距离
+    showspaces=false,                     % 不显示空格
+    showstringspaces=false,               % 不显示字符串中的空格
+    showtabs=false,                       % 不显示制表符
+    tabsize=2,                            % 制表符宽度
+    frame=single,                         % 框架
+    rulecolor=\color{black},              % 框架颜色
+    title=\lstname,                       % 显示文件名
+    morekeywords={*,...}                  % 自定义关键词
+}
+
+% 支持代码折叠
+\lstdefinelanguage{R}{
+    keywords={if, else, repeat, while, function, for, in, next, break},
+    otherkeywords={TRUE, FALSE, NULL, Inf, NaN, NA, NA_integer_, NA_real_, NA_complex_, NA_character_},
+    morecomment=[l]\#,                 % 行注释
+    morestring=[b]",                   % 双引号字符串
+    morestring=[b]'                    % 单引号字符串
+}
+
+\lstset{style=mystyle, language=R}

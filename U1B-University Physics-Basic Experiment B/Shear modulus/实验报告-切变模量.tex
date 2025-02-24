@@ -1,0 +1,201 @@
+%实验报告-切变模量
+
+%文档类型
+\documentclass[a4paper]{article}%A4纸，文档类型为论文
+
+%宏包
+%文字设置
+\usepackage[UTF8]{ctex}%处理中文
+\usepackage{xeCJK}%处理中文
+\usepackage{fontspec,xunicode,xltxtra}%字体设置
+%文档&排版设置
+\usepackage{titlesec}%自定义章节标题样式
+\usepackage{multicol}%分栏
+\usepackage{hyperref}%超链接设置\daleth 
+\usepackage{multirow,makecell}%制作复杂表格
+\usepackage{booktabs}%画三线表要用
+\usepackage{float}%图片、表格等位置浮动排版
+\usepackage{indentfirst}%首行缩进
+\usepackage{graphicx,subfigure}%图片插入
+\usepackage{listings}%代码高亮
+\usepackage{xcolor}
+\usepackage{appendix}%附录
+\usepackage{fancyhdr}%页眉页脚
+\usepackage{geometry}%页边距
+\usepackage{caption}
+%数学
+\usepackage{amsmath,amssymb}%公式
+\usepackage{amsfonts,mathrsfs,txfonts}%数学字体
+\usepackage{array}%矩阵
+\usepackage{gensymb}%角度单位“度”的命令：\degree
+
+\geometry{a4paper,scale=0.8}%设置了纸张为a4，并且版心占页面长度的比例为80%；scale也可以改为ratio，表示版面边距占页面长度的比例.
+\hypersetup{colorlinks=true,linkcolor=black,citecolor=black}%去掉目录等超链接所带的红框，并让参考文献的引用颜色为黑色
+\setlength{\parindent}{2em}%首行缩进2字符
+\lstset{
+    columns=fixed,
+    numbers=left, % 在左侧显示行号
+    numberstyle=\footnotesize\color{darkgray},% 设定行号格式
+    backgroundcolor=\color[RGB]{245,245,244},% 设定背景颜色
+    keywordstyle=\color[RGB]{40,40,255},% 设定关键字颜色
+    numberstyle=\color[RGB]{0,192,192},%行号数字样式
+    commentstyle=\it\color[RGB]{0,96,96},% 设置代码注释的格式
+    stringstyle=\rmfamily\slshape\color[RGB]{128,0,0},% 设置字符串格式
+}
+\pagestyle{fancy}%页眉页脚
+\fancyhead{}%清空页眉
+\fancyhead[C]{\emph{实验报告II：切变模量}}
+
+
+\newcommand{\kaiti}{\CJKfamily{STKaiti}} % 楷体：\kaiti或\emph
+\newcommand{\fs}{\CJKfamily{STFangsong}} % 仿宋：\fs或\fangsong
+%黑体：\heiti
+
+\newcommand{\suo}{\indent}%缩进2个字符
+
+\title{\heiti{实验报告}}%标题
+\author{{\emph{李佩哲}}}
+\date{\emph{\small\today}}
+
+\begin{document}
+\begin{center}
+\center{\bf{\LARGE{实验报告}\\\large{切变模量}}}\\
+\emph{李佩哲~~~PB21051049~~~\\\today}
+\end{center}
+\section{实验目的}
+测量金属丝的扭转模量与切变模量.
+
+\section{原理}
+根据剪切胡克定律$$\tau=G\gamma$$有$$\tau_\rho=G\gamma_\rho=G\rho \frac{\text d\phi}{\text dl}$$
+于是横截面上距轴线距离$\rho$处切应力恢复力矩为$$\tau \rho 2\pi\rho\text d\rho=2\pi G\rho^3\frac{\text d\phi}{\text dl}\text d\rho$$
+从而总恢复力矩为$$M=\frac{\pi}{2}GR^4\frac{\phi}{L}$$
+故$$G=\frac{2ML}{\pi R^4\phi}$$
+让金属丝与摆进行转动，根据简谐运动的规律，有$$T_0=2\pi \sqrt{\frac{I_0}{D}}$$
+其中$I_0$为摆的转动惯量.~为了便于测量与计算，在圆盘上放置一质量为$m$的金属环，则扭摆的周期变为$$T_1=2\pi\sqrt{\frac{I_0+I_1}{D}}$$
+结合之前的式子，最终可得$$D=\frac{2\pi^2m\left(r_{\text{内}}^2+r_{\text{外}}^2\right)}{T_1^2-T_0^2}$$
+$$G=\frac{4\pi Lm\left(r_{\text{内}}^2+r_{\text{外}}^2\right)}{R^4\left(T_1^2-T_0^2\right)}$$
+根据这个式子，扭转模量$D$与切变模量$G$可求.
+
+\section{实验仪器}
+扭摆、金属环、秒表等.
+
+\section{测量记录}
+原始数据见附件.\\整理如下
+\begin{table}[H]
+    \begin{minipage}{0.2\linewidth}
+        \centering
+        \begin{tabular}{ccc}
+            \toprule
+            数据  & 值\\
+            \midrule
+            $L$/m & 0.4420\\
+            $m$/kg & 0.5645\\
+            $d_\text{内}$/m & 0.08402\\
+            $d_\text{外}$/m & 0.10378\\
+            \bottomrule
+        \end{tabular}
+        \caption{次要误差数据}\label{1}
+    \end{minipage}
+    \begin{minipage}{0.4\linewidth}  
+        \centering
+        \begin{tabular}{ccc} 
+            \toprule
+            序号 &零误差/mm & $d$/m\\
+            \midrule
+            1&0.000&0.000781\\
+            2&0.000&0.000779\\
+            3&0.000&0.000779\\
+            4&0.000&0.000776\\
+            5&0.000&0.000776\\
+            6&0.000&0.000776\\
+            7&0.000&0.000775\\
+            8&0.000&0.000778\\
+            9&0.000&0.000779\\
+            \bottomrule
+        \end{tabular}
+        \caption{金属丝直径}\label{2}
+    \end{minipage}
+    \begin{minipage}{0.3\linewidth}  
+        \centering
+        \begin{tabular}{ccc} 
+            \toprule
+            序号 &$t_0\left(\pi,50T\right)$/s & $t_1\left(\pi,80T\right)$/s\\
+            \midrule
+            1&301.29&112.66\\
+            2&301.25&112.73\\
+            3&301.32&112.81\\
+            4&301.36&112.79\\
+            5&301.32&112.80\\
+            6&301.31&112.89\\
+            \bottomrule
+        \end{tabular}
+        \caption{总时间}\label{3}
+    \end{minipage}
+\end{table}
+
+\section{分析与讨论}
+\subsubsection{数据处理}
+由表\ref{1}可知，$L=0.4420~\text m$，$m=0.5645~\text{kg}$，$r_{\text 内}=0.04201~\text m$，$r_{\text 外}=0.05189~\text m$.
+
+由表\ref{2}可知，金属丝半径$R\approx0.00038883~\text m$.
+
+由表\ref{3}可知，$T_1\approx3.7664~\text s$，$T_0\approx2.2556~\text s$.
+
+所以$D=\frac{2\pi^2m\left(r_{\text{内}}^2+r_{\text{外}}^2\right)}{T_1^2-T_0^2}=5.4594\times 10^{-3}~$N$\cdot$m，
+$G=\frac{4\pi Lm\left(r_{\text{内}}^2+r_{\text{外}}^2\right)}{R^4\left(T_1^2-T_0^2\right)}\approx67.204$~GPa.
+
+
+\subsubsection{误差分析}
+由$D=\frac{2\pi^2m\left(r_{\text{内}}^2+r_{\text{外}}^2\right)}{T_1^2-T_0^2}$知，相对不确定度
+\begin{equation*}
+    \begin{aligned}
+        \frac{\Delta D}{D}&=\sqrt{
+            \left(\frac{\Delta m}{m}\right)^2
+            +\left(\frac{2r_{\text{内}}\Delta r_{\text{内}}}{r_{\text{内}}^2+r_{\text{外}}^2}\right)^2
+            +\left(\frac{2r_{\text{外}}\Delta r_{\text{外}}}{r_{\text{内}}^2+r_{\text{外}}^2}\right)^2
+            +\left(\frac{2T_1\Delta t}{n_1\left(T_1^2-T_0^2\right)}\right)^2
+            +\left(\frac{2T_0\Delta t}{n_0\left(T_1^2-T_0^2\right)}\right)^2}\\
+        &=\sqrt{
+            \left(\frac{0.1461}{564.5}\right)^2
+            +\left(\frac{2\times 0.04201\times 2.124\times 10^{-5}}{0.04201^2+0.05189^2}\right)^2
+            +\left(\frac{2\times 0.05189\times 2.124\times 10^{-5}}{0.04201^2+0.05189^2}\right)^2}\\
+            &\overline{
+            +\left[\frac{2\times 3.7664\times 0.074968}{80\left(3.7664^2-2.2556^2\right)}\right]^2
+            +\left[\frac{2\times 2.2556\times 0.035621}{50\left(3.7664^2-2.2556^2\right)}\right]^2
+            }=0.109472\%
+    \end{aligned}
+\end{equation*}
+由$G=\frac{4\pi Lm\left(r_{\text{内}}^2+r_{\text{外}}^2\right)}{R^4\left(T_1^2-T_0^2\right)}$
+知，相对不确定度
+\begin{equation*}
+    \begin{aligned}
+        \frac{\Delta G}{G}&=\sqrt{
+            \left(\frac{\Delta L}{L}\right)^2
+            +\left(\frac{\Delta m}{m}\right)^2
+            +\left(\frac{2r_{\text{内}}\Delta r_{\text{内}}}{r_{\text{内}}^2+r_{\text{外}}^2}\right)^2
+            +\left(\frac{2r_{\text{外}}\Delta r_{\text{外}}}{r_{\text{内}}^2+r_{\text{外}}^2}\right)^2
+            +\left(\frac{4\Delta R}{R}\right)^2
+            +\left(\frac{2T_1\Delta t}{n_1\left(T_1^2-T_0^2\right)}\right)^2
+            +\left(\frac{2T_0\Delta t}{n_0\left(T_1^2-T_0^2\right)}\right)^2}\\
+        &=\sqrt{
+            \left(\frac{0.001021}{0.4420}\right)^2
+            +\left(\frac{0.1461}{564.5}\right)^2
+            +\left(\frac{2\times 0.04201\times 2.124\times 10^{-5}}{0.04201^2+0.05189^2}\right)^2
+            +\left(\frac{2\times 0.05189\times 2.124\times 10^{-5}}{0.04201^2+0.05189^2}\right)^2}\\
+            &\overline{
+            +\left(\frac{4\times 4.246\times 10^{-6}}{0.0003883}\right)^2
+            +\left[\frac{2\times 3.7664\times 0.074968}{80\left(3.7664^2-2.2556^2\right)}\right]^2
+            +\left[\frac{2\times 2.2556\times 0.035621}{50\left(3.7664^2-2.2556^2\right)}\right]^2
+            }=4.38129\%
+    \end{aligned}
+\end{equation*}
+故$\Delta D=0.109472\%D=5.977\times 10^{-6}~$N$\cdot$m，$\Delta G=4.38129\%G=2.944~$GPa
+
+综上，$D=5.4594\pm 0.005977~$N$\cdot$mm，$G=67.204\pm 2.944~$GPa
+
+\section{思考}
+位了提高实验精度，本实验对主要误差的来源的物理量进行了多次测量，并在设计实验时结合已知数据进行适当的估算。
+
+在具体测量时应注意控制变量，保持金属丝伸直、圆盘转动水平等等。·
+
+\end{document}

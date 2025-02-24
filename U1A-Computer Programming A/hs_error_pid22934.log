@@ -1,0 +1,1619 @@
+#
+# A fatal error has been detected by the Java Runtime Environment:
+#
+#  SIGSEGV (0xb) at pc=0x00007ff819c31ce4, pid=22934, tid=0x0000000000023603
+#
+# JRE version: Java(TM) SE Runtime Environment (8.0_202-b08) (build 1.8.0_202-b08)
+# Java VM: Java HotSpot(TM) 64-Bit Server VM (25.202-b08 mixed mode bsd-amd64 compressed oops)
+# Problematic frame:
+# C  [dyld+0x2cce4]  lsl::AllocationMetadata::freeObject()+0x58
+#
+# Failed to write core dump. Core dumps have been disabled. To enable core dumping, try "ulimit -c unlimited" before starting Java again
+#
+# If you would like to submit a bug report, please visit:
+#   http://bugreport.java.com/bugreport/crash.jsp
+# The crash happened outside the Java Virtual Machine in native code.
+# See problematic frame for where to report the bug.
+#
+
+---------------  T H R E A D  ---------------
+
+Current thread (0x00007fb984ad7800):  JavaThread "PathDataService:publishFoldersInRootLocation" daemon [_thread_in_native, id=144899, stack(0x00007000126fc000,0x00007000127fc000)]
+
+siginfo: si_signo: 11 (SIGSEGV), si_code: 1 (SEGV_MAPERR), si_addr: 0x0000000000000800
+
+Registers:
+RAX=0x0000000000000010, RBX=0x0000000157983198, RCX=0x00007ff819c88104, RDX=0x0000000000000010
+RSP=0x00007000127fa380, RBP=0x00007000127fa380, RSI=0x0000000133962800, RDI=0x0000000000000800
+R8 =0x0000000000000000, R9 =0x0000000000000000, R10=0x000000015852f000, R11=0x000000010c2f9f01
+R12=0x00007000127fa6b0, R13=0x00007000127fa628, R14=0x0000000157983180, R15=0x0000000000000008
+RIP=0x00007ff819c31ce4, EFLAGS=0x0000000000010202, ERR=0x0000000000000004
+  TRAPNO=0x000000000000000e
+
+Top of Stack: (sp=0x00007000127fa380)
+0x00007000127fa380:   00007000127fa3a0 00007ff819c422cb
+0x00007000127fa390:   0000000157983840 0000000157983800
+0x00007000127fa3a0:   00007000127fa3d0 00007ff819c19807
+0x00007000127fa3b0:   00007ff819c31b3c 00000001579854a8
+0x00007000127fa3c0:   0000000157985400 00000001579854b8
+0x00007000127fa3d0:   00007000127fa400 00007ff819c197d3
+0x00007000127fa3e0:   00007ff819c31b3c 000000015796f488
+0x00007000127fa3f0:   000000015796f400 000000015796f498
+0x00007000127fa400:   00007000127fa430 00007ff819c197d3
+0x00007000127fa410:   00007ff819c31b3c 000000015795f040
+0x00007000127fa420:   000000010c2e4c30 000000010c2e4c30
+0x00007000127fa430:   00007000127fa450 00007ff819c19764
+0x00007000127fa440:   00007ff819c31b3c 000000015795f040
+0x00007000127fa450:   00007000127fa470 00007ff819c1928d
+0x00007000127fa460:   00007000127fa600 00007ff859ba0fe0
+0x00007000127fa470:   00007000127fa710 00007ff819c3c80c
+0x00007000127fa480:   000000010c312910 00007ff819c3c342
+0x00007000127fa490:   00007fb981700000 000000010cbbc000
+0x00007000127fa4a0:   00000000000fc000 000000013398b300
+0x00007000127fa4b0:   05007fb981700000 000000010c2e4c30
+0x00007000127fa4c0:   00007fb9817f4b50 0000000000000000
+0x00007000127fa4d0:   00007000127fa518 000000010c2e4c30
+0x00007000127fa4e0:   00007000127fa500 00007ff819c11fff
+0x00007000127fa4f0:   00007000127fa550 00007ff859ba0fe0
+0x00007000127fa500:   00007000127fa580 00007ff819c39989
+0x00007000127fa510:   00007ffc99b73e58 00007ff85bc7f360
+0x00007000127fa520:   0000000042000000 00007ff819c3c2ef
+0x00007000127fa530:   00007ff859b74a20 00007000127fa550
+0x00007000127fa540:   000000010c2e4c30 000000010cbe9127
+0x00007000127fa550:   0000000000000000 00007000127fa550
+0x00007000127fa560:   0000000000000108 00007ff819c81fb0
+0x00007000127fa570:   00007ff819c0d867 0000000000000108 
+
+Instructions: (pc=0x00007ff819c31ce4)
+0x00007ff819c31cc4:   00 8a 0c 0a 48 d3 e0 48 83 c0 10 48 83 f8 11 ba
+0x00007ff819c31cd4:   10 00 00 00 48 0f 43 d0 48 83 c2 0f 48 83 e2 f0
+0x00007ff819c31ce4:   48 8b 07 48 8b 40 40 5d ff e0 48 85 f6 74 64 55
+0x00007ff819c31cf4:   48 89 e5 48 8b 56 f0 48 83 c6 f0 48 8d 0c d5 00 
+
+Register to memory mapping:
+
+RAX=0x0000000000000010 is an unknown value
+RBX=0x0000000157983198 is an unknown value
+RCX=0x00007ff819c88104: _ZN5dyld3L11sVersionMapE+0x374 in /usr/lib/dyld at 0x00007ff819c05000
+RDX=0x0000000000000010 is an unknown value
+RSP=0x00007000127fa380 is pointing into the stack for thread: 0x00007fb984ad7800
+RBP=0x00007000127fa380 is pointing into the stack for thread: 0x00007fb984ad7800
+RSI=0x0000000133962800 is an unknown value
+RDI=0x0000000000000800 is an unknown value
+R8 =0x0000000000000000 is an unknown value
+R9 =0x0000000000000000 is an unknown value
+R10=0x000000015852f000 is an unknown value
+R11=0x000000010c2f9f01 is an unknown value
+R12=0x00007000127fa6b0 is pointing into the stack for thread: 0x00007fb984ad7800
+R13=0x00007000127fa628 is pointing into the stack for thread: 0x00007fb984ad7800
+R14=0x0000000157983180 is an unknown value
+R15=0x0000000000000008 is an unknown value
+
+
+Stack: [0x00007000126fc000,0x00007000127fc000],  sp=0x00007000127fa380,  free space=1016k
+Native frames: (J=compiled Java code, j=interpreted, Vv=VM code, C=native code)
+C  [dyld+0x2cce4]  lsl::AllocationMetadata::freeObject()+0x58
+C  [dyld+0x3d2cb]  lsl::UniquePtr<dyld4::Atlas::Image>::~UniquePtr()+0x3b
+C  [dyld+0x14807]  lsl::BTree<lsl::UniquePtr<dyld4::Atlas::Image>, std::__1::less<lsl::UniquePtr<dyld4::Atlas::Image> >, false>::NodeCore<31u, 15u>::deallocateChildren()+0x65
+C  [dyld+0x147d3]  lsl::BTree<lsl::UniquePtr<dyld4::Atlas::Image>, std::__1::less<lsl::UniquePtr<dyld4::Atlas::Image> >, false>::NodeCore<31u, 15u>::deallocateChildren()+0x31
+C  [dyld+0x147d3]  lsl::BTree<lsl::UniquePtr<dyld4::Atlas::Image>, std::__1::less<lsl::UniquePtr<dyld4::Atlas::Image> >, false>::NodeCore<31u, 15u>::deallocateChildren()+0x31
+C  [dyld+0x14764]  lsl::BTree<lsl::UniquePtr<dyld4::Atlas::Image>, std::__1::less<lsl::UniquePtr<dyld4::Atlas::Image> >, false>::clear()+0x16
+C  [dyld+0x1428d]  dyld4::RuntimeState::freeProcessSnapshot()+0x3d
+C  [dyld+0x3780c]  dyld4::APIs::dlopen_from(char const*, int, void*)+0x35a
+C  [libCppMicroServices.3.7.4.dylib+0x2d127]  cppmicroservices::SharedLibrary::Load(int)+0x57
+C  [libDeclarativeServices.1.5.0.dylib+0x355fc]  boost::asio::detail::executor_op<boost::asio::detail::work_dispatcher<cppmicroservices::scrimpl::FallbackAsyncWorkService::post(std::__1::packaged_task<void ()>&&)::'lambda'()>, std::__1::allocator<void>, boost::asio::detail::scheduler_operation>::do_complete(void*, boost::asio::detail::scheduler_operation*, boost::system::error_code const&, unsigned long)+0x14d0c
+C  [libDeclarativeServices.1.5.0.dylib+0x4dcd2]  boost::asio::detail::executor_op<boost::asio::detail::work_dispatcher<cppmicroservices::scrimpl::FallbackAsyncWorkService::post(std::__1::packaged_task<void ()>&&)::'lambda'()>, std::__1::allocator<void>, boost::asio::detail::scheduler_operation>::do_complete(void*, boost::asio::detail::scheduler_operation*, boost::system::error_code const&, unsigned long)+0x2d3e2
+C  [libDeclarativeServices.1.5.0.dylib+0x4dec9]  boost::asio::detail::executor_op<boost::asio::detail::work_dispatcher<cppmicroservices::scrimpl::FallbackAsyncWorkService::post(std::__1::packaged_task<void ()>&&)::'lambda'()>, std::__1::allocator<void>, boost::asio::detail::scheduler_operation>::do_complete(void*, boost::asio::detail::scheduler_operation*, boost::system::error_code const&, unsigned long)+0x2d5d9
+C  [libDeclarativeServices.1.5.0.dylib+0x4e08c]  boost::asio::detail::executor_op<boost::asio::detail::work_dispatcher<cppmicroservices::scrimpl::FallbackAsyncWorkService::post(std::__1::packaged_task<void ()>&&)::'lambda'()>, std::__1::allocator<void>, boost::asio::detail::scheduler_operation>::do_complete(void*, boost::asio::detail::scheduler_operation*, boost::system::error_code const&, unsigned long)+0x2d79c
+C  [libDeclarativeServices.1.5.0.dylib+0x6baa9]  boost::asio::detail::executor_op<boost::asio::detail::work_dispatcher<cppmicroservices::scrimpl::FallbackAsyncWorkService::post(std::__1::packaged_task<void ()>&&)::'lambda'()>, std::__1::allocator<void>, boost::asio::detail::scheduler_operation>::do_complete(void*, boost::asio::detail::scheduler_operation*, boost::system::error_code const&, unsigned long)+0x4b1b9
+C  [libDeclarativeServices.1.5.0.dylib+0x7105b]  boost::asio::detail::executor_op<boost::asio::detail::work_dispatcher<cppmicroservices::scrimpl::FallbackAsyncWorkService::post(std::__1::packaged_task<void ()>&&)::'lambda'()>, std::__1::allocator<void>, boost::asio::detail::scheduler_operation>::do_complete(void*, boost::asio::detail::scheduler_operation*, boost::system::error_code const&, unsigned long)+0x5076b
+C  [libDeclarativeServices.1.5.0.dylib+0x734b3]  boost::asio::detail::executor_op<boost::asio::detail::work_dispatcher<cppmicroservices::scrimpl::FallbackAsyncWorkService::post(std::__1::packaged_task<void ()>&&)::'lambda'()>, std::__1::allocator<void>, boost::asio::detail::scheduler_operation>::do_complete(void*, boost::asio::detail::scheduler_operation*, boost::system::error_code const&, unsigned long)+0x52bc3
+C  [libDeclarativeServices.1.5.0.dylib+0x4d8b6]  boost::asio::detail::executor_op<boost::asio::detail::work_dispatcher<cppmicroservices::scrimpl::FallbackAsyncWorkService::post(std::__1::packaged_task<void ()>&&)::'lambda'()>, std::__1::allocator<void>, boost::asio::detail::scheduler_operation>::do_complete(void*, boost::asio::detail::scheduler_operation*, boost::system::error_code const&, unsigned long)+0x2cfc6
+C  [libDeclarativeServices.1.5.0.dylib+0x6c277]  boost::asio::detail::executor_op<boost::asio::detail::work_dispatcher<cppmicroservices::scrimpl::FallbackAsyncWorkService::post(std::__1::packaged_task<void ()>&&)::'lambda'()>, std::__1::allocator<void>, boost::asio::detail::scheduler_operation>::do_complete(void*, boost::asio::detail::scheduler_operation*, boost::system::error_code const&, unsigned long)+0x4b987
+C  [libDeclarativeServices.1.5.0.dylib+0x6c733]  boost::asio::detail::executor_op<boost::asio::detail::work_dispatcher<cppmicroservices::scrimpl::FallbackAsyncWorkService::post(std::__1::packaged_task<void ()>&&)::'lambda'()>, std::__1::allocator<void>, boost::asio::detail::scheduler_operation>::do_complete(void*, boost::asio::detail::scheduler_operation*, boost::system::error_code const&, unsigned long)+0x4be43
+C  [libCppMicroServices.3.7.4.dylib+0x4e78a]  cppmicroservices::operator<<(std::__1::basic_ostream<char, std::__1::char_traits<char> >&, cppmicroservices::ServiceReferenceBase const&)+0x87a
+C  [libCppMicroServices.3.7.4.dylib+0x50c3a]  cppmicroservices::operator<<(std::__1::basic_ostream<char, std::__1::char_traits<char> >&, cppmicroservices::ServiceReferenceBase const&)+0x2d2a
+C  [libCppMicroServices.3.7.4.dylib+0x4ab7c]  cppmicroservices::ServiceObjectsBase::GetService() const+0x4bc
+C  [libCppMicroServices.3.7.4.dylib+0x4a705]  cppmicroservices::ServiceObjectsBase::GetService() const+0x45
+C  [libnativemldrivedesktop.dylib+0x6f5d]  Java_com_mathworks_storage_matlabdrivedesktop_NativeMatlabDriveAccess_isSharingIntegrationEnabledNative+0xbcd
+C  [libnativemldrivedesktop.dylib+0x42d0]  Java_com_mathworks_storage_matlabdrivedesktop_NativeMatlabDriveAccess_getMATLABDriveLocationNative+0x3f0
+j  com.mathworks.storage.matlabdrivedesktop.NativeMatlabDriveAccess.getMATLABDriveLocationNative(ZI)Ljava/lang/String;+0
+j  com.mathworks.storage.matlabdrivedesktop.NativeMatlabDriveAccess.getMATLABDrivePath(ZI)Ljava/lang/String;+2
+j  com.mathworks.storage.matlabdrivedesktop.NativeMatlabDriveAccess.getMATLABDrivePath(Z)Ljava/lang/String;+3
+j  com.mathworks.storage.matlabdrivedesktop.NativeMatlabDriveAccess.getMATLABDrivePath()Ljava/lang/String;+2
+j  com.mathworks.storage.matlabdrivedesktop.MatlabDriveAddressBarPlugin.isEnabled()Z+16
+j  com.mathworks.pathdataservice.PathDataService.getCustomRoots()Ljava/util/ArrayList;+39
+j  com.mathworks.pathdataservice.PathDataService.lambda$publishFoldersInRootLocation$0(Ljava/lang/String;)V+0
+j  com.mathworks.pathdataservice.PathDataService$$Lambda$33.run()V+4
+j  java.util.concurrent.Executors$RunnableAdapter.call()Ljava/lang/Object;+4
+j  java.util.concurrent.FutureTask.run()V+42
+j  java.util.concurrent.ThreadPoolExecutor.runWorker(Ljava/util/concurrent/ThreadPoolExecutor$Worker;)V+95
+j  java.util.concurrent.ThreadPoolExecutor$Worker.run()V+5
+j  java.lang.Thread.run()V+11
+v  ~StubRoutines::call_stub
+V  [libjvm.dylib+0x2f0d1e]  JavaCalls::call_helper(JavaValue*, methodHandle*, JavaCallArguments*, Thread*)+0x6ae
+V  [libjvm.dylib+0x2f14c2]  JavaCalls::call_virtual(JavaValue*, KlassHandle, Symbol*, Symbol*, JavaCallArguments*, Thread*)+0x164
+V  [libjvm.dylib+0x2f166e]  JavaCalls::call_virtual(JavaValue*, Handle, KlassHandle, Symbol*, Symbol*, Thread*)+0x4a
+V  [libjvm.dylib+0x34bf5d]  thread_entry(JavaThread*, Thread*)+0x7c
+V  [libjvm.dylib+0x570b93]  JavaThread::thread_main_inner()+0x9b
+V  [libjvm.dylib+0x57228e]  JavaThread::run()+0x1c2
+V  [libjvm.dylib+0x48f30a]  java_start(Thread*)+0xf6
+C  [libsystem_pthread.dylib+0x6259]  _pthread_start+0x7d
+C  [libsystem_pthread.dylib+0x1c7b]  thread_start+0xf
+C  0x0000000000000000
+
+Java frames: (J=compiled Java code, j=interpreted, Vv=VM code)
+j  com.mathworks.storage.matlabdrivedesktop.NativeMatlabDriveAccess.getMATLABDriveLocationNative(ZI)Ljava/lang/String;+0
+j  com.mathworks.storage.matlabdrivedesktop.NativeMatlabDriveAccess.getMATLABDrivePath(ZI)Ljava/lang/String;+2
+j  com.mathworks.storage.matlabdrivedesktop.NativeMatlabDriveAccess.getMATLABDrivePath(Z)Ljava/lang/String;+3
+j  com.mathworks.storage.matlabdrivedesktop.NativeMatlabDriveAccess.getMATLABDrivePath()Ljava/lang/String;+2
+j  com.mathworks.storage.matlabdrivedesktop.MatlabDriveAddressBarPlugin.isEnabled()Z+16
+j  com.mathworks.pathdataservice.PathDataService.getCustomRoots()Ljava/util/ArrayList;+39
+j  com.mathworks.pathdataservice.PathDataService.lambda$publishFoldersInRootLocation$0(Ljava/lang/String;)V+0
+j  com.mathworks.pathdataservice.PathDataService$$Lambda$33.run()V+4
+j  java.util.concurrent.Executors$RunnableAdapter.call()Ljava/lang/Object;+4
+j  java.util.concurrent.FutureTask.run()V+42
+j  java.util.concurrent.ThreadPoolExecutor.runWorker(Ljava/util/concurrent/ThreadPoolExecutor$Worker;)V+95
+j  java.util.concurrent.ThreadPoolExecutor$Worker.run()V+5
+j  java.lang.Thread.run()V+11
+v  ~StubRoutines::call_stub
+
+---------------  P R O C E S S  ---------------
+
+Java Threads: ( => current thread )
+  0x00007fb98423d000 JavaThread "TimerQueue" daemon [_thread_blocked, id=155139, stack(0x0000700012067000,0x0000700012167000)]
+  0x00007fb98feef800 JavaThread "CachedLightweightBrowserFactory" daemon [_thread_in_native, id=158979, stack(0x0000700012902000,0x0000700012a02000)]
+  0x00007fb98ed4a000 JavaThread "PathDataService cache" daemon [_thread_blocked, id=159235, stack(0x00007000127ff000,0x00007000128ff000)]
+=>0x00007fb984ad7800 JavaThread "PathDataService:publishFoldersInRootLocation" daemon [_thread_in_native, id=144899, stack(0x00007000126fc000,0x00007000127fc000)]
+  0x00007fb98ec7e000 JavaThread "ConnectorFactory" daemon [_thread_blocked, id=143363, stack(0x00007000125f9000,0x00007000126f9000)]
+  0x00007fb983860000 JavaThread "Thread-3" daemon [_thread_blocked, id=143115, stack(0x00007000124f6000,0x00007000125f6000)]
+  0x00007fb98eef5800 JavaThread "Image Fetcher 1" daemon [_thread_blocked, id=160267, stack(0x00007000123f3000,0x00007000124f3000)]
+  0x00007fb98e6fe000 JavaThread "AWT-EventQueue-0" [_thread_blocked, id=142595, stack(0x000070001226d000,0x000070001236d000)]
+  0x00007fb98383b800 JavaThread "AWT-Shutdown" [_thread_blocked, id=141083, stack(0x000070001216a000,0x000070001226a000)]
+  0x00007fb998120000 JavaThread "Image Fetcher 0" daemon [_thread_blocked, id=141571, stack(0x0000700011f64000,0x0000700012064000)]
+  0x00007fb98cef4000 JavaThread "Java2D Disposer" daemon [_thread_blocked, id=141319, stack(0x0000700011e61000,0x0000700011f61000)]
+  0x00007fb98e858000 JavaThread "Java2D Queue Flusher" daemon [_thread_blocked, id=138247, stack(0x0000700011d5e000,0x0000700011e5e000)]
+  0x00007fb98e863000 JavaThread "AppKit Thread" daemon [_thread_in_native, id=259, stack(0x00007ff7b3446000,0x00007ff7b3c46000)]
+  0x00007fb98dc41800 JavaThread "Settings Releaser" daemon [_thread_blocked, id=165127, stack(0x0000700011c5b000,0x0000700011d5b000)]
+  0x00007fb9984df800 JavaThread "EventMgr Dispatcher" daemon [_thread_in_native, id=100879, stack(0x000070000fa07000,0x0000700010207000)]
+  0x00007fb9991ab000 JavaThread "MatlabKeepAlive Timer" daemon [_thread_blocked, id=165643, stack(0x0000700011b58000,0x0000700011c58000)]
+  0x00007fb98c9a1800 JavaThread "Service Thread" daemon [_thread_blocked, id=166407, stack(0x0000700011952000,0x0000700011a52000)]
+  0x00007fb98f931000 JavaThread "C1 CompilerThread11" daemon [_thread_blocked, id=166915, stack(0x000070001184f000,0x000070001194f000)]
+  0x00007fb98f930800 JavaThread "C1 CompilerThread10" daemon [_thread_blocked, id=167171, stack(0x000070001174c000,0x000070001184c000)]
+  0x00007fb98e13e000 JavaThread "C1 CompilerThread9" daemon [_thread_blocked, id=167683, stack(0x0000700011649000,0x0000700011749000)]
+  0x00007fb98d8ca000 JavaThread "C1 CompilerThread8" daemon [_thread_blocked, id=167939, stack(0x0000700011546000,0x0000700011646000)]
+  0x00007fb98e13d800 JavaThread "C2 CompilerThread7" daemon [_thread_blocked, id=135427, stack(0x0000700011443000,0x0000700011543000)]
+  0x00007fb999147800 JavaThread "C2 CompilerThread6" daemon [_thread_blocked, id=135171, stack(0x0000700011340000,0x0000700011440000)]
+  0x00007fb98e0e4800 JavaThread "C2 CompilerThread5" daemon [_thread_blocked, id=168963, stack(0x000070001123d000,0x000070001133d000)]
+  0x00007fb98f92f800 JavaThread "C2 CompilerThread4" daemon [_thread_blocked, id=134915, stack(0x000070001113a000,0x000070001123a000)]
+  0x00007fb98f92f000 JavaThread "C2 CompilerThread3" daemon [_thread_blocked, id=169475, stack(0x0000700011037000,0x0000700011137000)]
+  0x00007fb98f92e000 JavaThread "C2 CompilerThread2" daemon [_thread_blocked, id=169987, stack(0x0000700010f34000,0x0000700011034000)]
+  0x00007fb98f92d800 JavaThread "C2 CompilerThread1" daemon [_thread_blocked, id=134403, stack(0x0000700010e31000,0x0000700010f31000)]
+  0x00007fb98f92b800 JavaThread "C2 CompilerThread0" daemon [_thread_in_native, id=170763, stack(0x0000700010d2e000,0x0000700010e2e000)]
+  0x00007fb98d8b6800 JavaThread "Attach Listener" daemon [_thread_blocked, id=171271, stack(0x0000700010c2b000,0x0000700010d2b000)]
+  0x00007fb98d8b8000 JavaThread "Finalizer" daemon [_thread_blocked, id=133635, stack(0x0000700010b28000,0x0000700010c28000)]
+  0x00007fb98e8ca800 JavaThread "Reference Handler" daemon [_thread_blocked, id=171783, stack(0x0000700010a25000,0x0000700010b25000)]
+  0x00007fb98e0fe800 JavaThread "main" [_thread_blocked, id=65027, stack(0x000070000e951000,0x000070000f151000)]
+
+Other Threads:
+  0x00007fb998124800 VMThread [stack: 0x0000700010922000,0x0000700010a22000] [id=133383]
+  0x00007fb99916c000 WatcherThread [stack: 0x0000700011a55000,0x0000700011b55000] [id=165891]
+
+VM state:not at safepoint (normal execution)
+
+VM Mutex/Monitor currently owned by a thread: None
+
+heap address: 0x0000000754000000, size: 1728 MB, Compressed Oops mode: Zero based, Oop shift amount: 3
+Narrow klass base: 0x0000000000000000, Narrow klass shift: 3
+Compressed class space size: 1073741824 Address: 0x00000007c0000000
+
+Heap:
+ PSYoungGen      total 130560K, used 53985K [0x00000007a5000000, 0x00000007af480000, 0x00000007c0000000)
+  eden space 125440K, 39% used [0x00000007a5000000,0x00000007a8011e18,0x00000007aca80000)
+  from space 5120K, 93% used [0x00000007aef80000,0x00000007af426988,0x00000007af480000)
+  to   space 6144K, 0% used [0x00000007ae880000,0x00000007ae880000,0x00000007aee80000)
+ ParOldGen       total 49152K, used 10082K [0x0000000754000000, 0x0000000757000000, 0x00000007a5000000)
+  object space 49152K, 20% used [0x0000000754000000,0x00000007549d8bf8,0x0000000757000000)
+ Metaspace       used 26135K, capacity 26498K, committed 26880K, reserved 1073152K
+  class space    used 3617K, capacity 3730K, committed 3840K, reserved 1048576K
+
+Card table byte_map: [0x000000014fffe000,0x000000015035f000] byte_map_base: 0x000000014c55e000
+
+Marking Bits: (ParMarkBitMap*) 0x0000000138614e40
+ Begin Bits: [0x00000001505e7000, 0x00000001520e7000)
+ End Bits:   [0x00000001520e7000, 0x0000000153be7000)
+
+Polling page: 0x000000010eb67000
+
+CodeCache: size=245760Kb used=8706Kb max_used=8706Kb free=237053Kb
+ bounds [0x0000000140c3e000, 0x00000001414ce000, 0x000000014fc3e000]
+ total_blobs=2683 nmethods=2094 adapters=499
+ compilation: enabled
+
+Compilation events (10 events):
+Event: 2.305 Thread 0x00007fb98f930800 2091       1       java.util.concurrent.locks.ReentrantReadWriteLock::writeLock (5 bytes)
+Event: 2.306 Thread 0x00007fb98f930800 nmethod 2091 0x00000001414bfed0 code [0x00000001414c0020, 0x00000001414c0130]
+Event: 2.310 Thread 0x00007fb98f931000 2092       1       com.google.gson.reflect.TypeToken::getRawType (5 bytes)
+Event: 2.310 Thread 0x00007fb98f931000 nmethod 2092 0x00000001414c0a10 code [0x00000001414c0b60, 0x00000001414c0c70]
+Event: 2.311 Thread 0x00007fb98e13e000 2093       1       java.awt.EventDispatchThread$1::evaluate (2 bytes)
+Event: 2.311 Thread 0x00007fb98d8ca000 2094  s    1       java.awt.EventDispatchThread::getEventQueue (5 bytes)
+Event: 2.311 Thread 0x00007fb98e13e000 nmethod 2093 0x00000001414c0cd0 code [0x00000001414c0e20, 0x00000001414c0f30]
+Event: 2.311 Thread 0x00007fb98d8ca000 nmethod 2094 0x00000001414c0f90 code [0x00000001414c10e0, 0x00000001414c1350]
+Event: 2.311 Thread 0x00007fb98d8ca000 2095       3       java.util.concurrent.locks.ReentrantReadWriteLock$Sync::exclusiveCount (5 bytes)
+Event: 2.311 Thread 0x00007fb98d8ca000 nmethod 2095 0x00000001414c13d0 code [0x00000001414c1520, 0x00000001414c1650]
+
+GC Heap History (10 events):
+Event: 0.961 GC heap before
+{Heap before GC invocations=7 (full 0):
+ PSYoungGen      total 52736K, used 51860K [0x00000007a5000000, 0x00000007a8700000, 0x00000007c0000000)
+  eden space 49152K, 100% used [0x00000007a5000000,0x00000007a8000000,0x00000007a8000000)
+  from space 3584K, 75% used [0x00000007a8380000,0x00000007a8625278,0x00000007a8700000)
+  to   space 3584K, 0% used [0x00000007a8000000,0x00000007a8000000,0x00000007a8380000)
+ ParOldGen       total 49152K, used 2139K [0x0000000754000000, 0x0000000757000000, 0x00000007a5000000)
+  object space 49152K, 4% used [0x0000000754000000,0x0000000754216e40,0x0000000757000000)
+ Metaspace       used 8378K, capacity 8568K, committed 8832K, reserved 1056768K
+  class space    used 986K, capacity 1034K, committed 1152K, reserved 1048576K
+Event: 0.964 GC heap after
+Heap after GC invocations=7 (full 0):
+ PSYoungGen      total 52736K, used 2643K [0x00000007a5000000, 0x00000007ab700000, 0x00000007c0000000)
+  eden space 49152K, 0% used [0x00000007a5000000,0x00000007a5000000,0x00000007a8000000)
+  from space 3584K, 73% used [0x00000007a8000000,0x00000007a8294dc8,0x00000007a8380000)
+  to   space 3584K, 0% used [0x00000007ab380000,0x00000007ab380000,0x00000007ab700000)
+ ParOldGen       total 49152K, used 3098K [0x0000000754000000, 0x0000000757000000, 0x00000007a5000000)
+  object space 49152K, 6% used [0x0000000754000000,0x0000000754306b88,0x0000000757000000)
+ Metaspace       used 8378K, capacity 8568K, committed 8832K, reserved 1056768K
+  class space    used 986K, capacity 1034K, committed 1152K, reserved 1048576K
+}
+Event: 1.088 GC heap before
+{Heap before GC invocations=8 (full 0):
+ PSYoungGen      total 52736K, used 51795K [0x00000007a5000000, 0x00000007ab700000, 0x00000007c0000000)
+  eden space 49152K, 100% used [0x00000007a5000000,0x00000007a8000000,0x00000007a8000000)
+  from space 3584K, 73% used [0x00000007a8000000,0x00000007a8294dc8,0x00000007a8380000)
+  to   space 3584K, 0% used [0x00000007ab380000,0x00000007ab380000,0x00000007ab700000)
+ ParOldGen       total 49152K, used 3098K [0x0000000754000000, 0x0000000757000000, 0x00000007a5000000)
+  object space 49152K, 6% used [0x0000000754000000,0x0000000754306b88,0x0000000757000000)
+ Metaspace       used 9810K, capacity 10044K, committed 10240K, reserved 1058816K
+  class space    used 1176K, capacity 1267K, committed 1280K, reserved 1048576K
+Event: 1.091 GC heap after
+Heap after GC invocations=8 (full 0):
+ PSYoungGen      total 101888K, used 2307K [0x00000007a5000000, 0x00000007ab700000, 0x00000007c0000000)
+  eden space 98304K, 0% used [0x00000007a5000000,0x00000007a5000000,0x00000007ab000000)
+  from space 3584K, 64% used [0x00000007ab380000,0x00000007ab5c0cb0,0x00000007ab700000)
+  to   space 3584K, 0% used [0x00000007ab000000,0x00000007ab000000,0x00000007ab380000)
+ ParOldGen       total 49152K, used 3655K [0x0000000754000000, 0x0000000757000000, 0x00000007a5000000)
+  object space 49152K, 7% used [0x0000000754000000,0x0000000754391ff8,0x0000000757000000)
+ Metaspace       used 9810K, capacity 10044K, committed 10240K, reserved 1058816K
+  class space    used 1176K, capacity 1267K, committed 1280K, reserved 1048576K
+}
+Event: 1.768 GC heap before
+{Heap before GC invocations=9 (full 0):
+ PSYoungGen      total 101888K, used 87979K [0x00000007a5000000, 0x00000007ab700000, 0x00000007c0000000)
+  eden space 98304K, 87% used [0x00000007a5000000,0x00000007aa3aa2c0,0x00000007ab000000)
+  from space 3584K, 64% used [0x00000007ab380000,0x00000007ab5c0cb0,0x00000007ab700000)
+  to   space 3584K, 0% used [0x00000007ab000000,0x00000007ab000000,0x00000007ab380000)
+ ParOldGen       total 49152K, used 3655K [0x0000000754000000, 0x0000000757000000, 0x00000007a5000000)
+  object space 49152K, 7% used [0x0000000754000000,0x0000000754391ff8,0x0000000757000000)
+ Metaspace       used 20739K, capacity 21070K, committed 21296K, reserved 1067008K
+  class space    used 2811K, capacity 2932K, committed 2944K, reserved 1048576K
+Event: 1.776 GC heap after
+Heap after GC invocations=9 (full 0):
+ PSYoungGen      total 101888K, used 3570K [0x00000007a5000000, 0x00000007af500000, 0x00000007c0000000)
+  eden space 98304K, 0% used [0x00000007a5000000,0x00000007a5000000,0x00000007ab000000)
+  from space 3584K, 99% used [0x00000007ab000000,0x00000007ab37c8d0,0x00000007ab380000)
+  to   space 5632K, 0% used [0x00000007aef80000,0x00000007aef80000,0x00000007af500000)
+ ParOldGen       total 49152K, used 8067K [0x0000000754000000, 0x0000000757000000, 0x00000007a5000000)
+  object space 49152K, 16% used [0x0000000754000000,0x00000007547e0d30,0x0000000757000000)
+ Metaspace       used 20739K, capacity 21070K, committed 21296K, reserved 1067008K
+  class space    used 2811K, capacity 2932K, committed 2944K, reserved 1048576K
+}
+Event: 1.776 GC heap before
+{Heap before GC invocations=10 (full 1):
+ PSYoungGen      total 101888K, used 3570K [0x00000007a5000000, 0x00000007af500000, 0x00000007c0000000)
+  eden space 98304K, 0% used [0x00000007a5000000,0x00000007a5000000,0x00000007ab000000)
+  from space 3584K, 99% used [0x00000007ab000000,0x00000007ab37c8d0,0x00000007ab380000)
+  to   space 5632K, 0% used [0x00000007aef80000,0x00000007aef80000,0x00000007af500000)
+ ParOldGen       total 49152K, used 8067K [0x0000000754000000, 0x0000000757000000, 0x00000007a5000000)
+  object space 49152K, 16% used [0x0000000754000000,0x00000007547e0d30,0x0000000757000000)
+ Metaspace       used 20739K, capacity 21070K, committed 21296K, reserved 1067008K
+  class space    used 2811K, capacity 2932K, committed 2944K, reserved 1048576K
+Event: 1.810 GC heap after
+Heap after GC invocations=10 (full 1):
+ PSYoungGen      total 101888K, used 0K [0x00000007a5000000, 0x00000007af500000, 0x00000007c0000000)
+  eden space 98304K, 0% used [0x00000007a5000000,0x00000007a5000000,0x00000007ab000000)
+  from space 3584K, 0% used [0x00000007ab000000,0x00000007ab000000,0x00000007ab380000)
+  to   space 5632K, 0% used [0x00000007aef80000,0x00000007aef80000,0x00000007af500000)
+ ParOldGen       total 49152K, used 10074K [0x0000000754000000, 0x0000000757000000, 0x00000007a5000000)
+  object space 49152K, 20% used [0x0000000754000000,0x00000007549d6bf8,0x0000000757000000)
+ Metaspace       used 20739K, capacity 21070K, committed 21296K, reserved 1067008K
+  class space    used 2811K, capacity 2932K, committed 2944K, reserved 1048576K
+}
+Event: 2.084 GC heap before
+{Heap before GC invocations=11 (full 1):
+ PSYoungGen      total 101888K, used 98304K [0x00000007a5000000, 0x00000007af500000, 0x00000007c0000000)
+  eden space 98304K, 100% used [0x00000007a5000000,0x00000007ab000000,0x00000007ab000000)
+  from space 3584K, 0% used [0x00000007ab000000,0x00000007ab000000,0x00000007ab380000)
+  to   space 5632K, 0% used [0x00000007aef80000,0x00000007aef80000,0x00000007af500000)
+ ParOldGen       total 49152K, used 10074K [0x0000000754000000, 0x0000000757000000, 0x00000007a5000000)
+  object space 49152K, 20% used [0x0000000754000000,0x00000007549d6bf8,0x0000000757000000)
+ Metaspace       used 23309K, capacity 23682K, committed 24192K, reserved 1071104K
+  class space    used 3226K, capacity 3352K, committed 3456K, reserved 1048576K
+Event: 2.088 GC heap after
+Heap after GC invocations=11 (full 1):
+ PSYoungGen      total 130560K, used 4762K [0x00000007a5000000, 0x00000007af480000, 0x00000007c0000000)
+  eden space 125440K, 0% used [0x00000007a5000000,0x00000007a5000000,0x00000007aca80000)
+  from space 5120K, 93% used [0x00000007aef80000,0x00000007af426988,0x00000007af480000)
+  to   space 6144K, 0% used [0x00000007ae880000,0x00000007ae880000,0x00000007aee80000)
+ ParOldGen       total 49152K, used 10082K [0x0000000754000000, 0x0000000757000000, 0x00000007a5000000)
+  object space 49152K, 20% used [0x0000000754000000,0x00000007549d8bf8,0x0000000757000000)
+ Metaspace       used 23309K, capacity 23682K, committed 24192K, reserved 1071104K
+  class space    used 3226K, capacity 3352K, committed 3456K, reserved 1048576K
+}
+
+Deoptimization events (10 events):
+Event: 1.936 Thread 0x00007fb98e0ce800 Uncommon trap: reason=unstable_if action=reinterpret pc=0x0000000141280360 method=java.util.Properties$LineReader.readLine()I @ 440
+Event: 2.124 Thread 0x00007fb98e0fe800 Uncommon trap: reason=bimorphic action=maybe_recompile pc=0x00000001413822f0 method=java.util.Hashtable.addEntry(ILjava/lang/Object;Ljava/lang/Object;I)V @ 38
+Event: 2.145 Thread 0x00007fb98e0fe800 Uncommon trap: reason=bimorphic action=maybe_recompile pc=0x00000001413822f0 method=java.util.Hashtable.addEntry(ILjava/lang/Object;Ljava/lang/Object;I)V @ 38
+Event: 2.173 Thread 0x00007fb98ec7e000 Uncommon trap: reason=bimorphic action=maybe_recompile pc=0x0000000141206304 method=java.util.HashMap.putVal(ILjava/lang/Object;Ljava/lang/Object;ZZ)Ljava/lang/Object; @ 203
+Event: 2.177 Thread 0x00007fb98e0fe800 Uncommon trap: reason=unstable_if action=reinterpret pc=0x000000014108385c method=java.lang.AbstractStringBuilder.append(Ljava/lang/String;)Ljava/lang/AbstractStringBuilder; @ 1
+Event: 2.177 Thread 0x00007fb98e0fe800 Uncommon trap: reason=unstable_if action=reinterpret pc=0x0000000141054444 method=java.lang.AbstractStringBuilder.append(Ljava/lang/String;)Ljava/lang/AbstractStringBuilder; @ 1
+Event: 2.192 Thread 0x00007fb98ec7e000 Uncommon trap: reason=bimorphic action=maybe_recompile pc=0x0000000141085bec method=java.lang.ThreadLocal.get()Ljava/lang/Object; @ 6
+Event: 2.194 Thread 0x00007fb98ec7e000 Uncommon trap: reason=class_check action=maybe_recompile pc=0x000000014137b218 method=java.util.AbstractList$Itr.hasNext()Z @ 8
+Event: 2.195 Thread 0x00007fb98ec7e000 Uncommon trap: reason=bimorphic action=maybe_recompile pc=0x0000000141085bec method=java.lang.ThreadLocal.get()Ljava/lang/Object; @ 6
+Event: 2.281 Thread 0x00007fb98e0ce800 Uncommon trap: reason=unstable_if action=reinterpret pc=0x000000014136b2ec method=java.lang.String.trim()Ljava/lang/String; @ 44
+
+Classes redefined (0 events):
+No events
+
+Internal exceptions (10 events):
+Event: 1.855 Thread 0x00007fb98e0fe800 Exception <a 'java/lang/ClassNotFoundException': com/mathworks/hg/peer/ToolToggleButtonPeerBeanInfo> (0x00000007a5f538b8) thrown at [/Users/java_re/workspace/8-2-build-macosx-x86_64/jdk8u202/12323/hotspot/src/share/vm/classfile/systemDictionary.cpp, line 
+Event: 1.856 Thread 0x00007fb98e0fe800 Exception <a 'java/lang/ClassNotFoundException': com/mathworks/hg/peer/AbstractToolbuttonPeerBeanInfo> (0x00000007a5fce1c0) thrown at [/Users/java_re/workspace/8-2-build-macosx-x86_64/jdk8u202/12323/hotspot/src/share/vm/classfile/systemDictionary.cpp, lin
+Event: 1.857 Thread 0x00007fb98e0fe800 Exception <a 'java/lang/ClassNotFoundException': com/mathworks/hg/peer/AbstractToolbuttonPeerCustomizer> (0x00000007a62d50e0) thrown at [/Users/java_re/workspace/8-2-build-macosx-x86_64/jdk8u202/12323/hotspot/src/share/vm/classfile/systemDictionary.cpp, l
+Event: 1.861 Thread 0x00007fb98e0fe800 Exception <a 'java/lang/ClassNotFoundException': com/mathworks/hg/peer/ToolToggleButtonPeerCustomizer> (0x00000007a63f8010) thrown at [/Users/java_re/workspace/8-2-build-macosx-x86_64/jdk8u202/12323/hotspot/src/share/vm/classfile/systemDictionary.cpp, lin
+Event: 1.864 Thread 0x00007fb98e0fe800 Exception <a 'java/lang/ClassNotFoundException': com/mathworks/hg/peer/ToolPushButtonPeerBeanInfo> (0x00000007a6536030) thrown at [/Users/java_re/workspace/8-2-build-macosx-x86_64/jdk8u202/12323/hotspot/src/share/vm/classfile/systemDictionary.cpp, line 21
+Event: 1.864 Thread 0x00007fb98e0fe800 Exception <a 'java/lang/ClassNotFoundException': com/mathworks/hg/peer/ToolPushButtonPeerCustomizer> (0x00000007a65a9740) thrown at [/Users/java_re/workspace/8-2-build-macosx-x86_64/jdk8u202/12323/hotspot/src/share/vm/classfile/systemDictionary.cpp, line 
+Event: 1.865 Thread 0x00007fb98e0fe800 Exception <a 'java/lang/ClassNotFoundException': com/mathworks/hg/peer/EchoBeanInfo> (0x00000007a660a7d8) thrown at [/Users/java_re/workspace/8-2-build-macosx-x86_64/jdk8u202/12323/hotspot/src/share/vm/classfile/systemDictionary.cpp, line 210]
+Event: 1.866 Thread 0x00007fb98e0fe800 Exception <a 'java/lang/ClassNotFoundException': com/mathworks/hg/peer/EchoCustomizer> (0x00000007a66d49b8) thrown at [/Users/java_re/workspace/8-2-build-macosx-x86_64/jdk8u202/12323/hotspot/src/share/vm/classfile/systemDictionary.cpp, line 210]
+Event: 2.177 Thread 0x00007fb98e0fe800 Implicit null exception at 0x0000000141083475 to 0x0000000141083849
+Event: 2.177 Thread 0x00007fb98e0fe800 Implicit null exception at 0x0000000141054034 to 0x000000014105442d
+
+Events (10 events):
+Event: 2.311 loading class com/mathworks/mde/liveeditor/LiveEditorTabManager$17 done
+Event: 2.311 loading class com/mathworks/mde/liveeditor/BrowserHandler$2
+Event: 2.311 loading class com/mathworks/mde/liveeditor/BrowserHandler$2 done
+Event: 2.312 loading class com/mathworks/peermodel/impl/ObservableImpl$PeerNodeListenerAdapter
+Event: 2.312 loading class com/mathworks/peermodel/impl/ObservableImpl$PeerNodeListenerAdapter done
+Event: 2.313 loading class com/mathworks/mde/liveeditor/debug/PeerModelBreakpointDataStoreService$1
+Event: 2.313 loading class com/mathworks/mde/liveeditor/debug/PeerModelBreakpointDataStoreService$1 done
+Event: 2.313 Thread 0x00007fb98e0ce800 Thread exited: 0x00007fb98e0ce800
+Event: 2.318 loading class org/cef/CefApp$5
+Event: 2.318 loading class org/cef/CefApp$5 done
+
+
+Dynamic libraries:
+0x000000010c47c000 	/Applications/MATLAB_R2023a.app/bin/maci64/libmwi18n.dylib
+0x000000010c8a8000 	/Applications/MATLAB_R2023a.app/bin/maci64/libmwmvm.dylib
+0x000000010cf57000 	/Applications/MATLAB_R2023a.app/bin/maci64/libmwservices.dylib
+0x000000010c594000 	/Applications/MATLAB_R2023a.app/bin/maci64/libmwfl.dylib
+0x000000010c376000 	/Applications/MATLAB_R2023a.app/bin/maci64/libmwcapabilities.dylib
+0x000000010c636000 	/Applications/MATLAB_R2023a.app/bin/maci64/libmwcppmicroservices.dylib
+0x000000010c3e2000 	/Applications/MATLAB_R2023a.app/bin/maci64/libmwfoundation_feature.dylib
+0x000000010c39e000 	/Applications/MATLAB_R2023a.app/bin/maci64/libmwmatlab_bootstrap_core.dylib
+0x000000010c3b4000 	/Applications/MATLAB_R2023a.app/bin/maci64/libmwrcf_framework.dylib
+0x000000010cbbc000 	/Applications/MATLAB_R2023a.app/bin/maci64/libCppMicroServices.3.7.4.dylib
+0x000000010c388000 	/Applications/MATLAB_R2023a.app/bin/maci64/libmwresource_core.dylib
+0x000000010c6b6000 	/Applications/MATLAB_R2023a.app/bin/maci64/libmwfoundation_filesystem.dylib
+0x000000010c6ef000 	/Applications/MATLAB_R2023a.app/bin/maci64/libmwcpp11compat.dylib
+0x000000010c71f000 	/Applications/MATLAB_R2023a.app/bin/maci64/libmwboost_filesystem.dylib
+0x000000010c43c000 	/Applications/MATLAB_R2023a.app/bin/maci64/libmwboost_thread.dylib
+0x000000010c777000 	/Applications/MATLAB_R2023a.app/bin/maci64/libexpat.1.8.7.dylib
+0x000000010d2f6000 	/Applications/MATLAB_R2023a.app/bin/maci64/libicuuc.69.1.dylib
+0x000000010d7b5000 	/Applications/MATLAB_R2023a.app/bin/maci64/libicui18n.69.1.dylib
+0x00007ff819e8f000 	/usr/lib/libc++.1.dylib
+0x00007ff825bfa000 	/usr/lib/libSystem.B.dylib
+0x00007ff819ee8000 	/usr/lib/libc++abi.dylib
+0x00007ff825bf5000 	/usr/lib/system/libcache.dylib
+0x00007ff825bb0000 	/usr/lib/system/libcommonCrypto.dylib
+0x00007ff825bd9000 	/usr/lib/system/libcompiler_rt.dylib
+0x00007ff825bcf000 	/usr/lib/system/libcopyfile.dylib
+0x00007ff819cf8000 	/usr/lib/system/libcorecrypto.dylib
+0x00007ff819dbc000 	/usr/lib/system/libdispatch.dylib
+0x00007ff819f44000 	/usr/lib/system/libdyld.dylib
+0x00007ff825beb000 	/usr/lib/system/libkeymgr.dylib
+0x00007ff825b8f000 	/usr/lib/system/libmacho.dylib
+0x00007ff825163000 	/usr/lib/system/libquarantine.dylib
+0x00007ff825be9000 	/usr/lib/system/libremovefile.dylib
+0x00007ff81ec09000 	/usr/lib/system/libsystem_asl.dylib
+0x00007ff819c9a000 	/usr/lib/system/libsystem_blocks.dylib
+0x00007ff819e06000 	/usr/lib/system/libsystem_c.dylib
+0x00007ff825be1000 	/usr/lib/system/libsystem_collections.dylib
+0x00007ff8243f2000 	/usr/lib/system/libsystem_configuration.dylib
+0x00007ff82346a000 	/usr/lib/system/libsystem_containermanager.dylib
+0x00007ff82584e000 	/usr/lib/system/libsystem_coreservices.dylib
+0x00007ff81cc86000 	/usr/lib/system/libsystem_darwin.dylib
+0x00007ff825bec000 	/usr/lib/system/libsystem_dnssd.dylib
+0x00007ff819e03000 	/usr/lib/system/libsystem_featureflags.dylib
+0x00007ff819f6f000 	/usr/lib/system/libsystem_info.dylib
+0x00007ff825b29000 	/usr/lib/system/libsystem_m.dylib
+0x00007ff819d8f000 	/usr/lib/system/libsystem_malloc.dylib
+0x00007ff81eb98000 	/usr/lib/system/libsystem_networkextension.dylib
+0x00007ff81d0cb000 	/usr/lib/system/libsystem_notify.dylib
+0x00007ff8243f6000 	/usr/lib/system/libsystem_sandbox.dylib
+0x00007ff825be6000 	/usr/lib/system/libsystem_secinit.dylib
+0x00007ff819efe000 	/usr/lib/system/libsystem_kernel.dylib
+0x00007ff819f65000 	/usr/lib/system/libsystem_platform.dylib
+0x00007ff819f38000 	/usr/lib/system/libsystem_pthread.dylib
+0x00007ff820561000 	/usr/lib/system/libsystem_symptoms.dylib
+0x00007ff819cde000 	/usr/lib/system/libsystem_trace.dylib
+0x00007ff825bbc000 	/usr/lib/system/libunwind.dylib
+0x00007ff819c9e000 	/usr/lib/system/libxpc.dylib
+0x00007ff819bc9000 	/usr/lib/libobjc.A.dylib
+0x00007ff825bc7000 	/usr/lib/liboah.dylib
+0x00007ff825c36000 	/usr/lib/libiconv.2.dylib
+0x00007ff825b8e000 	/usr/lib/libcharset.1.dylib
+0x000000010c454000 	/Applications/MATLAB_R2023a.app/bin/maci64/libmwboost_atomic.dylib
+0x00007ff819f9a000 	/System/Library/Frameworks/CoreFoundation.framework/Versions/A/CoreFoundation
+0x00007ff81cf8d000 	/System/Library/PrivateFrameworks/CoreServicesInternal.framework/Versions/A/CoreServicesInternal
+0x00007ff825bfc000 	/usr/lib/libfakelink.dylib
+0x00007ff81c9f2000 	/usr/lib/libicucore.A.dylib
+0x00007ff825c00000 	/System/Library/PrivateFrameworks/SoftLinking.framework/Versions/A/SoftLinking
+0x00007ff81d00c000 	/System/Library/Frameworks/IOKit.framework/Versions/A/IOKit
+0x00007ff82c3b9000 	/System/Library/Frameworks/CoreServices.framework/Versions/A/CoreServices
+0x00007ff8212d2000 	/usr/lib/libDiagnosticMessagesClient.dylib
+0x00007ff81ebaf000 	/usr/lib/libenergytrace.dylib
+0x00007ff82518a000 	/usr/lib/libbsm.0.dylib
+0x00007ff825b16000 	/usr/lib/libz.1.dylib
+0x00007ff825b94000 	/usr/lib/system/libkxld.dylib
+0x00007ff81e7f2000 	/System/Library/Frameworks/CFNetwork.framework/Versions/A/CFNetwork
+0x00007ff8220ee000 	/System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/FSEvents.framework/Versions/A/FSEvents
+0x00007ff81cc91000 	/System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/CarbonCore.framework/Versions/A/CarbonCore
+0x00007ff821315000 	/System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/Metadata.framework/Versions/A/Metadata
+0x00007ff825854000 	/System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/OSServices.framework/Versions/A/OSServices
+0x00007ff825dc1000 	/System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/SearchKit.framework/Versions/A/SearchKit
+0x00007ff8204e8000 	/System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/AE.framework/Versions/A/AE
+0x00007ff81a434000 	/System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/LaunchServices.framework/Versions/A/LaunchServices
+0x00007ff8262ff000 	/System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/DictionaryServices.framework/Versions/A/DictionaryServices
+0x00007ff8220fb000 	/System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/SharedFileList.framework/Versions/A/SharedFileList
+0x00007ff81c670000 	/System/Library/Frameworks/Security.framework/Versions/A/Security
+0x00007ff81aaff000 	/System/Library/Frameworks/SystemConfiguration.framework/Versions/A/SystemConfiguration
+0x00007ff825e4d000 	/usr/lib/libapple_nghttp2.dylib
+0x00007ff825e82000 	/usr/lib/libcompression.dylib
+0x00007ff81e7ee000 	/usr/lib/libnetwork.dylib
+0x00007ff820160000 	/usr/lib/libsqlite3.dylib
+0x00007ff81ae15000 	/System/Library/Frameworks/Foundation.framework/Versions/C/Foundation
+0x00007ff820569000 	/System/Library/Frameworks/Network.framework/Versions/A/Network
+0x00007ffb37ca3000 	/usr/lib/libCoreEntitlements.dylib
+0x00007ffb255de000 	/System/Library/PrivateFrameworks/MessageSecurity.framework/Versions/A/MessageSecurity
+0x00007ff820147000 	/System/Library/PrivateFrameworks/ProtocolBuffer.framework/Versions/A/ProtocolBuffer
+0x00007ff81ebb0000 	/usr/lib/libMobileGestalt.dylib
+0x00007ff82582d000 	/System/Library/PrivateFrameworks/AppleFSCompression.framework/Versions/A/AppleFSCompression
+0x00007ff825172000 	/usr/lib/libcoretls.dylib
+0x00007ff826368000 	/usr/lib/libcoretls_cfhelpers.dylib
+0x00007ff825e7c000 	/usr/lib/libpam.2.dylib
+0x00007ff8263d6000 	/usr/lib/libxar.1.dylib
+0x00007ff822125000 	/System/Library/PrivateFrameworks/CoreAutoLayout.framework/Versions/A/CoreAutoLayout
+0x00007ff8213ac000 	/System/Library/Frameworks/DiskArbitration.framework/Versions/A/DiskArbitration
+0x00007ff825d39000 	/usr/lib/libarchive.2.dylib
+0x00007ff82216d000 	/usr/lib/libxml2.2.dylib
+0x00007ff824401000 	/usr/lib/liblangid.dylib
+0x00007ff82a261000 	/System/Library/Frameworks/Combine.framework/Versions/A/Combine
+0x00007ff828386000 	/usr/lib/swift/libswiftCore.dylib
+0x00007ff91c129000 	/usr/lib/swift/libswiftCoreFoundation.dylib
+0x00007ff91a0e2000 	/usr/lib/swift/libswiftDarwin.dylib
+0x00007ff82dbdb000 	/usr/lib/swift/libswiftDispatch.dylib
+0x00007ff91c145000 	/usr/lib/swift/libswiftIOKit.dylib
+0x00007ff830015000 	/usr/lib/swift/libswiftObjectiveC.dylib
+0x00007ff91c13a000 	/usr/lib/swift/libswiftXPC.dylib
+0x00007ffb38cb9000 	/usr/lib/swift/libswift_Concurrency.dylib
+0x00007ffb38df8000 	/usr/lib/swift/libswift_StringProcessing.dylib
+0x00007ff830019000 	/usr/lib/swift/libswiftos.dylib
+0x00007ff8243fd000 	/System/Library/PrivateFrameworks/AppleSystemInfo.framework/Versions/A/AppleSystemInfo
+0x00007ff824e7f000 	/System/Library/PrivateFrameworks/IOMobileFramebuffer.framework/Versions/A/IOMobileFramebuffer
+0x00007ff823499000 	/System/Library/Frameworks/IOSurface.framework/Versions/A/IOSurface
+0x00007ff825c01000 	/usr/lib/libpcap.A.dylib
+0x00007ff820558000 	/usr/lib/libdns_services.dylib
+0x00007ff82634e000 	/usr/lib/liblzma.5.dylib
+0x00007ff82583e000 	/usr/lib/libbz2.1.0.dylib
+0x00007ffb38d3d000 	/usr/lib/swift/libswift_RegexParser.dylib
+0x00007ff8268b4000 	/usr/lib/libheimdal-asn1.dylib
+0x00007ff825166000 	/usr/lib/libCheckFix.dylib
+0x00007ff81ec20000 	/System/Library/PrivateFrameworks/TCC.framework/Versions/A/TCC
+0x00007ff824403000 	/System/Library/PrivateFrameworks/CoreNLP.framework/Versions/A/CoreNLP
+0x00007ff8212d4000 	/System/Library/PrivateFrameworks/MetadataUtilities.framework/Versions/A/MetadataUtilities
+0x00007ff82c65a000 	/System/Library/Frameworks/Accelerate.framework/Versions/A/Accelerate
+0x00007ff82519a000 	/usr/lib/libmecab.dylib
+0x00007ff81ab7e000 	/usr/lib/libCRFSuite.dylib
+0x00007ff8251f4000 	/usr/lib/libgermantok.dylib
+0x00007ff825e28000 	/usr/lib/libThaiTokenizer.dylib
+0x00007ff8213b4000 	/System/Library/Frameworks/Accelerate.framework/Versions/A/Frameworks/vImage.framework/Versions/A/vImage
+0x00007ff82c38c000 	/System/Library/Frameworks/Accelerate.framework/Versions/A/Frameworks/vecLib.framework/Versions/A/vecLib
+0x00007ff826418000 	/System/Library/Frameworks/Accelerate.framework/Versions/A/Frameworks/vecLib.framework/Versions/A/libvMisc.dylib
+0x00007ff824ca4000 	/System/Library/Frameworks/Accelerate.framework/Versions/A/Frameworks/vecLib.framework/Versions/A/libvDSP.dylib
+0x00007ff81a7f0000 	/System/Library/Frameworks/Accelerate.framework/Versions/A/Frameworks/vecLib.framework/Versions/A/libBLAS.dylib
+0x00007ff825f60000 	/System/Library/Frameworks/Accelerate.framework/Versions/A/Frameworks/vecLib.framework/Versions/A/libLAPACK.dylib
+0x00007ff8251f7000 	/System/Library/Frameworks/Accelerate.framework/Versions/A/Frameworks/vecLib.framework/Versions/A/libLinearAlgebra.dylib
+0x00007ff825e65000 	/System/Library/Frameworks/Accelerate.framework/Versions/A/Frameworks/vecLib.framework/Versions/A/libSparseBLAS.dylib
+0x00007ff825f5a000 	/System/Library/Frameworks/Accelerate.framework/Versions/A/Frameworks/vecLib.framework/Versions/A/libQuadrature.dylib
+0x00007ff8244ef000 	/System/Library/Frameworks/Accelerate.framework/Versions/A/Frameworks/vecLib.framework/Versions/A/libBNNS.dylib
+0x00007ff81aa88000 	/System/Library/Frameworks/Accelerate.framework/Versions/A/Frameworks/vecLib.framework/Versions/A/libSparse.dylib
+0x00007ffb248dd000 	/System/Library/PrivateFrameworks/MIL.framework/Versions/A/MIL
+0x00007ff8220d2000 	/System/Library/Frameworks/OpenDirectory.framework/Versions/A/Frameworks/CFOpenDirectory.framework/Versions/A/CFOpenDirectory
+0x00007ff8220c6000 	/System/Library/Frameworks/OpenDirectory.framework/Versions/A/OpenDirectory
+0x00007ff82636a000 	/System/Library/PrivateFrameworks/APFS.framework/Versions/A/APFS
+0x00007ff8250a9000 	/System/Library/Frameworks/SecurityFoundation.framework/Versions/A/SecurityFoundation
+0x00007ff8263e4000 	/usr/lib/libutil.dylib
+0x00007ffb23a6e000 	/System/Library/PrivateFrameworks/InstalledContentLibrary.framework/Versions/A/InstalledContentLibrary
+0x00007ff81cfd0000 	/System/Library/PrivateFrameworks/CoreServicesStore.framework/Versions/A/CoreServicesStore
+0x00007ff822122000 	/usr/lib/libapp_launch_measurement.dylib
+0x00007ffb1acb0000 	/System/Library/PrivateFrameworks/AppleMobileFileIntegrity.framework/Versions/A/AppleMobileFileIntegrity
+0x00007ff91c109000 	/usr/lib/libmis.dylib
+0x00007ff92a73d000 	/System/Library/PrivateFrameworks/MobileSystemServices.framework/Versions/A/MobileSystemServices
+0x00007ffa2496b000 	/System/Library/PrivateFrameworks/ConfigProfileHelper.framework/Versions/A/ConfigProfileHelper
+0x00007ff8212a8000 	/System/Library/PrivateFrameworks/CoreAnalytics.framework/Versions/A/CoreAnalytics
+0x00007ff825e2a000 	/System/Library/PrivateFrameworks/AppleSauce.framework/Versions/A/AppleSauce
+0x00007ff81b827000 	/System/Library/PrivateFrameworks/LanguageModeling.framework/Versions/A/LanguageModeling
+0x00007ff8263e8000 	/usr/lib/libxslt.1.dylib
+0x00007ff825d28000 	/usr/lib/libcmph.dylib
+0x00007ff824e6d000 	/System/Library/PrivateFrameworks/CoreEmoji.framework/Versions/A/CoreEmoji
+0x00007ff8244e9000 	/System/Library/PrivateFrameworks/LinguisticData.framework/Versions/A/LinguisticData
+0x00007ff81aa3e000 	/System/Library/PrivateFrameworks/Lexicon.framework/Versions/A/Lexicon
+0x00007ff825137000 	/System/Library/PrivateFrameworks/BackgroundTaskManagement.framework/Versions/A/BackgroundTaskManagement
+0x00007ffb37ddd000 	/usr/lib/libTLE.dylib
+0x000000010f5fa000 	/Applications/MATLAB_R2023a.app/bin/maci64/libicudata.69.1.dylib
+0x000000010c7e5000 	/Applications/MATLAB_R2023a.app/bin/maci64/libmwmcom.dylib
+0x000000010ddb5000 	/Applications/MATLAB_R2023a.app/bin/maci64/libmwms.dylib
+0x000000010d4ca000 	/Applications/MATLAB_R2023a.app/bin/maci64/libmwmst.dylib
+0x000000010c7a7000 	/Applications/MATLAB_R2023a.app/bin/maci64/libmwthreadpool.dylib
+0x000000010cd7d000 	/Applications/MATLAB_R2023a.app/bin/maci64/libut.dylib
+0x000000010e0c9000 	/Applications/MATLAB_R2023a.app/bin/maci64/libmx.dylib
+0x000000010ec64000 	/Applications/MATLAB_R2023a.app/bin/maci64/libmwmlutil.dylib
+0x000000010c823000 	/Applications/MATLAB_R2023a.app/bin/maci64/libmwfoundation_usm.dylib
+0x000000010daa1000 	/Applications/MATLAB_R2023a.app/bin/maci64/libmwfoundation_matlabdata.dylib
+0x000000010c747000 	/Applications/MATLAB_R2023a.app/bin/maci64/libmwnativedisplay.dylib
+0x000000010c75b000 	/Applications/MATLAB_R2023a.app/bin/maci64/libmwstartupplugin.dylib
+0x000000010ce03000 	/Applications/MATLAB_R2023a.app/bin/maci64/libmwstartup_plugin_initializer.dylib
+0x000000010ccf7000 	/Applications/MATLAB_R2023a.app/bin/maci64/libmwfoundation_threadpool.dylib
+0x000000010c3ca000 	/Applications/MATLAB_R2023a.app/bin/maci64/libmvmtransportapi.dylib
+0x000000010dc00000 	/Applications/MATLAB_R2023a.app/bin/maci64/libmwmatlab_toolbox_events_base.dylib
+0x000000010e63f000 	/Applications/MATLAB_R2023a.app/bin/maci64/libmwexecution_events.dylib
+0x000000010e35b000 	/Applications/MATLAB_R2023a.app/bin/maci64/libmwfoundation_log.dylib
+0x000000010c852000 	/Applications/MATLAB_R2023a.app/bin/maci64/libmwfoundation_tracelogger.dylib
+0x000000010c469000 	/Applications/MATLAB_R2023a.app/bin/maci64/libmwboost_chrono.dylib
+0x000000010d614000 	/Applications/MATLAB_R2023a.app/bin/maci64/libmwboost_log.dylib
+0x000000010cd2f000 	/Applications/MATLAB_R2023a.app/bin/maci64/libmwboost_serialization.dylib
+0x000000010d6bb000 	/Applications/MATLAB_R2023a.app/bin/maci64/libtbb.dylib
+0x000000010ce74000 	/Applications/MATLAB_R2023a.app/bin/maci64/libmwflcodesigning_verifier.dylib
+0x000000010c867000 	/Applications/MATLAB_R2023a.app/bin/maci64/libmwboost_iostreams.dylib
+0x000000010c7ca000 	/Applications/MATLAB_R2023a.app/bin/maci64/libusAsyncWorkService.dylib
+0x0000000111156000 	/Applications/MATLAB_R2023a.app/bin/maci64/libcrypto.1.1.dylib
+0x000000010cef3000 	/Applications/MATLAB_R2023a.app/bin/maci64/libmwflcertificates.dylib
+0x000000010dd57000 	/Applications/MATLAB_R2023a.app/bin/maci64/libmwflcrypto.dylib
+0x000000010d762000 	/Applications/MATLAB_R2023a.app/bin/maci64/libmwflcryptoutils.dylib
+0x00000001113d2000 	/Applications/MATLAB_R2023a.app/bin/maci64/libmwflcryptocryptopp.dylib
+0x000000010e4ea000 	/Applications/MATLAB_R2023a.app/bin/maci64/libssl.1.1.dylib
+0x000000010c890000 	/Applications/MATLAB_R2023a.app/bin/maci64/libmwfoundation_json.dylib
+0x000000010cec9000 	/Applications/MATLAB_R2023a.app/bin/maci64/libmwdtoa.dylib
+0x000000010cf3e000 	/Applications/MATLAB_R2023a.app/bin/maci64/libmwfoundation_memmgr.dylib
+0x000000010c7d7000 	/Applications/MATLAB_R2023a.app/bin/maci64/libmwflstrings.dylib
+0x000000010cea8000 	/Applications/MATLAB_R2023a.app/bin/maci64/libicuio.69.1.dylib
+0x000000010dd20000 	/Applications/MATLAB_R2023a.app/bin/maci64/libmwagentspfendpointregistry.dylib
+0x000000010dcf9000 	/Applications/MATLAB_R2023a.app/bin/maci64/libmwfoundation_paths.dylib
+0x000000010e463000 	/Applications/MATLAB_R2023a.app/bin/maci64/libmwagentspfsharedmemory.dylib
+0x000000010c87c000 	/Applications/MATLAB_R2023a.app/bin/maci64/libmwnativestrings.dylib
+0x000000010c368000 	/Applications/MATLAB_R2023a.app/bin/maci64/libmwboost_system.dylib
+0x000000010e4aa000 	/Applications/MATLAB_R2023a.app/bin/maci64/libmwmfl_permute.dylib
+0x000000010d7a2000 	/Applications/MATLAB_R2023a.app/bin/maci64/libmwload_context.dylib
+0x000000010e491000 	/Applications/MATLAB_R2023a.app/bin/maci64/libmwindexingapimethods.dylib
+0x000000010e923000 	/Applications/MATLAB_R2023a.app/bin/maci64/libtbbmalloc.dylib
+0x000000010dd47000 	/Applications/MATLAB_R2023a.app/bin/maci64/libmwmatlabdata_boost_serialization.dylib
+0x00007ff81d12a000 	/System/Library/Frameworks/AppKit.framework/Versions/C/AppKit
+0x00007ff81e133000 	/System/Library/PrivateFrameworks/UIFoundation.framework/Versions/A/UIFoundation
+0x00007ffb1c10d000 	/System/Library/PrivateFrameworks/CollectionViewCore.framework/Versions/A/CollectionViewCore
+0x00007ff82bf88000 	/System/Library/PrivateFrameworks/RemoteViewServices.framework/Versions/A/RemoteViewServices
+0x00007ff823c42000 	/System/Library/PrivateFrameworks/XCTTargetBootstrap.framework/Versions/A/XCTTargetBootstrap
+0x00007ff827a6b000 	/System/Library/PrivateFrameworks/InternationalSupport.framework/Versions/A/InternationalSupport
+0x00007ff827af4000 	/System/Library/PrivateFrameworks/UserActivity.framework/Versions/A/UserActivity
+0x00007ffb323df000 	/System/Library/PrivateFrameworks/WindowManagement.framework/Versions/A/WindowManagement
+0x00007ff826e63000 	/usr/lib/libspindump.dylib
+0x00007ff81e301000 	/System/Library/Frameworks/UniformTypeIdentifiers.framework/Versions/A/UniformTypeIdentifiers
+0x00007ff81fce7000 	/System/Library/Frameworks/CoreData.framework/Versions/A/CoreData
+0x00007ff8234b6000 	/System/Library/Frameworks/Metal.framework/Versions/A/Metal
+0x00007ff823c47000 	/System/Library/PrivateFrameworks/CoreSVG.framework/Versions/A/CoreSVG
+0x00007ff81ec3b000 	/System/Library/PrivateFrameworks/SkyLight.framework/Versions/A/SkyLight
+0x00007ff81f025000 	/System/Library/Frameworks/CoreGraphics.framework/Versions/A/CoreGraphics
+0x00007ff8268d8000 	/System/Library/PrivateFrameworks/IconServices.framework/Versions/A/IconServices
+0x00007ff82fbdc000 	/System/Library/Frameworks/ApplicationServices.framework/Versions/A/ApplicationServices
+0x00007ff823c2e000 	/System/Library/PrivateFrameworks/DFRFoundation.framework/Versions/A/DFRFoundation
+0x00007ff82890e000 	/System/Library/Frameworks/AudioToolbox.framework/Versions/A/AudioToolbox
+0x00007ff827a76000 	/System/Library/PrivateFrameworks/DataDetectorsCore.framework/Versions/A/DataDetectorsCore
+0x00007ff91f0e4000 	/System/Library/PrivateFrameworks/TextInput.framework/Versions/A/TextInput
+0x00007ff823936000 	/System/Library/Frameworks/Carbon.framework/Versions/A/Frameworks/HIToolbox.framework/Versions/A/HIToolbox
+0x00007ff821ac3000 	/System/Library/Frameworks/QuartzCore.framework/Versions/A/QuartzCore
+0x00007ff82bfc0000 	/System/Library/Frameworks/Carbon.framework/Versions/A/Frameworks/SpeechRecognition.framework/Versions/A/SpeechRecognition
+0x00007ff821e62000 	/System/Library/PrivateFrameworks/CoreUI.framework/Versions/A/CoreUI
+0x00007ff81bf51000 	/System/Library/Frameworks/CoreAudio.framework/Versions/A/CoreAudio
+0x00007ff827285000 	/System/Library/PrivateFrameworks/MultitouchSupport.framework/Versions/A/MultitouchSupport
+0x00007ff8220ba000 	/System/Library/PrivateFrameworks/PerformanceAnalysis.framework/Versions/A/PerformanceAnalysis
+0x00007ffa2f648000 	/System/Library/Frameworks/OpenGL.framework/Versions/A/OpenGL
+0x00007ff825076000 	/System/Library/PrivateFrameworks/MobileKeyBag.framework/Versions/A/MobileKeyBag
+0x00007ff81f749000 	/System/Library/Frameworks/ColorSync.framework/Versions/A/ColorSync
+0x00007ff823fde000 	/System/Library/Frameworks/CoreImage.framework/Versions/A/CoreImage
+0x00007ff81bd62000 	/System/Library/Frameworks/CoreText.framework/Versions/A/CoreText
+0x00007ff823c7f000 	/System/Library/Frameworks/ImageIO.framework/Versions/A/ImageIO
+0x00007ff82799d000 	/System/Library/PrivateFrameworks/TextureIO.framework/Versions/A/TextureIO
+0x00007ff8265a1000 	/usr/lib/libate.dylib
+0x00007ff82714b000 	/System/Library/PrivateFrameworks/AppleJPEG.framework/Versions/A/AppleJPEG
+0x00007ff826899000 	/usr/lib/libexpat.1.dylib
+0x00007ff8277f9000 	/System/Library/Frameworks/ImageIO.framework/Versions/A/Resources/libPng.dylib
+0x00007ff827826000 	/System/Library/Frameworks/ImageIO.framework/Versions/A/Resources/libTIFF.dylib
+0x00007ff827917000 	/System/Library/Frameworks/ImageIO.framework/Versions/A/Resources/libGIF.dylib
+0x00007ff827196000 	/System/Library/Frameworks/ImageIO.framework/Versions/A/Resources/libJP2.dylib
+0x00007ff8278b7000 	/System/Library/Frameworks/ImageIO.framework/Versions/A/Resources/libJPEG.dylib
+0x00007ff8278ae000 	/System/Library/Frameworks/ImageIO.framework/Versions/A/Resources/libRadiance.dylib
+0x00007ff8237cc000 	/System/Library/PrivateFrameworks/FontServices.framework/libFontParser.dylib
+0x00007ff82048d000 	/System/Library/PrivateFrameworks/RunningBoardServices.framework/Versions/A/RunningBoardServices
+0x00007ff832607000 	/System/Library/PrivateFrameworks/IOSurfaceAccelerator.framework/Versions/A/IOSurfaceAccelerator
+0x00007ff827281000 	/System/Library/PrivateFrameworks/WatchdogClient.framework/Versions/A/WatchdogClient
+0x00007ff81b989000 	/System/Library/Frameworks/CoreDisplay.framework/Versions/A/CoreDisplay
+0x00007ff8236bb000 	/System/Library/Frameworks/CoreMedia.framework/Versions/A/CoreMedia
+0x00007ff8234ad000 	/System/Library/PrivateFrameworks/IOAccelerator.framework/Versions/A/IOAccelerator
+0x00007ff82224c000 	/System/Library/Frameworks/CoreVideo.framework/Versions/A/CoreVideo
+0x00007ff825e7a000 	/System/Library/Frameworks/MetalPerformanceShaders.framework/Versions/A/MetalPerformanceShaders
+0x00007ff8272be000 	/System/Library/Frameworks/VideoToolbox.framework/Versions/A/VideoToolbox
+0x00007ff8203d1000 	/System/Library/PrivateFrameworks/BaseBoard.framework/Versions/A/BaseBoard
+0x00007ff8278a7000 	/System/Library/PrivateFrameworks/GPUWrangler.framework/Versions/A/GPUWrangler
+0x00007ff82788b000 	/System/Library/PrivateFrameworks/IOPresentment.framework/Versions/A/IOPresentment
+0x00007ff8278b1000 	/System/Library/PrivateFrameworks/DSExternalDisplay.framework/Versions/A/DSExternalDisplay
+0x00007ffb200dd000 	/System/Library/PrivateFrameworks/GPUCompiler.framework/Versions/31001/Libraries/libllvm-flatbuffers.dylib
+0x00007ffa2f63c000 	/System/Library/Frameworks/OpenGL.framework/Versions/A/Libraries/libCoreFSCache.dylib
+0x00007ffb200d9000 	/System/Library/PrivateFrameworks/GPUCompiler.framework/Versions/31001/Libraries/libGPUCompilerUtils.dylib
+0x00007ff82791d000 	/System/Library/PrivateFrameworks/CMCaptureCore.framework/Versions/A/CMCaptureCore
+0x00007ffa34f0c000 	/System/Library/Frameworks/ExtensionFoundation.framework/Versions/A/ExtensionFoundation
+0x00007ff82e358000 	/System/Library/PrivateFrameworks/CoreTime.framework/Versions/A/CoreTime
+0x00007ff826e4d000 	/System/Library/PrivateFrameworks/AppServerSupport.framework/Versions/A/AppServerSupport
+0x00007ff8291d9000 	/System/Library/PrivateFrameworks/perfdata.framework/Versions/A/perfdata
+0x00007ff81bab5000 	/System/Library/PrivateFrameworks/AudioToolboxCore.framework/Versions/A/AudioToolboxCore
+0x00007ff823695000 	/System/Library/PrivateFrameworks/caulk.framework/Versions/A/caulk
+0x00007ff828aa6000 	/usr/lib/libAudioStatistics.dylib
+0x00007ff91b58c000 	/System/Library/PrivateFrameworks/SystemPolicy.framework/Versions/A/SystemPolicy
+0x00007ff828d44000 	/usr/lib/libSMC.dylib
+0x00007ff831e6f000 	/System/Library/Frameworks/CoreMIDI.framework/Versions/A/CoreMIDI
+0x00007ff8277c7000 	/usr/lib/libAudioToolboxUtility.dylib
+0x00007ff8373a2000 	/System/Library/PrivateFrameworks/OSAServicesClient.framework/Versions/A/OSAServicesClient
+0x00007ff8291e6000 	/usr/lib/libperfcheck.dylib
+0x00007ff82677d000 	/System/Library/PrivateFrameworks/PlugInKit.framework/Versions/A/PlugInKit
+0x00007ff82509c000 	/System/Library/PrivateFrameworks/AssertionServices.framework/Versions/A/AssertionServices
+0x00007ffa2f697000 	/System/Library/Frameworks/OpenGL.framework/Versions/A/Libraries/libGLU.dylib
+0x00007ffa2f65b000 	/System/Library/Frameworks/OpenGL.framework/Versions/A/Libraries/libGFXShared.dylib
+0x00007ffa2f864000 	/System/Library/Frameworks/OpenGL.framework/Versions/A/Libraries/libGL.dylib
+0x00007ffa2f664000 	/System/Library/Frameworks/OpenGL.framework/Versions/A/Libraries/libGLImage.dylib
+0x00007ffa2f658000 	/System/Library/Frameworks/OpenGL.framework/Versions/A/Libraries/libCVMSPluginSupport.dylib
+0x00007ffb37dbc000 	/usr/lib/libRosetta.dylib
+0x00007ffa2f643000 	/System/Library/Frameworks/OpenGL.framework/Versions/A/Libraries/libCoreVMClient.dylib
+0x00007ff824376000 	/System/Library/Frameworks/MetalPerformanceShaders.framework/Versions/A/Frameworks/MPSCore.framework/Versions/A/MPSCore
+0x00007ff825797000 	/System/Library/Frameworks/MetalPerformanceShaders.framework/Versions/A/Frameworks/MPSImage.framework/Versions/A/MPSImage
+0x00007ff82520d000 	/System/Library/Frameworks/MetalPerformanceShaders.framework/Versions/A/Frameworks/MPSNeuralNetwork.framework/Versions/A/MPSNeuralNetwork
+0x00007ff825680000 	/System/Library/Frameworks/MetalPerformanceShaders.framework/Versions/A/Frameworks/MPSMatrix.framework/Versions/A/MPSMatrix
+0x00007ff82543b000 	/System/Library/Frameworks/MetalPerformanceShaders.framework/Versions/A/Frameworks/MPSRayIntersector.framework/Versions/A/MPSRayIntersector
+0x00007ff8256bb000 	/System/Library/Frameworks/MetalPerformanceShaders.framework/Versions/A/Frameworks/MPSNDArray.framework/Versions/A/MPSNDArray
+0x00007ffa3627c000 	/System/Library/Frameworks/MetalPerformanceShaders.framework/Versions/A/Frameworks/MPSFunctions.framework/Versions/A/MPSFunctions
+0x00007ff81a6b1000 	/System/Library/PrivateFrameworks/MetalTools.framework/Versions/A/MetalTools
+0x00007ff8243fc000 	/System/Library/PrivateFrameworks/AggregateDictionary.framework/Versions/A/AggregateDictionary
+0x00007ff826638000 	/usr/lib/libIOReport.dylib
+0x00007ffa30c47000 	/System/Library/Frameworks/OpenCL.framework/Versions/A/OpenCL
+0x00007ff8269df000 	/System/Library/PrivateFrameworks/GraphVisualizer.framework/Versions/A/GraphVisualizer
+0x00007ffb1ffee000 	/System/Library/PrivateFrameworks/FontServices.framework/Versions/A/FontServices
+0x00007ff826e08000 	/System/Library/PrivateFrameworks/OTSVG.framework/Versions/A/OTSVG
+0x00007ff821e16000 	/System/Library/Frameworks/ApplicationServices.framework/Versions/A/Frameworks/ATS.framework/Versions/A/Resources/libFontRegistry.dylib
+0x00007ff826e57000 	/System/Library/PrivateFrameworks/FontServices.framework/libhvf.dylib
+0x00007ffb1ffef000 	/System/Library/PrivateFrameworks/FontServices.framework/libXTFontStaticRegistryData.dylib
+0x00007ffb31288000 	/System/Library/PrivateFrameworks/VideoToolboxParavirtualizationSupport.framework/Versions/A/VideoToolboxParavirtualizationSupport
+0x00007ff826849000 	/System/Library/PrivateFrameworks/AppleVA.framework/Versions/A/AppleVA
+0x00007ff828ae6000 	/System/Library/Frameworks/ApplicationServices.framework/Versions/A/Frameworks/ATS.framework/Versions/A/ATS
+0x00007ff81f839000 	/System/Library/Frameworks/ApplicationServices.framework/Versions/A/Frameworks/HIServices.framework/Versions/A/HIServices
+0x00007ff827929000 	/System/Library/Frameworks/ApplicationServices.framework/Versions/A/Frameworks/PrintCore.framework/Versions/A/PrintCore
+0x00007ff828e99000 	/System/Library/Frameworks/ApplicationServices.framework/Versions/A/Frameworks/QD.framework/Versions/A/QD
+0x00007ff828e91000 	/System/Library/Frameworks/ApplicationServices.framework/Versions/A/Frameworks/ColorSyncLegacy.framework/Versions/A/ColorSyncLegacy
+0x00007ff828aba000 	/System/Library/Frameworks/ApplicationServices.framework/Versions/A/Frameworks/SpeechSynthesis.framework/Versions/A/SpeechSynthesis
+0x00007ff8278e7000 	/System/Library/Frameworks/ApplicationServices.framework/Versions/A/Frameworks/ATSUI.framework/Versions/A/ATSUI
+0x00007ff828e24000 	/usr/lib/libcups.2.dylib
+0x00007ff8291f5000 	/System/Library/Frameworks/Kerberos.framework/Versions/A/Kerberos
+0x00007ff829204000 	/System/Library/Frameworks/GSS.framework/Versions/A/GSS
+0x00007ff828b54000 	/usr/lib/libresolv.9.dylib
+0x00007ff826e68000 	/System/Library/PrivateFrameworks/Heimdal.framework/Versions/A/Heimdal
+0x00007ff82ff98000 	/System/Library/Frameworks/Kerberos.framework/Versions/A/Libraries/libHeimdalProxy.dylib
+0x00007ff82924f000 	/System/Library/PrivateFrameworks/CommonAuth.framework/Versions/A/CommonAuth
+0x00007ffa341e2000 	/System/Library/Frameworks/AVFAudio.framework/Versions/A/AVFAudio
+0x00007ff8373eb000 	/System/Library/PrivateFrameworks/AXCoreUtilities.framework/Versions/A/AXCoreUtilities
+0x00007ff828a36000 	/System/Library/PrivateFrameworks/AudioSession.framework/Versions/A/AudioSession
+0x00007ff82a038000 	/System/Library/Frameworks/IOBluetooth.framework/Versions/A/IOBluetooth
+0x00007ff82694f000 	/System/Library/PrivateFrameworks/MediaExperience.framework/Versions/A/MediaExperience
+0x00007ff8288dd000 	/System/Library/PrivateFrameworks/AudioSession.framework/libSessionUtility.dylib
+0x00007ff828ea5000 	/System/Library/PrivateFrameworks/AudioResourceArbitration.framework/Versions/A/AudioResourceArbitration
+0x00007ff82cf91000 	/System/Library/PrivateFrameworks/PowerLog.framework/Versions/A/PowerLog
+0x00007ff82ced3000 	/System/Library/Frameworks/CoreBluetooth.framework/Versions/A/CoreBluetooth
+0x00007ff82ff99000 	/System/Library/Frameworks/AudioUnit.framework/Versions/A/AudioUnit
+0x00007ff824f06000 	/System/Library/PrivateFrameworks/CoreUtils.framework/Versions/A/CoreUtils
+0x00007ffb1eb9f000 	/System/Library/PrivateFrameworks/CoreUtilsExtras.framework/Versions/A/CoreUtilsExtras
+0x00007ffb23901000 	/System/Library/PrivateFrameworks/IO80211.framework/Versions/A/IO80211
+0x00007ff8268bd000 	/System/Library/PrivateFrameworks/IconFoundation.framework/Versions/A/IconFoundation
+0x00007ff82bfb0000 	/System/Library/PrivateFrameworks/SpeechRecognitionCore.framework/Versions/A/SpeechRecognitionCore
+0x0000000111bea000 	/Applications/MATLAB_R2023a.app/bin/maci64/libmwbuiltin.dylib
+0x000000010e5d4000 	/Applications/MATLAB_R2023a.app/bin/maci64/libmwcwf_interface.dylib
+0x000000010ea0a000 	/Applications/MATLAB_R2023a.app/bin/maci64/libmwflstorageprovider.dylib
+0x000000010e47d000 	/Applications/MATLAB_R2023a.app/bin/maci64/libmwflstorageutility.dylib
+0x000000010eb68000 	/Applications/MATLAB_R2023a.app/bin/maci64/libmwflstoragevfs.dylib
+0x000000010e9a2000 	/Applications/MATLAB_R2023a.app/bin/maci64/libmwlivecode.dylib
+0x000000010e587000 	/Applications/MATLAB_R2023a.app/bin/maci64/libmwmatlabstoragesystem.dylib
+0x000000010ea72000 	/Applications/MATLAB_R2023a.app/bin/maci64/libmwrelease_info.dylib
+0x000000010eaee000 	/Applications/MATLAB_R2023a.app/bin/maci64/libmwsearch_path_utilities.dylib
+0x00000001116c9000 	/Applications/MATLAB_R2023a.app/bin/maci64/libmwsettings_in_matlab.dylib
+0x0000000111711000 	/Applications/MATLAB_R2023a.app/bin/maci64/libmwmcos.dylib
+0x0000000111775000 	/Applications/MATLAB_R2023a.app/bin/maci64/libmwopccore.dylib
+0x00000001118d5000 	/Applications/MATLAB_R2023a.app/bin/maci64/libmwopcmodel.dylib
+0x000000010e9e2000 	/Applications/MATLAB_R2023a.app/bin/maci64/libmwopczippackage.dylib
+0x00000001123d8000 	/Applications/MATLAB_R2023a.app/bin/maci64/libmwsettingscore.dylib
+0x000000010eaa9000 	/Applications/MATLAB_R2023a.app/bin/maci64/libmwstring_matrix.dylib
+0x000000010cebc000 	/Applications/MATLAB_R2023a.app/bin/maci64/libmwkeybrd.dylib
+0x0000000111adf000 	/Applications/MATLAB_R2023a.app/bin/maci64/libmwflnetwork.dylib
+0x000000010eb33000 	/Applications/MATLAB_R2023a.app/bin/maci64/libmwflstorageevents.dylib
+0x000000010d794000 	/Applications/MATLAB_R2023a.app/bin/maci64/libmwfoundation_fctrl_ext.dylib
+0x00000001119d6000 	/Applications/MATLAB_R2023a.app/bin/maci64/libmwopcmwservices.dylib
+0x00000001129eb000 	/Applications/MATLAB_R2023a.app/bin/maci64/libxerces-c-3.2.dylib
+0x000000010e4d7000 	/Applications/MATLAB_R2023a.app/bin/maci64/libminizip.dylib
+0x000000011210b000 	/Applications/MATLAB_R2023a.app/bin/maci64/libmwfoundation_matlabdata_standalone.dylib
+0x00000001126a9000 	/Applications/MATLAB_R2023a.app/bin/maci64/libmwfoundation_matlabdata_json.dylib
+0x000000010e5b8000 	/Applications/MATLAB_R2023a.app/bin/maci64/libmwagentinterprocessmutex.dylib
+0x000000010f597000 	/Applications/MATLAB_R2023a.app/bin/maci64/libmwopcmwpackaging.dylib
+0x000000010c395000 	/Applications/MATLAB_R2023a.app/bin/maci64/libmwfactory_settings_loader.dylib
+0x000000010c36d000 	/Applications/MATLAB_R2023a.app/bin/maci64/libmwboost_date_time.dylib
+0x000000010e572000 	/Applications/MATLAB_R2023a.app/bin/maci64/libusServiceComponent.dylib
+0x000000010dd0e000 	/Applications/MATLAB_R2023a.app/bin/maci64/libmwfoundation_matlabjson_frontend.dylib
+0x000000010eace000 	/Applications/MATLAB_R2023a.app/bin/maci64/libmwsearch_path_interfaces.dylib
+0x0000000111836000 	/Applications/MATLAB_R2023a.app/bin/maci64/libmwstoragefilefolderobserver.dylib
+0x0000000112813000 	/Applications/MATLAB_R2023a.app/bin/maci64/libmwsearch_path_events.dylib
+0x00007ff826f20000 	/System/Library/PrivateFrameworks/login.framework/Versions/A/login
+0x00007ff8222a1000 	/System/Library/PrivateFrameworks/login.framework/Versions/A/Frameworks/loginsupport.framework/Versions/A/loginsupport
+0x0000000113181000 	/Applications/MATLAB_R2023a.app/bin/maci64/libDeclarativeServices.1.5.0.dylib
+0x000000011230d000 	/Applications/MATLAB_R2023a.app/bin/maci64/libConfigurationAdmin.1.3.3.dylib
+0x000000010f5bd000 	/Applications/MATLAB_R2023a.app/bin/maci64/cppmicroservices_compendium/foundation/cppmicroservices/managementagentimpl/mwManagementAgentImpl.dylib
+0x000000010f571000 	/Applications/MATLAB_R2023a.app/bin/maci64/cppmicroservices_compendium/foundation/cppmicroservices/logserviceimpl/mwLogServiceImpl.dylib
+0x0000000111898000 	/Applications/MATLAB_R2023a.app/bin/maci64/factory_settings/jsd/startup_settings/mwJsdStartupSettings.dylib
+0x00000001118b7000 	/Applications/MATLAB_R2023a.app/bin/maci64/matlab_startup_plugins/graphics/opengl_startup_plugin/mwopengl_startup_plugin.dylib
+0x0000000112202000 	/Applications/MATLAB_R2023a.app/bin/maci64/libmwgraphics_state.dylib
+0x000000010c349000 	/Applications/MATLAB_R2023a.app/bin/maci64/libmwdisplay_device.dylib
+0x000000011291f000 	/Applications/MATLAB_R2023a.app/bin/maci64/libmwddux.dylib
+0x000000011335e000 	/Applications/MATLAB_R2023a.app/bin/maci64/libmwddux_loggingapi.dylib
+0x0000000113253000 	/Applications/MATLAB_R2023a.app/bin/maci64/libmwMVMLocal.dylib
+0x0000000113596000 	/Applications/MATLAB_R2023a.app/bin/maci64/libmwiqm.dylib
+0x000000011d500000 	/Applications/MATLAB_R2023a.app/bin/maci64/libmwmcr.dylib
+0x000000010eb54000 	/Applications/MATLAB_R2023a.app/bin/maci64/libmwlanguage_execution_interfaces.dylib
+0x000000011d7be000 	/Applications/MATLAB_R2023a.app/bin/maci64/libmwm_dispatcher.dylib
+0x0000000113469000 	/Applications/MATLAB_R2023a.app/bin/maci64/libmwerrorrecovery.dylib
+0x000000011dae3000 	/Applications/MATLAB_R2023a.app/bin/maci64/libmwm_interpreter.dylib
+0x00000001136c3000 	/Applications/MATLAB_R2023a.app/bin/maci64/libmwm_parser.dylib
+0x000000011d94a000 	/Applications/MATLAB_R2023a.app/bin/maci64/libmwfoundation_matlabdata_matlab.dylib
+0x000000010e5a9000 	/Applications/MATLAB_R2023a.app/bin/maci64/libmwm_dispatcher_interfaces.dylib
+0x00000001121cd000 	/Applications/MATLAB_R2023a.app/bin/maci64/libmwcwf_implementation.dylib
+0x0000000111abc000 	/Applications/MATLAB_R2023a.app/bin/maci64/libmwmatlab_modules_events.dylib
+0x000000011295a000 	/Applications/MATLAB_R2023a.app/bin/maci64/libmwmatlab_modules_implementation.dylib
+0x000000010f5e4000 	/Applications/MATLAB_R2023a.app/bin/maci64/libmwmatlab_modules_interfaces.dylib
+0x000000011310f000 	/Applications/MATLAB_R2023a.app/bin/maci64/libmwmodule_descriptor_implementation.dylib
+0x000000011d6c6000 	/Applications/MATLAB_R2023a.app/bin/maci64/libmwmodule_descriptor_interfaces.dylib
+0x0000000112237000 	/Applications/MATLAB_R2023a.app/bin/maci64/libmwmodule_feature.dylib
+0x000000011224c000 	/Applications/MATLAB_R2023a.app/bin/maci64/libmwpackage_registry_interfaces.dylib
+0x000000011da3a000 	/Applications/MATLAB_R2023a.app/bin/maci64/libmwpackage_registry_implementation.dylib
+0x000000011dd29000 	/Applications/MATLAB_R2023a.app/bin/maci64/libmwsearch_path_impl.dylib
+0x00000001123a0000 	/Applications/MATLAB_R2023a.app/bin/maci64/libmwsearch_space_implementation.dylib
+0x0000000111824000 	/Applications/MATLAB_R2023a.app/bin/maci64/libmwsearch_space_utilities.dylib
+0x00000001121e4000 	/Applications/MATLAB_R2023a.app/bin/maci64/libmwpackage_registry_events.dylib
+0x00000001129af000 	/Applications/MATLAB_R2023a.app/bin/maci64/libmwpackage_registry_utilities.dylib
+0x0000000112260000 	/Applications/MATLAB_R2023a.app/bin/maci64/libmwsearch_space_interfaces.dylib
+0x000000011e33f000 	/Applications/MATLAB_R2023a.app/bin/maci64/libmwca_messages.dylib
+0x00000001132e9000 	/Applications/MATLAB_R2023a.app/bin/maci64/libmwcontextdata.dylib
+0x00000001129cc000 	/Applications/MATLAB_R2023a.app/bin/maci64/libmwlf_util.dylib
+0x0000000113326000 	/Applications/MATLAB_R2023a.app/bin/maci64/libmwmsgcatmcos.dylib
+0x000000011dc7c000 	/Applications/MATLAB_R2023a.app/bin/maci64/libmwregexp.dylib
+0x00000001130af000 	/Applications/MATLAB_R2023a.app/bin/maci64/libmwxtester_core.dylib
+0x0000000113533000 	/Applications/MATLAB_R2023a.app/bin/maci64/libmwnamesuggestion.dylib
+0x000000011df1f000 	/Applications/MATLAB_R2023a.app/bin/maci64/libmwpa_function_registry.dylib
+0x00000001130c4000 	/Applications/MATLAB_R2023a.app/bin/maci64/libmwca_analysis.dylib
+0x000000011e068000 	/Applications/MATLAB_R2023a.app/bin/maci64/libmwca_analysis_impl.dylib
+0x000000011ddd6000 	/Applications/MATLAB_R2023a.app/bin/maci64/libmwlf_astapi.dylib
+0x000000011ee35000 	/Applications/MATLAB_R2023a.app/bin/maci64/libmwmf0.dylib
+0x000000011fade000 	/Applications/MATLAB_R2023a.app/bin/maci64/libmwmlint.dylib
+0x000000011d632000 	/Applications/MATLAB_R2023a.app/bin/maci64/libmwca_astapi.dylib
+0x000000011e8a8000 	/Applications/MATLAB_R2023a.app/bin/maci64/libmwca_rulesystem.dylib
+0x00000001130db000 	/Applications/MATLAB_R2023a.app/bin/maci64/libmwcoderapp_shared_screener.dylib
+0x000000011de52000 	/Applications/MATLAB_R2023a.app/bin/maci64/libmwlf_parfor_classification.dylib
+0x0000000113566000 	/Applications/MATLAB_R2023a.app/bin/maci64/libmwmtok.dylib
+0x00000001130f3000 	/Applications/MATLAB_R2023a.app/bin/maci64/libmwlf_features.dylib
+0x000000011d75a000 	/Applications/MATLAB_R2023a.app/bin/maci64/libmwlf_tracer.dylib
+0x000000011debf000 	/Applications/MATLAB_R2023a.app/bin/maci64/libmwboost_program_options.dylib
+0x0000000113793000 	/Applications/MATLAB_R2023a.app/bin/maci64/libmwmodeling_mf0_utils.dylib
+0x00000001137a7000 	/Applications/MATLAB_R2023a.app/bin/maci64/libmwscl_regex.dylib
+0x00000001121f4000 	/Applications/MATLAB_R2023a.app/bin/maci64/libmwboost_random.dylib
+0x000000011e1cf000 	/Applications/MATLAB_R2023a.app/bin/maci64/libmwreferenceapi.dylib
+0x00000001137c2000 	/Applications/MATLAB_R2023a.app/bin/maci64/libmwmatlab_toolbox_events.dylib
+0x000000011e9a9000 	/Applications/MATLAB_R2023a.app/bin/maci64/libmwreference_docparser.dylib
+0x000000011e17a000 	/Applications/MATLAB_R2023a.app/bin/maci64/libmwreference_property.dylib
+0x00000001137db000 	/Applications/MATLAB_R2023a.app/bin/maci64/libmwreference_utils.dylib
+0x000000011e224000 	/Applications/MATLAB_R2023a.app/bin/maci64/libmwdocproducts_shared.dylib
+0x000000011e25b000 	/Applications/MATLAB_R2023a.app/bin/maci64/libmwhelpsystem_core_doclanguage.dylib
+0x000000011226f000 	/Applications/MATLAB_R2023a.app/bin/maci64/libmwstoragemicroservicestoragesystem.dylib
+0x000000011dcec000 	/Applications/MATLAB_R2023a.app/bin/maci64/libmwsprootutils.dylib
+0x000000011ea3a000 	/Applications/MATLAB_R2023a.app/bin/maci64/libmwbridge.dylib
+0x000000011ebb8000 	/Applications/MATLAB_R2023a.app/bin/maci64/libmex.dylib
+0x00000001123c8000 	/Applications/MATLAB_R2023a.app/bin/maci64/libmwsplashscreen.dylib
+0x000000011e2cc000 	/Applications/MATLAB_R2023a.app/bin/maci64/libmwflurlmanager.dylib
+0x000000011227e000 	/Applications/MATLAB_R2023a.app/bin/maci64/libmwflurlmgrfactory.dylib
+0x00000001201fe000 	/Applications/MATLAB_R2023a.app/bin/maci64/libmwlxemainservices.dylib
+0x000000011dd08000 	/Applications/MATLAB_R2023a.app/bin/maci64/libmwnativedialogs.dylib
+0x000000011ecab000 	/Applications/MATLAB_R2023a.app/bin/maci64/libmwudd.dylib
+0x000000010eae1000 	/Applications/MATLAB_R2023a.app/bin/maci64/libmwgenerate_diag_message.dylib
+0x0000000123e43000 	/Applications/MATLAB_R2023a.app/bin/maci64/libmwm_lxe.dylib
+0x000000011ed51000 	/Applications/MATLAB_R2023a.app/bin/maci64/libmwfe_driver.dylib
+0x0000000120645000 	/Applications/MATLAB_R2023a.app/bin/maci64/libmwfe_name_resolution.dylib
+0x000000011eb0f000 	/Applications/MATLAB_R2023a.app/bin/maci64/libmwir.dylib
+0x000000011316f000 	/Applications/MATLAB_R2023a.app/bin/maci64/libmwlxeinterfaces.dylib
+0x000000011f5de000 	/Applications/MATLAB_R2023a.app/bin/maci64/libmwlxeindexing.dylib
+0x000000011e295000 	/Applications/MATLAB_R2023a.app/bin/maci64/libmwlxeutilities.dylib
+0x000000011eb59000 	/Applications/MATLAB_R2023a.app/bin/maci64/libmwlxetypes.dylib
+0x0000000111ad2000 	/Applications/MATLAB_R2023a.app/bin/maci64/libmwlxeruntimelocationservices.dylib
+0x000000011d6a8000 	/Applications/MATLAB_R2023a.app/bin/maci64/libmwlxesyntaxservices.dylib
+0x000000011eac5000 	/Applications/MATLAB_R2023a.app/bin/maci64/libmwprofiler.dylib
+0x000000011dacc000 	/Applications/MATLAB_R2023a.app/bin/maci64/libmwdebug_printer.dylib
+0x0000000113584000 	/Applications/MATLAB_R2023a.app/bin/maci64/libmwhotlinkprinter.dylib
+0x000000011f7fa000 	/Applications/MATLAB_R2023a.app/bin/maci64/libmwlxeirgen.dylib
+0x000000011f441000 	/Applications/MATLAB_R2023a.app/bin/maci64/libmwfe_astapi.dylib
+0x000000011edd9000 	/Applications/MATLAB_R2023a.app/bin/maci64/libmwfe_util.dylib
+0x00000001217ea000 	/Applications/MATLAB_R2023a.app/bin/maci64/libmwmathelem.dylib
+0x0000000121029000 	/Applications/MATLAB_R2023a.app/bin/maci64/libmwmathlinalg.dylib
+0x0000000120dce000 	/Applications/MATLAB_R2023a.app/bin/maci64/libmwfe_lowering.dylib
+0x0000000121452000 	/Applications/MATLAB_R2023a.app/bin/maci64/libmwfe_osp.dylib
+0x000000011f942000 	/Applications/MATLAB_R2023a.app/bin/maci64/libmwfe_parfor.dylib
+0x0000000120c00000 	/Applications/MATLAB_R2023a.app/bin/maci64/libmwfe_parser.dylib
+0x000000011f4c0000 	/Applications/MATLAB_R2023a.app/bin/maci64/libmwfe_spmd.dylib
+0x000000011f526000 	/Applications/MATLAB_R2023a.app/bin/maci64/libmwspmatrix.dylib
+0x00000001228f8000 	/Applications/MATLAB_R2023a.app/bin/maci64/libmwmathcore.dylib
+0x000000011d695000 	/Applications/MATLAB_R2023a.app/bin/maci64/libmwompwrapper.dylib
+0x000000011fa5d000 	/Applications/MATLAB_R2023a.app/bin/maci64/libmwcholmod.dylib
+0x000000010c359000 	/Applications/MATLAB_R2023a.app/bin/maci64/libmwamd.dylib
+0x000000010ceea000 	/Applications/MATLAB_R2023a.app/bin/maci64/libmwcolamd.dylib
+0x000000011e303000 	/Applications/MATLAB_R2023a.app/bin/maci64/libmwblas.dylib
+0x00000001223d4000 	/Applications/MATLAB_R2023a.app/bin/maci64/libmwlapack.dylib
+0x000000011ee0e000 	/Applications/MATLAB_R2023a.app/bin/maci64/libmwbinder.dylib
+0x0000000122553000 	/Applications/MATLAB_R2023a.app/bin/maci64/libmwmathutil.dylib
+0x00000001137f2000 	/Applications/MATLAB_R2023a.app/bin/maci64/libmwumfpack_api.dylib
+0x000000010f58b000 	/Applications/MATLAB_R2023a.app/bin/maci64/libmwcsparse.dylib
+0x0000000127689000 	/Applications/MATLAB_R2023a.app/bin/maci64/libmwgraphblas.7.3.0.dylib
+0x0000000120cc7000 	/Applications/MATLAB_R2023a.app/bin/maci64/libmwma57.dylib
+0x0000000120d1b000 	/Applications/MATLAB_R2023a.app/bin/maci64/libmwmetis.dylib
+0x000000011f3ea000 	/Applications/MATLAB_R2023a.app/bin/maci64/libmwspqr.dylib
+0x0000000121604000 	/Applications/MATLAB_R2023a.app/bin/maci64/libmwumfpack.dylib
+0x0000000122e1c000 	/Applications/MATLAB_R2023a.app/sys/os/maci64/libiomp5.dylib
+0x000000012300b000 	/Applications/MATLAB_R2023a.app/sys/os/maci64/libifcore.dylib
+0x0000000123693000 	/Applications/MATLAB_R2023a.app/sys/os/maci64/libimf.dylib
+0x000000012166d000 	/Applications/MATLAB_R2023a.app/sys/os/maci64/libintlc.dylib
+0x000000012980b000 	/Applications/MATLAB_R2023a.app/sys/os/maci64/libsvml.dylib
+0x000000011229f000 	/Applications/MATLAB_R2023a.app/bin/maci64/matlab_startup_plugins/matlab_graphics_ui/mwuixloader.dylib
+0x0000000112da0000 	/Applications/MATLAB_R2023a.app/bin/maci64/libmwuix.dylib
+0x0000000112e11000 	/Applications/MATLAB_R2023a.app/bin/maci64/libmwdrawnow.dylib
+0x0000000123a8e000 	/Applications/MATLAB_R2023a.app/bin/maci64/libmwgui.dylib
+0x000000011228c000 	/Applications/MATLAB_R2023a.app/bin/maci64/libmwnativemenus.dylib
+0x00000001226a1000 	/Applications/MATLAB_R2023a.app/bin/maci64/libmwgraphics_util.dylib
+0x0000000122717000 	/Applications/MATLAB_R2023a.app/bin/maci64/libtex_base.dylib
+0x00007ff831fca000 	/System/Library/Frameworks/Cocoa.framework/Versions/A/Cocoa
+0x00007ff82d583000 	/System/Library/Frameworks/FileProvider.framework/Versions/A/FileProvider
+0x00007ff82033c000 	/System/Library/Frameworks/Accounts.framework/Versions/A/Accounts
+0x00007ff8222db000 	/System/Library/PrivateFrameworks/UserManagement.framework/Versions/A/UserManagement
+0x00007ff82d70f000 	/System/Library/PrivateFrameworks/GenerationalStorage.framework/Versions/A/GenerationalStorage
+0x00007ff82e287000 	/System/Library/PrivateFrameworks/CoreSymbolication.framework/Versions/A/CoreSymbolication
+0x00007ff82cf86000 	/System/Library/PrivateFrameworks/SymptomDiagnosticReporter.framework/Versions/A/SymptomDiagnosticReporter
+0x00007ff81e317000 	/System/Library/PrivateFrameworks/DesktopServicesPriv.framework/Versions/A/DesktopServicesPriv
+0x00007ff81d0da000 	/usr/lib/libsandbox.1.dylib
+0x00007ff82e24c000 	/System/Library/PrivateFrameworks/DebugSymbols.framework/Versions/A/DebugSymbols
+0x00007ff828e86000 	/System/Library/PrivateFrameworks/NetAuth.framework/Versions/A/NetAuth
+0x00007ff829eb8000 	/System/Library/PrivateFrameworks/Sharing.framework/Versions/A/Sharing
+0x00007ff82f485000 	/System/Library/PrivateFrameworks/Apple80211.framework/Versions/A/Apple80211
+0x00007ff825881000 	/System/Library/PrivateFrameworks/AuthKit.framework/Versions/A/AuthKit
+0x00007ff824e8c000 	/System/Library/Frameworks/CoreWLAN.framework/Versions/A/CoreWLAN
+0x00007ff82f489000 	/System/Library/PrivateFrameworks/CoreWiFi.framework/Versions/A/CoreWiFi
+0x00007ffa1e93f000 	/System/Library/PrivateFrameworks/WiFiPeerToPeer.framework/Versions/A/WiFiPeerToPeer
+0x00007ff82ddf6000 	/System/Library/PrivateFrameworks/FrontBoardServices.framework/Versions/A/FrontBoardServices
+0x00007ff82de8e000 	/System/Library/PrivateFrameworks/BoardServices.framework/Versions/A/BoardServices
+0x00007ff82f61c000 	/System/Library/PrivateFrameworks/BackBoardServices.framework/Versions/A/BackBoardServices
+0x00007ff8259f8000 	/System/Library/Frameworks/UserNotifications.framework/Versions/A/UserNotifications
+0x00007ff829344000 	/System/Library/PrivateFrameworks/CorePhoneNumbers.framework/Versions/A/CorePhoneNumbers
+0x00007ff828b81000 	/System/Library/PrivateFrameworks/MultiverseSupport.framework/Versions/A/MultiverseSupport
+0x00007ff82f897000 	/System/Library/PrivateFrameworks/RemoteServiceDiscovery.framework/Versions/A/RemoteServiceDiscovery
+0x00007ff82d0a4000 	/System/Library/PrivateFrameworks/DiskManagement.framework/Versions/A/DiskManagement
+0x00007ff82cfb8000 	/System/Library/PrivateFrameworks/AppleIDAuthSupport.framework/Versions/A/AppleIDAuthSupport
+0x00007ffa38e68000 	/System/Library/PrivateFrameworks/AAAFoundation.framework/Versions/A/AAAFoundation
+0x00007ff82931d000 	/System/Library/PrivateFrameworks/KeychainCircle.framework/Versions/A/KeychainCircle
+0x00007ff82f8a7000 	/System/Library/PrivateFrameworks/RemoteXPC.framework/Versions/A/RemoteXPC
+0x00007ff82d070000 	/System/Library/PrivateFrameworks/MediaKit.framework/Versions/A/MediaKit
+0x00007ff82cfc4000 	/System/Library/Frameworks/DiscRecording.framework/Versions/A/DiscRecording
+0x00007ff8267c1000 	/usr/lib/libCoreStorage.dylib
+0x00007ff82f912000 	/usr/lib/libcsfde.dylib
+0x00007ff82a109000 	/System/Library/PrivateFrameworks/ProtectedCloudStorage.framework/Versions/A/ProtectedCloudStorage
+0x00007ff82f90e000 	/System/Library/PrivateFrameworks/EFILogin.framework/Versions/A/EFILogin
+0x00007ff82d735000 	/System/Library/PrivateFrameworks/OctagonTrust.framework/Versions/A/OctagonTrust
+0x00007ff8267b9000 	/usr/lib/libMatch.1.dylib
+0x00007ffb37b74000 	/usr/lib/libAccessibilityBaseImplementations.dylib
+0x0000000123c2b000 	/Applications/MATLAB_R2023a.app/bin/maci64/factory_settings/settings/matlab/mwmatlab_factory_settings.dylib
+0x00007ff821fba000 	/System/Library/PrivateFrameworks/ViewBridge.framework/Versions/A/ViewBridge
+0x0000000112e91000 	/Applications/MATLAB_R2023a.app/bin/maci64/factory_settings_plugins/matlab/datatypes/datetime/datetime_settings.dylib
+0x0000000122877000 	/Applications/MATLAB_R2023a.app/bin/maci64/libmwdatetime.dylib
+0x000000011f5a2000 	/Applications/MATLAB_R2023a.app/bin/maci64/factory_settings/storage/mldrivesettings/mwmldrive_settings.dylib
+0x00007ff923e0a000 	/System/Library/CoreServices/RawCamera.bundle/Contents/MacOS/RawCamera
+0x00007ff82925f000 	/System/Library/PrivateFrameworks/MobileAsset.framework/Versions/A/MobileAsset
+0x00007ff92172e000 	/System/Library/PrivateFrameworks/SoftwareUpdateCoreSupport.framework/Versions/A/SoftwareUpdateCoreSupport
+0x00007ff927adc000 	/System/Library/PrivateFrameworks/SoftwareUpdateCoreConnect.framework/Versions/A/SoftwareUpdateCoreConnect
+0x00007ff82ffbd000 	/System/Library/PrivateFrameworks/StreamingZip.framework/Versions/A/StreamingZip
+0x00007ff9213ad000 	/System/Library/PrivateFrameworks/MSUDataAccessor.framework/Versions/A/MSUDataAccessor
+0x00007ff91d960000 	/usr/lib/libbootpolicy.dylib
+0x00007ff92e415000 	/usr/lib/libpartition2_dynamic.dylib
+0x00007ffb1b77f000 	/System/Library/PrivateFrameworks/CMPhoto.framework/Versions/A/CMPhoto
+0x00007ff82e11f000 	/System/Library/PrivateFrameworks/AppleVPA.framework/Versions/A/AppleVPA
+0x00007ff827b60000 	/System/Library/Frameworks/MediaToolbox.framework/Versions/A/MediaToolbox
+0x00007ff82d553000 	/System/Library/PrivateFrameworks/CoreAVCHD.framework/Versions/A/CoreAVCHD
+0x00007ff82c6a2000 	/System/Library/Frameworks/MediaAccessibility.framework/Versions/A/MediaAccessibility
+0x00007ff82d54f000 	/System/Library/PrivateFrameworks/Mangrove.framework/Versions/A/Mangrove
+0x00007ff82d194000 	/System/Library/PrivateFrameworks/CoreAUC.framework/Versions/A/CoreAUC
+0x000000011faa9000 	/Applications/MATLAB_R2023a.app/bin/maci64/mvm_services/mvm_server/mwMVMServiceFactory.dylib
+0x0000000120d97000 	/Applications/MATLAB_R2023a.app/bin/maci64/mvm_services/mvm_eventmgr/mwEventMgrServiceFactory.dylib
+0x0000000123598000 	/Applications/MATLAB_R2023a.app/bin/maci64/matlab_startup_plugins/matlab_package_metadata_source/mwmatlab_package_metadata_source.dylib
+0x0000000129484000 	/Applications/MATLAB_R2023a.app/bin/maci64/libmwmvm_events.dylib
+0x0000000129378000 	/Applications/MATLAB_R2023a.app/bin/maci64/libmwreg_fw_backend.dylib
+0x0000000120fb0000 	/Applications/MATLAB_R2023a.app/bin/maci64/libmwconnectormessageserviceapi.dylib
+0x0000000120fd5000 	/Applications/MATLAB_R2023a.app/bin/maci64/libmwreg_fw_utils.dylib
+0x00000001293f6000 	/Applications/MATLAB_R2023a.app/bin/maci64/libmwreg_fw_path_management.dylib
+0x0000000129590000 	/Applications/MATLAB_R2023a.app/bin/maci64/libmwepfwk_events.dylib
+0x000000011d7a4000 	/Applications/MATLAB_R2023a.app/bin/maci64/libmwreg_point_api.dylib
+0x000000013181d000 	/Applications/MATLAB_R2023a.app/bin/maci64/libmwconnectorcommon.dylib
+0x000000011df08000 	/Applications/MATLAB_R2023a.app/bin/maci64/libmwconnectorconnectorapi.dylib
+0x000000011e321000 	/Applications/MATLAB_R2023a.app/bin/maci64/matlab_startup_plugins/connector/openssl_initializer/libmwconnectoropensslinitializer.dylib
+0x00000001319ce000 	/Applications/MATLAB_R2023a.app/bin/maci64/libPocoNet.60.dylib
+0x00000001295f6000 	/Applications/MATLAB_R2023a.app/bin/maci64/libPocoNetSSL.60.dylib
+0x0000000131df7000 	/Applications/MATLAB_R2023a.app/bin/maci64/libPocoFoundation.60.dylib
+0x000000012965a000 	/Applications/MATLAB_R2023a.app/bin/maci64/libPocoCrypto.60.dylib
+0x0000000129758000 	/Applications/MATLAB_R2023a.app/bin/maci64/libPocoUtil.60.dylib
+0x0000000131c43000 	/Applications/MATLAB_R2023a.app/bin/maci64/libPocoXML.60.dylib
+0x00000001296b6000 	/Applications/MATLAB_R2023a.app/bin/maci64/libPocoJSON.60.dylib
+0x0000000120ffe000 	/Applications/MATLAB_R2023a.app/bin/maci64/matlab_startup_plugins/cefclient/mwwebwindowmanager_init_plugin.dylib
+0x0000000131d23000 	/Applications/MATLAB_R2023a.app/bin/maci64/libmwwebwindow_extprocess.dylib
+0x000000012363e000 	/Applications/MATLAB_R2023a.app/bin/maci64/libmwwebwindow.dylib
+0x000000011e1b0000 	/Applications/MATLAB_R2023a.app/bin/maci64/libmwcefcommon.dylib
+0x0000000131bd3000 	/Applications/MATLAB_R2023a.app/bin/maci64/libmwcefexchangeprotocol.dylib
+0x0000000132114000 	/Applications/MATLAB_R2023a.app/bin/maci64/libmwcefexchangemessages.dylib
+0x0000000132287000 	/Applications/MATLAB_R2023a.app/bin/maci64/libmwmsl.dylib
+0x000000013208b000 	/Applications/MATLAB_R2023a.app/bin/maci64/libmwmsp.dylib
+0x000000013251d000 	/Applications/MATLAB_R2023a.app/bin/maci64/libmwmcrr.dylib
+0x000000013299e000 	/Applications/MATLAB_R2023a.app/bin/maci64/libprotobuf3.3.21.9.0.dylib
+0x00000001235f4000 	/Applications/MATLAB_R2023a.app/bin/maci64/libmwmss.dylib
+0x00000001228b4000 	/Applications/MATLAB_R2023a.app/bin/maci64/libmwcefServer_transport.dylib
+0x00000001228d1000 	/Applications/MATLAB_R2023a.app/bin/maci64/libmwflhttpproxy.dylib
+0x000000013219d000 	/Applications/MATLAB_R2023a.app/bin/maci64/matlab_startup_plugins/matlab_performance_diagnostic/mwmatlab_performance_diagnostic.dylib
+0x0000000129722000 	/Applications/MATLAB_R2023a.app/bin/maci64/matlab_startup_plugins/xmlutils/mwLibXML2InitPlugin.dylib
+0x0000000131b66000 	/Applications/MATLAB_R2023a.app/bin/maci64/libmwxmlutils.dylib
+0x0000000132204000 	/Applications/MATLAB_R2023a.app/bin/maci64/libmwflhttpclient_core.dylib
+0x00000001326c9000 	/Applications/MATLAB_R2023a.app/bin/maci64/libxml2.2.10.3.dylib
+0x0000000131b89000 	/Applications/MATLAB_R2023a.app/bin/maci64/matlab_startup_plugins/jmi/mwJavaClasspathCache.dylib
+0x0000000132c76000 	/Applications/MATLAB_R2023a.app/bin/maci64/libmwjmi.dylib
+0x000000011d7b1000 	/Applications/MATLAB_R2023a.app/bin/maci64/libmwnativejava_services.dylib
+0x0000000131bb3000 	/Applications/MATLAB_R2023a.app/bin/maci64/libmwaddons_javapath.dylib
+0x000000011e1c0000 	/Applications/MATLAB_R2023a.app/bin/maci64/libmw_addons_core_metadata_provider.dylib
+0x000000011eafa000 	/Applications/MATLAB_R2023a.app/bin/maci64/libmwmetadata_core.dylib
+0x000000011eba1000 	/Applications/MATLAB_R2023a.app/bin/maci64/libmwmetadata_serializer.dylib
+0x000000011f412000 	/Applications/MATLAB_R2023a.app/bin/maci64/libmwresources_folder.dylib
+0x00000001320e5000 	/Applications/MATLAB_R2023a.app/bin/maci64/matlab_startup_plugins/startup_plugins/prewarm_service_impl/mwPrewarmServiceImpl.dylib
+0x000000011f41f000 	/Applications/MATLAB_R2023a.app/bin/maci64/matlab_startup_plugins/storage/matlab_integration_startup_plugin/mwmatlab_integration_startup_plugin.dylib
+0x00000001323d1000 	/Applications/MATLAB_R2023a.app/bin/maci64/matlab_startup_plugins/connector/autostart/libmwconnectorautostart.dylib
+0x0000000132855000 	/Applications/MATLAB_R2023a.app/bin/maci64/connector_bootstrap_plugins/connector/connector_impl/libmwconnectorconnectorimpl.dylib
+0x0000000132238000 	/Applications/MATLAB_R2023a.app/bin/maci64/libmwconnectorframeworkapi.dylib
+0x0000000132371000 	/Applications/MATLAB_R2023a.app/bin/maci64/libmwconnectoruscontainer.dylib
+0x000000011f5c6000 	/Applications/MATLAB_R2023a.app/bin/maci64/matlab_startup_plugins/aws/startupplugin/mwawsstartupplugin.dylib
+0x0000000132489000 	/Applications/MATLAB_R2023a.app/bin/maci64/matlab_startup_plugins/login/startup_plugin/mwlogin_startup_plugin.dylib
+0x0000000132396000 	/Applications/MATLAB_R2023a.app/bin/maci64/libmwauthwsclient.dylib
+0x0000000132e1b000 	/Applications/MATLAB_R2023a.app/bin/maci64/libmwflsecretsstoreapi.dylib
+0x000000012973d000 	/Applications/MATLAB_R2023a.app/bin/maci64/libmwlogin.dylib
+0x0000000120dbe000 	/Applications/MATLAB_R2023a.app/bin/maci64/libmwserviceprocess.dylib
+0x0000000132431000 	/Applications/MATLAB_R2023a.app/bin/maci64/foundation/urlmanager/foundation/urlmanager/impl/mwurlmanagerimpl.dylib
+0x0000000132e9c000 	/Applications/MATLAB_R2023a.app/bin/maci64/login/desktoplogin/login/messaging/embedded_connector/libmwloginmessagingembeddedconnector.dylib
+0x0000000132453000 	/Applications/MATLAB_R2023a.app/bin/maci64/libmwconnectorrequestresponse.dylib
+0x0000000132251000 	/Applications/MATLAB_R2023a.app/bin/maci64/libmwlogindetail.dylib
+0x0000000132267000 	/Applications/MATLAB_R2023a.app/bin/maci64/libmwlogininteractive.dylib
+0x0000000123e31000 	/Applications/MATLAB_R2023a.app/bin/maci64/libmwloginutils.dylib
+0x00000001324fb000 	/Applications/MATLAB_R2023a.app/bin/maci64/matlab_startup_plugins/builtin2/preload/mwpreloadbuiltins.dylib
+0x0000000132470000 	/Applications/MATLAB_R2023a.app/bin/maci64/matlab_startup_plugins/foundation/matfile/startup/mwmatfile_startup.dylib
+0x00000001328cd000 	/Applications/MATLAB_R2023a.app/bin/maci64/matlab_startup_plugins/foundation/cppmicroservices/shutdown_hook/mwCppMicroServicesShutdownHook.dylib
+0x0000000132f58000 	/Applications/MATLAB_R2023a.app/bin/maci64/matlab_startup_plugins/foundation/platform/pf_matlab_impl/libmwpf_matlab_impl.dylib
+0x000000013290d000 	/Applications/MATLAB_R2023a.app/bin/maci64/libmwpf.dylib
+0x00000001333e8000 	/Applications/MATLAB_R2023a.app/bin/maci64/libmwsl_services.dylib
+0x0000000132fb9000 	/Applications/MATLAB_R2023a.app/bin/maci64/libmwperformance_measurement_instrument.dylib
+0x0000000133e1f000 	/Applications/MATLAB_R2023a.app/bin/maci64/libmwstring.dylib
+0x0000000132933000 	/Applications/MATLAB_R2023a.app/bin/maci64/libmwsl_diagnostic_core.dylib
+0x000000011fad0000 	/Applications/MATLAB_R2023a.app/bin/maci64/libmwxtester_core_mi.dylib
+0x0000000129473000 	/Applications/MATLAB_R2023a.app/bin/maci64/libmwfloat2str.dylib
+0x000000013306f000 	/Applications/MATLAB_R2023a.app/bin/maci64/libmwsqldb.dylib
+0x0000000132fff000 	/Applications/MATLAB_R2023a.app/bin/maci64/libmwscl_string.dylib
+0x000000013302e000 	/Applications/MATLAB_R2023a.app/bin/maci64/libmwscl_diag.dylib
+0x00000001330df000 	/Applications/MATLAB_R2023a.app/bin/maci64/libmwscl_process.dylib
+0x000000013316a000 	/Applications/MATLAB_R2023a.app/bin/maci64/libmwsl_feature.dylib
+0x000000013311c000 	/Applications/MATLAB_R2023a.app/bin/maci64/libmwstringutil.dylib
+0x0000000132954000 	/Applications/MATLAB_R2023a.app/bin/maci64/libmwcustom_holes_factory.dylib
+0x0000000133260000 	/Applications/MATLAB_R2023a.app/bin/maci64/libmwdash_core.dylib
+0x000000013381f000 	/Applications/MATLAB_R2023a.app/bin/maci64/libmwbuiltinsutil.dylib
+0x00000001331fa000 	/Applications/MATLAB_R2023a.app/bin/maci64/libmwdisplay_core.dylib
+0x0000000133a5c000 	/Applications/MATLAB_R2023a.app/bin/maci64/libmwpattern.dylib
+0x0000000132977000 	/Applications/MATLAB_R2023a.app/bin/maci64/libmwdisplay_services.dylib
+0x00000001331b8000 	/Applications/MATLAB_R2023a.app/bin/maci64/libmwscl_core.dylib
+0x0000000133308000 	/Applications/MATLAB_R2023a.app/bin/maci64/connector_plugins/connector/binarycef/libmwconnectorbinarycefactivator.dylib
+0x000000013323c000 	/Applications/MATLAB_R2023a.app/bin/maci64/libmwconnectorbinarycefimpl.dylib
+0x0000000133369000 	/Applications/MATLAB_R2023a.app/bin/maci64/libmwconnectorbinaryapi.dylib
+0x0000000133150000 	/Applications/MATLAB_R2023a.app/bin/maci64/matlab_startup_plugins/foundation/httpclient_core/startup/mwhttpclient_core_startup.dylib
+0x000000013332c000 	/Applications/MATLAB_R2023a.app/bin/maci64/matlab_startup_plugins/agent/spf/matlabstartup/libmwagentspfmatlabstartup.dylib
+0x00000001338dc000 	/Applications/MATLAB_R2023a.app/bin/maci64/libmwagentspfframeworksetup.dylib
+0x00000001324e1000 	/Applications/MATLAB_R2023a.app/bin/maci64/matlab_startup_plugins/shared/image_io/startup/mwimageio_startup.dylib
+0x00000001333a6000 	/Applications/MATLAB_R2023a.app/bin/maci64/matlabconnector/serviceprocess/matlabconnector/serviceprocess/services_mode/prod/libmwserviceprocessprod.dylib
+0x00000001339d4000 	/Applications/MATLAB_R2023a.app/bin/maci64/connector_plugins/connector/container/libmwconnectorcontaineractivator.dylib
+0x0000000133c53000 	/Applications/MATLAB_R2023a.app/bin/maci64/libmwconnectorcontainerimpl.dylib
+0x0000000133992000 	/Applications/MATLAB_R2023a.app/bin/maci64/libmwconnectorhttpapi.dylib
+0x00000001331d8000 	/Applications/MATLAB_R2023a.app/bin/maci64/libmwconnectorreactivestreams.dylib
+0x0000000133a16000 	/Applications/MATLAB_R2023a.app/bin/maci64/matlab_startup_plugins/search_path/path_cache_loader/mwpath_cache_loader.dylib
+0x00000001323c1000 	/Applications/MATLAB_R2023a.app/bin/maci64/libmwmpath.dylib
+0x0000000133bdc000 	/Applications/MATLAB_R2023a.app/bin/maci64/connector_plugins/connector/json/libmwconnectorjsonactivator.dylib
+0x0000000133c0a000 	/Applications/MATLAB_R2023a.app/bin/maci64/libmwconnectorjsonimpl.dylib
+0x0000000133d5e000 	/Applications/MATLAB_R2023a.app/bin/maci64/mvm_services/mvm_cache_impl/mwmvm_cache_impl.dylib
+0x000000013441f000 	/Applications/MATLAB_R2023a.app/bin/maci64/matlab_startup_plugins/matlab_path_metadata_source/mwmatlab_path_metadata_source.dylib
+0x0000000134538000 	/Applications/MATLAB_R2023a.app/bin/maci64/libmwaddons_registry_core.dylib
+0x000000013334d000 	/Applications/MATLAB_R2023a.app/bin/maci64/libmwaddons_finder.dylib
+0x000000013447b000 	/Applications/MATLAB_R2023a.app/bin/maci64/libmwaddons_install_location_core.dylib
+0x0000000133912000 	/Applications/MATLAB_R2023a.app/bin/maci64/libmwaddons_product_support_core.dylib
+0x0000000133d08000 	/Applications/MATLAB_R2023a.app/bin/maci64/libmwproductdata.dylib
+0x00000001345f5000 	/Applications/MATLAB_R2023a.app/bin/maci64/libmwinstall_engine.dylib
+0x00000001333c7000 	/Applications/MATLAB_R2023a.app/bin/maci64/libmwinstall_component_refiner.dylib
+0x00000001344cd000 	/Applications/MATLAB_R2023a.app/bin/maci64/libmwinstall_ddux.dylib
+0x000000013469f000 	/Applications/MATLAB_R2023a.app/bin/maci64/libmwinstall_processor.dylib
+0x0000000133931000 	/Applications/MATLAB_R2023a.app/bin/maci64/libmwinstall_product_validator.dylib
+0x00000001297fc000 	/Applications/MATLAB_R2023a.app/bin/maci64/libmwinstall_repository_adapter_config.dylib
+0x0000000132106000 	/Applications/MATLAB_R2023a.app/bin/maci64/libmwavailablespacecalculator.dylib
+0x0000000133df2000 	/Applications/MATLAB_R2023a.app/bin/maci64/libmwinstall_cpputil.dylib
+0x000000013305f000 	/Applications/MATLAB_R2023a.app/bin/maci64/libmwtransitive_closure_manager.dylib
+0x00000001339b7000 	/Applications/MATLAB_R2023a.app/bin/maci64/libmwinstall_component_impl.dylib
+0x000000013479b000 	/Applications/MATLAB_R2023a.app/bin/maci64/libmwinstall_datamodels_transitive_closure.dylib
+0x0000000134503000 	/Applications/MATLAB_R2023a.app/bin/maci64/libmwinstall_product_impl.dylib
+0x00000001346fd000 	/Applications/MATLAB_R2023a.app/bin/maci64/libmwprod_comp_metadata_parser.dylib
+0x0000000133ce8000 	/Applications/MATLAB_R2023a.app/bin/maci64/libmwinstall_downloader.dylib
+0x0000000133a43000 	/Applications/MATLAB_R2023a.app/bin/maci64/libmwinstall_archive_extractor.dylib
+0x00000001339c5000 	/Applications/MATLAB_R2023a.app/bin/maci64/libmwlocale.dylib
+0x0000000133c3a000 	/Applications/MATLAB_R2023a.app/bin/maci64/libmwplatformutil.dylib
+0x00000001348c8000 	/Applications/MATLAB_R2023a.app/bin/maci64/libmwboost_locale.dylib
+0x0000000133cca000 	/Applications/MATLAB_R2023a.app/bin/maci64/libmwenczip.dylib
+0x0000000134a12000 	/Applications/MATLAB_R2023a.app/bin/maci64/libarchive.19.dylib
+0x0000000134957000 	/Applications/MATLAB_R2023a.app/bin/maci64/mvm_services/mvm_cache_updater/mwmvm_cache_updater.dylib
+0x0000000134bc6000 	/Applications/MATLAB_R2023a.app/bin/maci64/spf/framework/agent/spf/framework/libmwagentspfframework.dylib
+0x000000013466f000 	/Applications/MATLAB_R2023a.app/bin/maci64/libmwagentspfcore.dylib
+0x0000000134757000 	/Applications/MATLAB_R2023a.app/bin/maci64/libmwagentspfserialisation.dylib
+0x0000000134e1a000 	/Applications/MATLAB_R2023a.app/bin/maci64/libavrocpp.1.10.0.dylib
+0x0000000133d46000 	/Applications/MATLAB_R2023a.app/bin/maci64/libmwagentspfutils.dylib
+0x0000000134ace000 	/Applications/MATLAB_R2023a.app/bin/maci64/libmwboost_regex.dylib
+0x0000000134873000 	/Applications/MATLAB_R2023a.app/bin/maci64/spf/serialisationproviders/matlab_desktop_spf_serializers/mwMatlabDesktopSPFSerializers.dylib
+0x000000013477d000 	/Applications/MATLAB_R2023a.app/bin/maci64/connector_plugins/connector/binary/libmwconnectorbinaryactivator.dylib
+0x00000001349da000 	/Applications/MATLAB_R2023a.app/bin/maci64/libmwconnectorbinaryimpl.dylib
+0x000000013558d000 	/Applications/MATLAB_R2023a.app/bin/maci64/libmwmcos_impl.dylib
+0x0000000134cbe000 	/Applications/MATLAB_R2023a.app/bin/maci64/libmwobject_serialization_customization.dylib
+0x00000001333db000 	/Applications/MATLAB_R2023a.app/bin/maci64/libmwsave_context.dylib
+0x0000000134b1d000 	/Applications/MATLAB_R2023a.app/bin/maci64/spf/serialisationproviders/storage/syncserviceserialisationprovider/libmwstoragesyncserviceserialisationprovider.dylib
+0x0000000134839000 	/Applications/MATLAB_R2023a.app/bin/maci64/libmwstoragesyncserviceserialisation.dylib
+0x00000001348ad000 	/Applications/MATLAB_R2023a.app/bin/maci64/libmwagentcoretransport.dylib
+0x0000000134b83000 	/Applications/MATLAB_R2023a.app/bin/maci64/connector_plugins/connector/message_service/libmwconnectormessageserviceactivator.dylib
+0x0000000134b53000 	/Applications/MATLAB_R2023a.app/bin/maci64/libmwconnectorbayeuxapi.dylib
+0x0000000134d93000 	/Applications/MATLAB_R2023a.app/bin/maci64/libmwconnectormessageserviceimpl.dylib
+0x000000013502c000 	/Applications/MATLAB_R2023a.app/bin/maci64/libmwudd_mi.dylib
+0x00000001351c9000 	/Applications/MATLAB_R2023a.app/bin/maci64/spf/serialisationproviders/agent/spf/avroserialisationprovider/libmwagentspfavroserialisationprovider.dylib
+0x0000000134d22000 	/Applications/MATLAB_R2023a.app/bin/maci64/connector_plugins/connector/framework/libmwconnectorframeworkactivator.dylib
+0x0000000134d4a000 	/Applications/MATLAB_R2023a.app/bin/maci64/libmwconnectorframeworkimpl.dylib
+0x00000001350e2000 	/Applications/MATLAB_R2023a.app/bin/maci64/libmwudd_jmi.dylib
+0x0000000134d65000 	/Applications/MATLAB_R2023a.app/bin/maci64/spf/serialisationproviders/agent/spf/streamstreamserialisation/mwagentspfstreamstreamserialisation.dylib
+0x0000000134f76000 	/Applications/MATLAB_R2023a.app/bin/maci64/connector_plugins/connector/bayeux/libmwconnectorbayeuxactivator.dylib
+0x00000001352b0000 	/Applications/MATLAB_R2023a.app/bin/maci64/libmwconnectorbayeuximpl.dylib
+0x0000000135327000 	/Applications/MATLAB_R2023a.app/bin/maci64/spf/serialisationproviders/login/spf/matlabloginserialisation/libmwmatlabloginserialisation.dylib
+0x0000000134f96000 	/Applications/MATLAB_R2023a.app/bin/maci64/spf/providers/agent/spf/invokable/mwagentspfinvokablecbserialisationprovider.dylib
+0x0000000133945000 	/Applications/MATLAB_R2023a.app/bin/maci64/libmwagentspfinvokable.dylib
+0x0000000135425000 	/Applications/MATLAB_R2023a.app/bin/maci64/libmwagentspfmessaging.dylib
+0x0000000134ff2000 	/Applications/MATLAB_R2023a.app/bin/maci64/libmwagentspfthreadpool.dylib
+0x0000000134fbe000 	/Applications/MATLAB_R2023a.app/bin/maci64/connector_plugins/connector/configuration/libmwconnectorconfigurationactivator.dylib
+0x00000001353b0000 	/Applications/MATLAB_R2023a.app/bin/maci64/libmwconnectorconfigurationimpl.dylib
+0x000000013515b000 	/Applications/MATLAB_R2023a.app/bin/maci64/spf/providers/agent/spf/distributeddirectory/implementation/libmwagentspfdistributeddirectory.dylib
+0x0000000135e0c000 	/Applications/MATLAB_R2023a.app/bin/maci64/libmwagentspfddimpl.dylib
+0x000000013550c000 	/Applications/MATLAB_R2023a.app/bin/maci64/libmwagentspfldapsearch.dylib
+0x000000013549a000 	/Applications/MATLAB_R2023a.app/bin/maci64/libmwboost_json.dylib
+0x0000000134641000 	/Applications/MATLAB_R2023a.app/bin/maci64/libmwboost_container.dylib
+0x0000000135ba8000 	/Applications/MATLAB_R2023a.app/bin/maci64/connector_plugins/connector/security/libmwconnectorsecurityactivator.dylib
+0x0000000135c73000 	/Applications/MATLAB_R2023a.app/bin/maci64/libmwconnectorsecurityimpl.dylib
+0x0000000136070000 	/Applications/MATLAB_R2023a.app/bin/maci64/spf/providers/agent/spf/handshakeexecutor/impl/libmwagentspfhandshakeexecutor.dylib
+0x0000000135196000 	/Applications/MATLAB_R2023a.app/bin/maci64/connector_plugins/connector/connector_impl_m/libmwconnectorconnectorimplm.dylib
+0x0000000135401000 	/Applications/MATLAB_R2023a.app/bin/maci64/spf/providers/agent/spf/routingmanager/impl/libmwagentspfroutingmanager.dylib
+0x0000000135d07000 	/Applications/MATLAB_R2023a.app/bin/maci64/libmwagentspfrmimpl.dylib
+0x0000000135d56000 	/Applications/MATLAB_R2023a.app/bin/maci64/connector_plugins/connector/http/libmwconnectorhttpactivator.dylib
+0x0000000136696000 	/Applications/MATLAB_R2023a.app/bin/maci64/libmwconnectorhttpimpl.dylib
+0x000000013650a000 	/Applications/MATLAB_R2023a.app/bin/maci64/libPocoZip.60.dylib
+0x00000001354dd000 	/Applications/MATLAB_R2023a.app/bin/maci64/connector_plugins/connector/connector_impl_jni/libmwconnectorconnectorimpljni.dylib
+0x0000000135c00000 	/Applications/MATLAB_R2023a.app/bin/maci64/connector_plugins/jsd/jsd_endpoint_plugin/mwjsd_endpoint_plugin.dylib
+0x000000013697d000 	/Applications/MATLAB_R2023a.app/bin/maci64/spf/servicepublishers/agent/spf/rpcservicepublisher/libmwagentspfrpcservicepublisher.dylib
+0x0000000136566000 	/Applications/MATLAB_R2023a.app/bin/maci64/libmwagentspfcatapult.dylib
+0x0000000135bdf000 	/Applications/MATLAB_R2023a.app/bin/maci64/libmwagentspfprofilerwrapper.dylib
+0x00000001365b2000 	/Applications/MATLAB_R2023a.app/bin/maci64/libmwagentspfrpc.dylib
+0x0000000136822000 	/Applications/MATLAB_R2023a.app/bin/maci64/libmwmstream.dylib
+0x0000000135c21000 	/Applications/MATLAB_R2023a.app/bin/maci64/libmwagentspftransport.dylib
+0x0000000136c37000 	/Applications/MATLAB_R2023a.app/bin/maci64/libmwmctl.dylib
+0x0000000135dd4000 	/Applications/MATLAB_R2023a.app/bin/maci64/matlab_startup_plugins/jmi/mwjmiloader.dylib
+0x0000000112d91000 	/Applications/MATLAB_R2023a.app/bin/maci64/libmwjvm_interface.dylib
+0x00000001365f5000 	/Applications/MATLAB_R2023a.app/bin/maci64/spf/providers/agent/spf/threadpoolprovider/implementation/libmwagentspfthreadpoolprovider.dylib
+0x0000000134659000 	/Applications/MATLAB_R2023a.app/sys/java/jre/maci64/jre/lib/jli/libjli.dylib
+0x0000000137d19000 	/Applications/MATLAB_R2023a.app/sys/java/jre/maci64/jre/lib/server/libjvm.dylib
+0x00007ff91c015000 	/usr/lib/libstdc++.6.dylib
+0x0000000135c40000 	/Applications/MATLAB_R2023a.app/bin/maci64/spf/providers/agent/spf/cfrouterprovider/implementation/libmwagentspfcfrouterprovider.dylib
+0x0000000135c58000 	/Applications/MATLAB_R2023a.app/bin/maci64/spf/providers/agent/spf/routerprovider/implementation/libmwagentspfrouterprovider.dylib
+0x0000000136619000 	/Applications/MATLAB_R2023a.app/bin/maci64/spf/providers/agent/spf/cancellation/impl/mwagentspfcancellation.dylib
+0x0000000136633000 	/Applications/MATLAB_R2023a.app/bin/maci64/libmwagentspfcancellationimpl.dylib
+0x000000013687d000 	/Applications/MATLAB_R2023a.app/bin/maci64/spf/providers/agent/spf/profiler/implementation/libmwagentspfprofiler.dylib
+0x000000013711d000 	/Applications/MATLAB_R2023a.app/bin/maci64/matlab_startup_plugins/lmgrimpl/libmwlmgrimpl.dylib
+0x000000013664a000 	/Applications/MATLAB_R2023a.app/bin/maci64/libmwlicensemarkerfile.dylib
+0x0000000136661000 	/Applications/MATLAB_R2023a.app/bin/maci64/libmwmhlmsharedexceptions.dylib
+0x0000000134860000 	/Applications/MATLAB_R2023a.app/bin/maci64/libmwollauthzsharedutils.dylib
+0x00000001368d7000 	/Applications/MATLAB_R2023a.app/bin/maci64/libmwollsharedexceptions.dylib
+0x0000000136b68000 	/Applications/MATLAB_R2023a.app/bin/maci64/spf/servicepublishers/agent/spf/legacyservicepublisher/libmwagentspflegacyservicepublisher.dylib
+0x0000000136938000 	/Applications/MATLAB_R2023a.app/bin/maci64/libmwagentcontrolcommon.dylib
+0x0000000134b71000 	/Applications/MATLAB_R2023a.app/bin/maci64/libmwagentcontroldiscovery.dylib
+0x00000001368ad000 	/Applications/MATLAB_R2023a.app/bin/maci64/libmwagentcorecontainer.dylib
+0x0000000135176000 	/Applications/MATLAB_R2023a.app/bin/maci64/libmwagentcoreservice.dylib
+0x0000000136ad8000 	/Applications/MATLAB_R2023a.app/bin/maci64/libmwagentcoreserviceutils.dylib
+0x0000000136d96000 	/Applications/MATLAB_R2023a.app/bin/maci64/libmwagentdirectoryclient.dylib
+0x0000000136de6000 	/Applications/MATLAB_R2023a.app/bin/maci64/libmwagentspflegacyservicewrapper.dylib
+0x0000000136e27000 	/Applications/MATLAB_R2023a.app/bin/maci64/libmwagentnanomsgtransport.dylib
+0x0000000136f00000 	/Applications/MATLAB_R2023a.app/bin/maci64/libmwagentutils.dylib
+0x0000000134bb3000 	/Applications/MATLAB_R2023a.app/bin/maci64/libmwmatlabconnectorfolderlocations.dylib
+0x0000000136afd000 	/Applications/MATLAB_R2023a.app/bin/maci64/libmwstoragesharedlib.dylib
+0x0000000134e04000 	/Applications/MATLAB_R2023a.app/bin/maci64/libmwboost_context.dylib
+0x00000001351b6000 	/Applications/MATLAB_R2023a.app/bin/maci64/libmwagentfilelocking.dylib
+0x0000000134fe5000 	/Applications/MATLAB_R2023a.app/bin/maci64/libmwmatlabconnectoruniquemachineid.dylib
+0x00000001354fc000 	/Applications/MATLAB_R2023a.app/bin/maci64/libmwmatlabconnectorurlmanager.dylib
+0x0000000136b1b000 	/Applications/MATLAB_R2023a.app/bin/maci64/libmwagentdirectoryserialisation.dylib
+0x0000000136901000 	/Applications/MATLAB_R2023a.app/bin/maci64/libmwagentnanomsgbytetransport.dylib
+0x0000000136917000 	/Applications/MATLAB_R2023a.app/bin/maci64/libmwagentnanomsg.dylib
+0x0000000136f90000 	/Applications/MATLAB_R2023a.app/bin/maci64/libnanomsg.5.1.0.dylib
+0x0000000136e70000 	/Applications/MATLAB_R2023a.app/bin/maci64/splash/coreui/libmwSplashScreenImpl.dylib
+0x0000000136e90000 	/Applications/MATLAB_R2023a.app/bin/maci64/vfs/core/storage/storagesystem/storagesystem.dylib
+0x0000000136eb3000 	/Applications/MATLAB_R2023a.app/bin/maci64/connector_plugins/MOlocaleswitch/libmwmolocaleswitchplugin.dylib
+0x0000000136fe4000 	/Applications/MATLAB_R2023a.app/bin/maci64/libmwmolocaleswitchevent.dylib
+0x0000000136ed5000 	/Applications/MATLAB_R2023a.app/bin/maci64/connector_plugins/connector/information/libmwconnectorinformationactivator.dylib
+0x00000001374a8000 	/Applications/MATLAB_R2023a.app/bin/maci64/libmwconnectorinformationimpl.dylib
+0x000000013557e000 	/Applications/MATLAB_R2023a.app/bin/maci64/libmwconnectormvmcommonapi.dylib
+0x000000013701a000 	/Applications/MATLAB_R2023a.app/bin/maci64/connector_plugins/addons/registry/mwaddons_registry_connector_plugin.dylib
+0x000000013704e000 	/Applications/MATLAB_R2023a.app/bin/maci64/connector_plugins/connector/worker/libmwconnectorworkeractivator.dylib
+0x00000001376ef000 	/Applications/MATLAB_R2023a.app/bin/maci64/libmwconnectorworkerimpl.dylib
+0x000000013667e000 	/Applications/MATLAB_R2023a.app/bin/maci64/libmwconnectordduxapi.dylib
+0x0000000137071000 	/Applications/MATLAB_R2023a.app/bin/maci64/vfs/provider/storage/fileprovider/fileprovider.dylib
+0x00007ff91af9c000 	/System/Library/Frameworks/Carbon.framework/Versions/A/Carbon
+0x00007ff833b2e000 	/System/Library/Frameworks/Carbon.framework/Versions/A/Frameworks/CommonPanels.framework/Versions/A/CommonPanels
+0x00007ff82f90a000 	/System/Library/Frameworks/Carbon.framework/Versions/A/Frameworks/Help.framework/Versions/A/Help
+0x00007ff833b32000 	/System/Library/Frameworks/Carbon.framework/Versions/A/Frameworks/ImageCapture.framework/Versions/A/ImageCapture
+0x00007ff833b02000 	/System/Library/Frameworks/Carbon.framework/Versions/A/Frameworks/OpenScripting.framework/Versions/A/OpenScripting
+0x00007ff833b2a000 	/System/Library/Frameworks/Carbon.framework/Versions/A/Frameworks/Ink.framework/Versions/A/Ink
+0x00007ff91af98000 	/System/Library/Frameworks/Carbon.framework/Versions/A/Frameworks/Print.framework/Versions/A/Print
+0x00007ff833b26000 	/System/Library/Frameworks/Carbon.framework/Versions/A/Frameworks/SecurityHI.framework/Versions/A/SecurityHI
+0x000000012170e000 	/Applications/MATLAB_R2023a.app/bin/maci64/connector_plugins/connector/gds/libmwconnectorgdsactivator.dylib
+0x000000013757d000 	/Applications/MATLAB_R2023a.app/bin/maci64/libmwconnectorgdsimpl.dylib
+0x0000000121735000 	/Applications/MATLAB_R2023a.app/bin/maci64/vfs/provider/storage/cloudmockprovideractivator/libmwstoragecloudmockprovideractivator.dylib
+0x0000000121776000 	/Applications/MATLAB_R2023a.app/bin/maci64/libmwstoragecloudmockprovider.dylib
+0x0000000137649000 	/Applications/MATLAB_R2023a.app/bin/maci64/libmwstoragecloudprovider.dylib
+0x0000000137ae9000 	/Applications/MATLAB_R2023a.app/bin/maci64/connector_plugins/connector/m/common_m/libmwconnectorcommonmactivator.dylib
+0x00000001216e7000 	/usr/lib/libobjc-trampolines.dylib
+0x00007ff920d8b000 	/System/Library/Frameworks/Accelerate.framework/Versions/A/Frameworks/vImage.framework/Versions/A/Libraries/libCGInterfaces.dylib
+0x00007ff9202c9000 	/System/Library/Frameworks/Quartz.framework/Versions/A/Quartz
+0x00007ff91dad4000 	/System/Library/Frameworks/Quartz.framework/Versions/A/Frameworks/QuartzComposer.framework/Versions/A/QuartzComposer
+0x00007ff91df9c000 	/System/Library/Frameworks/PDFKit.framework/Versions/A/PDFKit
+0x00007ff91cfbe000 	/System/Library/Frameworks/Quartz.framework/Versions/A/Frameworks/QuartzFilters.framework/Versions/A/QuartzFilters
+0x00007ff91c364000 	/System/Library/Frameworks/Quartz.framework/Versions/A/Frameworks/ImageKit.framework/Versions/A/ImageKit
+0x00007ffa37a2d000 	/System/Library/Frameworks/QuickLookUI.framework/Versions/A/QuickLookUI
+0x00007ff833b36000 	/System/Library/Frameworks/JavaScriptCore.framework/Versions/A/JavaScriptCore
+0x00007ff91af08000 	/System/Library/PrivateFrameworks/CorePDF.framework/Versions/A/CorePDF
+0x00007ff8373e3000 	/System/Library/PrivateFrameworks/URLFormatting.framework/Versions/A/URLFormatting
+0x00007ff82a162000 	/System/Library/Frameworks/QuickLook.framework/Versions/A/QuickLook
+0x00007ff832efd000 	/System/Library/PrivateFrameworks/DisplayServices.framework/Versions/A/DisplayServices
+0x00007ff91cf46000 	/System/Library/Frameworks/ImageCaptureCore.framework/Versions/A/ImageCaptureCore
+0x00007ff91b38c000 	/System/Library/Frameworks/AVFoundation.framework/Versions/A/AVFoundation
+0x00007ff82a1c6000 	/System/Library/Frameworks/MetalKit.framework/Versions/A/MetalKit
+0x00007ffb319cd000 	/System/Library/PrivateFrameworks/VisionKitCore.framework/Versions/A/VisionKitCore
+0x00007ff919d6f000 	/System/Library/PrivateFrameworks/QuickLookSupport.framework/Versions/A/QuickLookSupport
+0x00007ff83008f000 	/System/Library/Frameworks/QuickLookThumbnailing.framework/Versions/A/QuickLookThumbnailing
+0x00007ff82dbf0000 	/System/Library/PrivateFrameworks/AVFCore.framework/Versions/A/AVFCore
+0x00007ff835222000 	/System/Library/PrivateFrameworks/AVFCapture.framework/Versions/A/AVFCapture
+0x00007ff919d9f000 	/System/Library/PrivateFrameworks/AirPlaySync.framework/Versions/A/AirPlaySync
+0x00007ffb1b751000 	/System/Library/PrivateFrameworks/CMImaging.framework/Versions/A/CMImaging
+0x00007ff8353a1000 	/System/Library/PrivateFrameworks/Quagga.framework/Versions/A/Quagga
+0x00007ff835473000 	/System/Library/PrivateFrameworks/CMCapture.framework/Versions/A/CMCapture
+0x00007ff828c50000 	/System/Library/Frameworks/CoreMediaIO.framework/Versions/A/CoreMediaIO
+0x00007ff91c069000 	/System/Library/PrivateFrameworks/LoggingSupport.framework/Versions/A/LoggingSupport
+0x00007ff826f3c000 	/System/Library/PrivateFrameworks/CoreBrightness.framework/Versions/A/CoreBrightness
+0x00007ff836472000 	/System/Library/PrivateFrameworks/HID.framework/Versions/A/HID
+0x00007ff91be49000 	/System/Library/Frameworks/SafariServices.framework/Versions/A/SafariServices
+0x00007ff91b7ed000 	/System/Library/PrivateFrameworks/QuickLookNonBaseSystem.framework/Versions/A/QuickLookNonBaseSystem
+0x00007ff826641000 	/System/Library/PrivateFrameworks/CrashReporterSupport.framework/Versions/A/CrashReporterSupport
+0x00007ff929995000 	/System/Library/PrivateFrameworks/OSAnalytics.framework/Versions/A/OSAnalytics
+0x00007ff9356e0000 	/System/Library/PrivateFrameworks/Symbolication.framework/Versions/A/Symbolication
+0x00007ff91c0db000 	/System/Library/PrivateFrameworks/MallocStackLogging.framework/Versions/A/MallocStackLogging
+0x00007ff833abf000 	/System/Library/PrivateFrameworks/MarkupUI.framework/Versions/A/MarkupUI
+0x00007ff91b7ca000 	/System/Library/PrivateFrameworks/SidecarCore.framework/Versions/A/SidecarCore
+0x00007ff91d984000 	/System/Library/PrivateFrameworks/AnnotationKit.framework/Versions/A/AnnotationKit
+0x00007ff91b7f1000 	/System/Library/PrivateFrameworks/DataDetectors.framework/Versions/A/DataDetectors
+0x00007ffb2524a000 	/System/Library/PrivateFrameworks/MediaAnalysisServices.framework/Versions/A/MediaAnalysisServices
+0x00007ff82c712000 	/System/Library/Frameworks/Vision.framework/Versions/A/Vision
+0x00007ff9325a7000 	/System/Library/PrivateFrameworks/RevealCore.framework/Versions/A/RevealCore
+0x00007ff93259b000 	/System/Library/PrivateFrameworks/Reveal.framework/Versions/A/Reveal
+0x00007ff923bc3000 	/System/Library/PrivateFrameworks/TextRecognition.framework/Versions/A/TextRecognition
+0x00007ff9289db000 	/System/Library/PrivateFrameworks/Translation.framework/Versions/A/Translation
+0x00007ff92020f000 	/System/Library/PrivateFrameworks/Lookup.framework/Versions/A/Lookup
+0x00007ff91a1a4000 	/System/Library/Frameworks/WebKit.framework/Versions/A/WebKit
+0x00007ff82cb7e000 	/System/Library/PrivateFrameworks/AddressBookCore.framework/Versions/A/AddressBookCore
+0x00007ff8373e2000 	/System/Library/PrivateFrameworks/PhoneNumbers.framework/Versions/A/PhoneNumbers
+0x00007ff829af0000 	/System/Library/PrivateFrameworks/IDS.framework/Versions/A/IDS
+0x00007ff91bdf3000 	/System/Library/Frameworks/NaturalLanguage.framework/Versions/A/NaturalLanguage
+0x00007ff822670000 	/System/Library/Frameworks/CoreML.framework/Versions/A/CoreML
+0x00007ff81f97e000 	/System/Library/PrivateFrameworks/Montreal.framework/Versions/A/Montreal
+0x00007ff825497000 	/System/Library/Frameworks/MLCompute.framework/Versions/A/MLCompute
+0x00007ff822304000 	/System/Library/Frameworks/CloudKit.framework/Versions/A/CloudKit
+0x00007ff8300ca000 	/System/Library/PrivateFrameworks/Espresso.framework/Versions/A/Espresso
+0x00007ffb24bc0000 	/System/Library/PrivateFrameworks/MLAssetIO.framework/Versions/A/MLAssetIO
+0x00007ffa3628f000 	/System/Library/Frameworks/MetalPerformanceShadersGraph.framework/Versions/A/MetalPerformanceShadersGraph
+0x00007ffa24f38000 	/System/Library/PrivateFrameworks/ANECompiler.framework/Versions/A/ANECompiler
+0x00007ff831d7f000 	/System/Library/PrivateFrameworks/AppleNeuralEngine.framework/Versions/A/AppleNeuralEngine
+0x00007ff92022b000 	/usr/lib/libncurses.5.4.dylib
+0x00007ff830eb6000 	/System/Library/PrivateFrameworks/ANEServices.framework/Versions/A/ANEServices
+0x00007ffa38234000 	/System/Library/Frameworks/SharedWithYouCore.framework/Versions/A/SharedWithYouCore
+0x00007ffb37c8d000 	/usr/lib/libBASupport.dylib
+0x00007ff82fc9d000 	/System/Library/PrivateFrameworks/AppleAccount.framework/Versions/A/AppleAccount
+0x00007ff8222a4000 	/System/Library/PrivateFrameworks/ApplePushService.framework/Versions/A/ApplePushService
+0x00007ff830049000 	/System/Library/PrivateFrameworks/C2.framework/Versions/A/C2
+0x00007ff8233a7000 	/System/Library/Frameworks/CoreLocation.framework/Versions/A/CoreLocation
+0x00007ffb1badb000 	/System/Library/PrivateFrameworks/CloudKitDistributedSync.framework/Versions/A/CloudKitDistributedSync
+0x00007ff830041000 	/System/Library/Frameworks/PushKit.framework/Versions/A/PushKit
+0x00007ffa34c78000 	/System/Library/Frameworks/CoreTransferable.framework/Versions/A/CoreTransferable
+0x00007ffa1a798000 	/System/Library/Frameworks/CryptoKit.framework/Versions/A/CryptoKit
+0x00007ffa1e8c2000 	/System/Library/PrivateFrameworks/FeatureFlags.framework/Versions/A/FeatureFlags
+0x00007ff932b96000 	/usr/lib/swift/libswiftAVFoundation.dylib
+0x00007ff91c120000 	/usr/lib/swift/libswiftCoreAudio.dylib
+0x00007ff920daa000 	/usr/lib/swift/libswiftCoreLocation.dylib
+0x00007ff920dad000 	/usr/lib/swift/libswiftCoreMIDI.dylib
+0x00007ff9316a3000 	/usr/lib/swift/libswiftCoreMedia.dylib
+0x00007ff926df0000 	/usr/lib/swift/libswiftMetal.dylib
+0x00007ff92a31a000 	/usr/lib/swift/libswiftQuartzCore.dylib
+0x00007ff92e252000 	/usr/lib/swift/libswiftUniformTypeIdentifiers.dylib
+0x00007ff91f046000 	/usr/lib/swift/libswiftsimd.dylib
+0x00007ff82fe08000 	/System/Library/PrivateFrameworks/AppleIDSSOAuthentication.framework/Versions/A/AppleIDSSOAuthentication
+0x00007ff82f997000 	/System/Library/PrivateFrameworks/AppSupport.framework/Versions/A/AppSupport
+0x00007ff828835000 	/System/Library/PrivateFrameworks/IMFoundation.framework/Versions/A/IMFoundation
+0x00007ff836b3e000 	/System/Library/PrivateFrameworks/Marco.framework/Versions/A/Marco
+0x00007ff829c80000 	/System/Library/PrivateFrameworks/IDSFoundation.framework/Versions/A/IDSFoundation
+0x00007ff8203b9000 	/System/Library/PrivateFrameworks/CommonUtilities.framework/Versions/A/CommonUtilities
+0x00007ff91bce8000 	/System/Library/PrivateFrameworks/FTServices.framework/Versions/A/FTServices
+0x00007ff833aeb000 	/System/Library/PrivateFrameworks/Engram.framework/Versions/A/Engram
+0x00007ff833a8e000 	/usr/lib/libtidy.A.dylib
+0x00007ff8270df000 	/System/Library/PrivateFrameworks/Bom.framework/Versions/A/Bom
+0x00007ff828b91000 	/usr/lib/libParallelCompression.dylib
+0x00007ff9273a2000 	/System/Library/PrivateFrameworks/FTAWD.framework/Versions/A/FTAWD
+0x00007ff831b7b000 	/System/Library/PrivateFrameworks/RTCReporting.framework/Versions/A/RTCReporting
+0x00007ff82a361000 	/System/Library/PrivateFrameworks/GeoServices.framework/Versions/A/GeoServices
+0x00007ff8288a9000 	/System/Library/PrivateFrameworks/LocationSupport.framework/Versions/A/LocationSupport
+0x00007ffb20bca000 	/System/Library/PrivateFrameworks/GeoServicesCore.framework/Versions/A/GeoServicesCore
+0x00007ffa1a595000 	/usr/lib/swift/libswiftNetwork.dylib
+0x00007ff82ff93000 	/System/Library/PrivateFrameworks/CryptoKitCBridging.framework/Versions/A/CryptoKitCBridging
+0x00007ff82df34000 	/System/Library/Frameworks/CryptoTokenKit.framework/Versions/A/CryptoTokenKit
+0x00007ff9316a1000 	/usr/lib/swift/libswiftCryptoTokenKit.dylib
+0x00007ff82df8f000 	/System/Library/Frameworks/LocalAuthentication.framework/Versions/A/LocalAuthentication
+0x00007ff82dfd4000 	/System/Library/Frameworks/LocalAuthentication.framework/Support/SharedUtils.framework/Versions/A/SharedUtils
+0x00007ff91a0db000 	/usr/lib/swift/libswiftCoreGraphics.dylib
+0x00007ffb256cf000 	/System/Library/PrivateFrameworks/MilAneflow.framework/Versions/A/MilAneflow
+0x00007ff831ba0000 	/System/Library/Frameworks/WebKit.framework/Versions/A/Frameworks/WebKitLegacy.framework/Versions/A/WebKitLegacy
+0x00007ff837432000 	/System/Library/Frameworks/WebKit.framework/Versions/A/Frameworks/WebCore.framework/Versions/A/WebCore
+0x00007ff83740a000 	/usr/lib/libAccessibility.dylib
+0x00007ff82fe4b000 	/System/Library/PrivateFrameworks/CorePrediction.framework/Versions/A/CorePrediction
+0x00007ff82c309000 	/usr/lib/libnetworkextension.dylib
+0x00007ff822a43000 	/System/Library/Frameworks/WebKit.framework/Versions/A/Frameworks/WebCore.framework/Versions/A/Frameworks/libwebrtc.dylib
+0x00007ff91a154000 	/System/Library/PrivateFrameworks/SafariSafeBrowsing.framework/Versions/A/SafariSafeBrowsing
+0x00007ff828bfc000 	/System/Library/Frameworks/SecurityInterface.framework/Versions/A/SecurityInterface
+0x00007ff91c76b000 	/System/Library/PrivateFrameworks/WebInspectorUI.framework/Versions/A/WebInspectorUI
+0x00007ffa38a30000 	/System/Library/Frameworks/WebKit.framework/Versions/A/Frameworks/WebCore.framework/Versions/A/Frameworks/libANGLE-shared.dylib
+0x00007ffb3238f000 	/System/Library/PrivateFrameworks/WebGPU.framework/Versions/A/WebGPU
+0x00007ff82989a000 	/System/Library/Frameworks/NetworkExtension.framework/Versions/A/NetworkExtension
+0x00007ff91e0b8000 	/System/Library/Frameworks/SceneKit.framework/Versions/A/SceneKit
+0x00007ff91fe1b000 	/System/Library/PrivateFrameworks/CaptiveNetwork.framework/Versions/A/CaptiveNetwork
+0x00007ff82f85f000 	/System/Library/PrivateFrameworks/EAP8021X.framework/Versions/A/EAP8021X
+0x00007ff92ade7000 	/System/Library/Frameworks/ModelIO.framework/Versions/A/ModelIO
+0x00007ff82c2c9000 	/System/Library/Frameworks/GLKit.framework/Versions/A/GLKit
+0x00007ffb39192000 	/usr/lib/usd/libIex.dylib
+0x00007ffb3914e000 	/usr/lib/usd/libHalf.dylib
+0x00007ffb39062000 	/usr/lib/usd/libAlembic.dylib
+0x00007ffc19bc9000 	/usr/lib/usd/libusd_ms.dylib
+0x00007ffb3923e000 	/usr/lib/usd/libosdCPU.dylib
+0x00007ffb391a2000 	/usr/lib/usd/libImath.dylib
+0x00007ffb3919e000 	/usr/lib/usd/libIlmThread.dylib
+0x00007ffb3919a000 	/usr/lib/usd/libIexMath.dylib
+0x00007ffb3929a000 	/usr/lib/usd/libtbb.dylib
+0x00007ffb391ae000 	/usr/lib/usd/libMaterialXCore.dylib
+0x00007ffb3921a000 	/usr/lib/usd/libMaterialXFormat.dylib
+0x00007ffb30496000 	/System/Library/PrivateFrameworks/USDLib_FormatLoaderProxy.framework/Versions/A/USDLib_FormatLoaderProxy
+0x00007ff91bcc9000 	/System/Library/PrivateFrameworks/CoreOptimization.framework/Versions/A/CoreOptimization
+0x00007ff81f93d000 	/System/Library/PrivateFrameworks/WirelessDiagnostics.framework/Versions/A/WirelessDiagnostics
+0x00007ff8336b0000 	/System/Library/PrivateFrameworks/WirelessDiagnostics.framework/Versions/A/Libraries/libAWDSupportFramework.dylib
+0x00007ff81f895000 	/System/Library/PrivateFrameworks/WirelessDiagnostics.framework/Versions/A/Libraries/libAWDSupport.dylib
+0x00007ff81f92c000 	/System/Library/PrivateFrameworks/WirelessDiagnostics.framework/Versions/A/Libraries/libprotobuf-lite.dylib
+0x00007ff82934d000 	/usr/lib/libTelephonyUtilDynamic.dylib
+0x00007ff81f8d1000 	/System/Library/PrivateFrameworks/WirelessDiagnostics.framework/Versions/A/Libraries/libprotobuf.dylib
+0x00007ff82cb0a000 	/System/Library/PrivateFrameworks/ContactsPersistence.framework/Versions/A/ContactsPersistence
+0x00007ff82ccd0000 	/System/Library/Frameworks/Contacts.framework/Versions/A/Contacts
+0x00007ff82ca68000 	/System/Library/PrivateFrameworks/ContactsFoundation.framework/Versions/A/ContactsFoundation
+0x00007ff82deec000 	/System/Library/PrivateFrameworks/vCard.framework/Versions/A/vCard
+0x00007ffb1c21d000 	/System/Library/PrivateFrameworks/ContactsMetrics.framework/Versions/A/ContactsMetrics
+0x00007ff82bfc8000 	/System/Library/PrivateFrameworks/AppleLDAP.framework/Versions/A/AppleLDAP
+0x00007ff82fbe0000 	/System/Library/Frameworks/ClassKit.framework/Versions/A/ClassKit
+0x00007ff83191a000 	/System/Library/PrivateFrameworks/CoreSuggestions.framework/Versions/A/CoreSuggestions
+0x00007ff9328dc000 	/usr/lib/swift/libswiftOSLog.dylib
+0x00007ff8225bd000 	/System/Library/PrivateFrameworks/CloudDocs.framework/Versions/A/CloudDocs
+0x00007ff82a0f0000 	/System/Library/PrivateFrameworks/AppContainer.framework/Versions/A/AppContainer
+0x00007ff82a105000 	/System/Library/PrivateFrameworks/SecCodeWrapper.framework/Versions/A/SecCodeWrapper
+0x00007ff82ee49000 	/System/Library/Frameworks/Intents.framework/Versions/A/Intents
+0x00007ff830ed6000 	/System/Library/PrivateFrameworks/ProactiveSupport.framework/Versions/A/ProactiveSupport
+0x00007ff825a3d000 	/System/Library/Frameworks/CoreSpotlight.framework/Versions/A/CoreSpotlight
+0x00007ff836e84000 	/System/Library/PrivateFrameworks/ProactiveEventTracker.framework/Versions/A/ProactiveEventTracker
+0x00007ff830031000 	/System/Library/PrivateFrameworks/IntentsFoundation.framework/Versions/A/IntentsFoundation
+0x00007ff82fbdd000 	/System/Library/PrivateFrameworks/InternationalTextSearch.framework/Versions/A/InternationalTextSearch
+0x00007ff9387f0000 	/System/Library/PrivateFrameworks/InternalSwiftProtobuf.framework/Versions/A/InternalSwiftProtobuf
+0x00007ff9385e4000 	/System/Library/Frameworks/OSLog.framework/Versions/A/OSLog
+0x00007ff923192000 	/System/Library/Frameworks/Vision.framework/libfaceCore.dylib
+0x00007ff923d4f000 	/System/Library/PrivateFrameworks/Futhark.framework/Versions/A/Futhark
+0x00007ff926bcc000 	/System/Library/PrivateFrameworks/InertiaCam.framework/Versions/A/InertiaCam
+0x00007ff826671000 	/System/Library/PrivateFrameworks/CVNLP.framework/Versions/A/CVNLP
+0x00007ffb2f46a000 	/System/Library/PrivateFrameworks/TranslationUIServices.framework/Versions/A/TranslationUIServices
+0x00007ff82e3f4000 	/System/Library/PrivateFrameworks/EmbeddedAcousticRecognition.framework/Versions/A/EmbeddedAcousticRecognition
+0x00007ff931134000 	/System/Library/PrivateFrameworks/Osprey.framework/Versions/A/Osprey
+0x00007ff91ffbe000 	/usr/lib/libmorphun.dylib
+0x00007ff920713000 	/System/Library/PrivateFrameworks/SiriInstrumentation.framework/Versions/A/SiriInstrumentation
+0x00007ffb2955e000 	/System/Library/PrivateFrameworks/SiriAnalytics.framework/Versions/A/SiriAnalytics
+0x00007ff832b78000 	/System/Library/PrivateFrameworks/AssistantServices.framework/Versions/A/AssistantServices
+0x00007ff926e16000 	/System/Library/Frameworks/SoundAnalysis.framework/Versions/A/SoundAnalysis
+0x00007ff91fc8a000 	/System/Library/PrivateFrameworks/DistributedEvaluation.framework/Versions/A/DistributedEvaluation
+0x00007ff9230df000 	/System/Library/PrivateFrameworks/EmojiFoundation.framework/Versions/A/EmojiFoundation
+0x00007ff929e25000 	/System/Library/PrivateFrameworks/SDAPI.framework/Versions/A/SDAPI
+0x00007ff923d69000 	/System/Library/PrivateFrameworks/DifferentialPrivacy.framework/Versions/A/DifferentialPrivacy
+0x00007ff81e4ea000 	/System/Library/PrivateFrameworks/CoreDuet.framework/Versions/A/CoreDuet
+0x00007ff919e33000 	/System/Library/PrivateFrameworks/CoreParsec.framework/Versions/A/CoreParsec
+0x00007ff91c9c7000 	/System/Library/PrivateFrameworks/SearchFoundation.framework/Versions/A/SearchFoundation
+0x00007ffb245a7000 	/System/Library/PrivateFrameworks/LighthouseBitacoraFramework.framework/Versions/A/LighthouseBitacoraFramework
+0x00007ff91c8db000 	/System/Library/PrivateFrameworks/TrialProto.framework/Versions/A/TrialProto
+0x00007ff91c953000 	/System/Library/PrivateFrameworks/Trial.framework/Versions/A/Trial
+0x00007ff92bdaf000 	/System/Library/PrivateFrameworks/BiomePubSub.framework/Versions/A/BiomePubSub
+0x00007ff82dad5000 	/System/Library/Frameworks/CoreTelephony.framework/Versions/A/CoreTelephony
+0x00007ff83103d000 	/System/Library/PrivateFrameworks/CoreDuetDaemonProtocol.framework/Versions/A/CoreDuetDaemonProtocol
+0x00007ff82e362000 	/System/Library/PrivateFrameworks/Rapport.framework/Versions/A/Rapport
+0x00007ff924bf8000 	/System/Library/PrivateFrameworks/BiomeFoundation.framework/Versions/A/BiomeFoundation
+0x00007ffb26ee5000 	/System/Library/PrivateFrameworks/PegasusAPI.framework/Versions/A/PegasusAPI
+0x00007ffb1b10a000 	/System/Library/PrivateFrameworks/BiomeLibrary.framework/Versions/A/BiomeLibrary
+0x00007ff927777000 	/System/Library/PrivateFrameworks/BiomeStreams.framework/Versions/A/BiomeStreams
+0x00007ff92bdf0000 	/System/Library/PrivateFrameworks/BiomeStorage.framework/Versions/A/BiomeStorage
+0x00007ffb1b0ee000 	/System/Library/PrivateFrameworks/BiomeFlexibleStorage.framework/Versions/A/BiomeFlexibleStorage
+0x00007ffb1b0d5000 	/System/Library/PrivateFrameworks/BiomeDSL.framework/Versions/A/BiomeDSL
+0x00007ff831d57000 	/System/Library/PrivateFrameworks/Seeding.framework/Versions/A/Seeding
+0x00007ff91e980000 	/System/Library/PrivateFrameworks/FeedbackLogger.framework/Versions/A/FeedbackLogger
+0x00007ff82e18f000 	/System/Library/PrivateFrameworks/SAObjects.framework/Versions/A/SAObjects
+0x00007ff83263f000 	/System/Library/PrivateFrameworks/MediaRemote.framework/Versions/A/MediaRemote
+0x00007ff836a27000 	/System/Library/PrivateFrameworks/MediaServices.framework/Versions/A/MediaServices
+0x00007ff8269b6000 	/System/Library/PrivateFrameworks/PersistentConnection.framework/Versions/A/PersistentConnection
+0x00007ff91c5c4000 	/System/Library/Frameworks/PencilKit.framework/Versions/A/PencilKit
+0x00007ff91c74c000 	/System/Library/PrivateFrameworks/SidecarUI.framework/Versions/A/SidecarUI
+0x00007ff91c146000 	/System/Library/PrivateFrameworks/CoreHandwriting.framework/Versions/A/CoreHandwriting
+0x00007ff92a2fb000 	/usr/lib/swift/libswiftAppKit.dylib
+0x00007ff91c144000 	/usr/lib/swift/libswiftCoreImage.dylib
+0x00007ff81abb3000 	/usr/lib/libmecabra.dylib
+0x00007ff826411000 	/usr/lib/libChineseTokenizer.dylib
+0x00007ff82c32f000 	/System/Library/Frameworks/Accessibility.framework/Versions/A/Accessibility
+0x0000000128989000 	/Applications/MATLAB_R2023a.app/bin/maci64/builtins/lxe/lxe/mwm_lxe_builtinimpl.dylib
+0x00000001289d2000 	/Applications/MATLAB_R2023a.app/bin/maci64/builtinservices/builtin2/mcosbuiltin2adapter/mwmcosbuiltin2adapter.dylib
+0x00000001289aa000 	/Applications/MATLAB_R2023a.app/bin/maci64/builtins/lxe/lxe/mwlibmwlxemainservices_builtinimpl.dylib
+0x0000000128aba000 	/Applications/MATLAB_R2023a.app/bin/maci64/builtins/matlab_toolbox_strfun_string/mwstring_builtinimpl.dylib
+0x0000000128b0b000 	/Applications/MATLAB_R2023a.app/bin/maci64/builtins/matlab_datatypes_dictionary/mwdictionary_builtinimpl.dylib
+0x0000000140acb000 	/Applications/MATLAB_R2023a.app/bin/maci64/libmwdictionary.dylib
+0x0000000128301000 	/Applications/MATLAB_R2023a.app/sys/java/jre/maci64/jre/lib/libverify.dylib
+0x0000000128a30000 	/Applications/MATLAB_R2023a.app/sys/java/jre/maci64/jre/lib/libjava.dylib
+0x0000000121020000 	/Applications/MATLAB_R2023a.app/sys/java/jre/maci64/jre/lib/libzip.dylib
+0x0000000140958000 	/Applications/MATLAB_R2023a.app/bin/maci64/libnativejmi.dylib
+0x000000012830f000 	/Applications/MATLAB_R2023a.app/bin/maci64/libmwidlebusyevents.dylib
+0x00000001289c2000 	/Applications/MATLAB_R2023a.app/bin/maci64/libnativeutil.dylib
+0x0000000154feb000 	/Applications/MATLAB_R2023a.app/bin/maci64/libnativeservices.dylib
+0x00000001550c0000 	/Applications/MATLAB_R2023a.app/bin/maci64/libnativesettings.dylib
+0x00000001551f9000 	/Applications/MATLAB_R2023a.app/bin/maci64/libnativemvm.dylib
+0x0000000155000000 	/Applications/MATLAB_R2023a.app/bin/maci64/libmwproject_settings.dylib
+0x000000015502d000 	/Applications/MATLAB_R2023a.app/bin/maci64/libmwcomputils_user.dylib
+0x000000015504a000 	/Applications/MATLAB_R2023a.app/bin/maci64/libmwcomputils_capabilities.dylib
+0x0000000155010000 	/Applications/MATLAB_R2023a.app/bin/maci64/libmweditorcautils.dylib
+0x000000015501e000 	/Applications/MATLAB_R2023a.app/sys/java/jre/maci64/jre/lib/libmanagement.dylib
+0x000000015509a000 	/Applications/MATLAB_R2023a.app/sys/java/jre/maci64/jre/lib/libnet.dylib
+0x0000000155129000 	/Applications/MATLAB_R2023a.app/sys/java/jre/maci64/jre/lib/libnio.dylib
+0x0000000155ee4000 	/Applications/MATLAB_R2023a.app/sys/java/jre/maci64/jre/lib/libawt.dylib
+0x0000000156059000 	/Applications/MATLAB_R2023a.app/sys/java/jre/maci64/jre/lib/libmlib_image.dylib
+0x00007ffa354b8000 	/System/Library/Frameworks/JavaNativeFoundation.framework/Versions/A/JavaNativeFoundation
+0x00007ffa354c4000 	/System/Library/Frameworks/JavaRuntimeSupport.framework/Versions/A/JavaRuntimeSupport
+0x0000000156125000 	/Applications/MATLAB_R2023a.app/sys/java/jre/maci64/jre/lib/libawt_lwawt.dylib
+0x0000000155155000 	/Applications/MATLAB_R2023a.app/sys/java/jre/maci64/jre/lib/libosxapp.dylib
+0x00007ff91a150000 	/System/Library/Frameworks/ExceptionHandling.framework/Versions/A/ExceptionHandling
+0x00007ffa2f86f000 	/System/Library/Frameworks/OpenGL.framework/Versions/A/Resources/GLEngine.bundle/GLEngine
+0x00007ffa2f6d5000 	/System/Library/Frameworks/OpenGL.framework/Versions/A/Libraries/libGLProgrammability.dylib
+0x00007ffa27528000 	/System/Library/Extensions/AppleIntelKBLGraphicsGLDriver.bundle/Contents/MacOS/AppleIntelKBLGraphicsGLDriver
+0x00007ff927679000 	/System/Library/PrivateFrameworks/GPUSupport.framework/Versions/A/Libraries/libGPUSupportMercury.dylib
+0x0000000156cf9000 	/System/Library/Extensions/AMDRadeonX6000GLDriver.bundle/Contents/MacOS/AMDRadeonX6000GLDriver
+0x00007ffa33b16000 	/System/Library/Extensions/AMDRadeonX6000GLDriver.bundle/Contents/MacOS/ATIRadeonX6000SCLib.dylib
+0x00007ffa25bfc000 	/System/Library/Extensions/AMDShared.bundle/Contents/PlugIns/libSC.dylib
+0x00007ffa2f9f9000 	/System/Library/Frameworks/OpenGL.framework/Versions/A/Resources/GLRendererFloat.bundle/GLRendererFloat
+0x0000000156b15000 	/Applications/MATLAB_R2023a.app/sys/java/jre/maci64/jre/lib/libfontmanager.dylib
+0x0000000155142000 	/Applications/MATLAB_R2023a.app/sys/java/jre/maci64/jre/lib/libosxui.dylib
+0x00000001551cc000 	/Applications/MATLAB_R2023a.app/bin/maci64/libnativejava.dylib
+0x0000000156b7c000 	/Applications/MATLAB_R2023a.app/bin/maci64/libmwactivitytracking.dylib
+0x0000000155f8d000 	/Applications/MATLAB_R2023a.app/bin/maci64/libmwconnectorjavaconnectorjavaimpljni.dylib
+0x0000000155fc5000 	/Applications/MATLAB_R2023a.app/bin/maci64/libmwconnectorjninativebridgeapi.dylib
+0x0000000155fa8000 	/Applications/MATLAB_R2023a.app/bin/maci64/connector_plugins/connector/jni_message_service/libmwconnectorjnimessageserviceactivator.dylib
+0x0000000155fe2000 	/Applications/MATLAB_R2023a.app/bin/maci64/libmwconnectorjnimessageserviceimpl.dylib
+0x000000015601b000 	/Applications/MATLAB_R2023a.app/bin/maci64/connector_plugins/connector/jni_native_bridge/libmwconnectorjninativebridgeactivator.dylib
+0x000000015603a000 	/Applications/MATLAB_R2023a.app/bin/maci64/libmwconnectorjninativebridgeimpl.dylib
+0x0000000155ffc000 	/Applications/MATLAB_R2023a.app/bin/maci64/connector_plugins/connector/jni_cosg/libmwconnectorjnicosgactivator.dylib
+0x0000000156bed000 	/Applications/MATLAB_R2023a.app/bin/maci64/libmwconnectorjnicosgimpl.dylib
+0x0000000156bbf000 	/Applications/MATLAB_R2023a.app/bin/maci64/connector_plugins/connector/jni_json/libmwconnectorjnijsonactivator.dylib
+0x00000001551e7000 	/Applications/MATLAB_R2023a.app/bin/maci64/libmwconnectorjnijsonimpl.dylib
+0x0000000156c56000 	/Applications/MATLAB_R2023a.app/bin/maci64/connector_plugins/editorservices/serialization/serialization.dylib
+0x00000001574e9000 	/Applications/MATLAB_R2023a.app/bin/maci64/libmwmlxreadwrite.dylib
+0x0000000156c1b000 	/Applications/MATLAB_R2023a.app/bin/maci64/libmwplaintextreadwrite.dylib
+0x000000015758a000 	/Applications/MATLAB_R2023a.app/bin/maci64/libmwrichmarkup_readwrite.dylib
+0x000000015772e000 	/Applications/MATLAB_R2023a.app/bin/maci64/libmwmatlab_publish_parser.dylib
+0x0000000156c2f000 	/Applications/MATLAB_R2023a.app/bin/maci64/libmwserializationcore.dylib
+0x0000000157a13000 	/Applications/MATLAB_R2023a.app/bin/maci64/libmwmcos_factory.dylib
+0x0000000157bcf000 	/Applications/MATLAB_R2023a.app/bin/maci64/libmwmlreportgen_xml.dylib
+0x0000000156cdb000 	/Applications/MATLAB_R2023a.app/bin/maci64/libmwmatlab_codeasxml.dylib
+0x0000000157857000 	/Applications/MATLAB_R2023a.app/bin/maci64/libantlr4-runtime.4.9.1.dylib
+0x000000015753a000 	/Applications/MATLAB_R2023a.app/bin/maci64/libmwiocommonfile.dylib
+0x0000000157565000 	/Applications/MATLAB_R2023a.app/bin/maci64/libmwmatlab_tokenizer_mi.dylib
+0x0000000157ec1000 	/Applications/MATLAB_R2023a.app/bin/maci64/libmwlivecode_contentmodel.dylib
+0x0000000157649000 	/Applications/MATLAB_R2023a.app/bin/maci64/libcmark.0.30.2.dylib
+0x0000000156bd3000 	/Applications/MATLAB_R2023a.app/bin/maci64/libnativecapabilities.dylib
+0x0000000157d30000 	/Applications/MATLAB_R2023a.app/bin/maci64/libnativecmdwin.dylib
+0x0000000158597000 	/Applications/MATLAB_R2023a.app/bin/maci64/libjcef.dylib
+0x0000000157605000 	/Applications/MATLAB_R2023a.app/bin/maci64/libmwcef_common.dylib
+0x0000000158ef5000 	/Applications/MATLAB_R2023a.app/bin/maci64/libQt5Core.5.15.0.dylib
+0x0000000159712000 	/Applications/MATLAB_R2023a.app/bin/maci64/libQt5Gui.5.15.0.dylib
+0x0000000159ef2000 	/Applications/MATLAB_R2023a.app/bin/maci64/libQt5Widgets.5.15.0.dylib
+0x00007ffa341da000 	/System/Library/Frameworks/AGL.framework/Versions/A/AGL
+0x0000000165499000 	/Applications/MATLAB_R2023a.app/bin/maci64/Frameworks/Chromium Embedded Framework.framework/Chromium Embedded Framework
+0x00007ff825159000 	/System/Library/Frameworks/ServiceManagement.framework/Versions/A/ServiceManagement
+0x00007ffa1a672000 	/System/Library/Frameworks/ForceFeedback.framework/Versions/A/ForceFeedback
+0x00007ff82faa4000 	/System/Library/Frameworks/GameController.framework/Versions/A/GameController
+0x00007ffb20aaf000 	/System/Library/PrivateFrameworks/GameControllerFoundation.framework/Versions/A/GameControllerFoundation
+0x00007ffb20b0c000 	/System/Library/PrivateFrameworks/GameControllerSettings.framework/Versions/A/GameControllerSettings
+0x00007ff9215e7000 	/System/Library/Frameworks/ExternalAccessory.framework/ExternalAccessory
+0x00007ff82e0a2000 	/System/Library/Frameworks/CoreHaptics.framework/Versions/A/CoreHaptics
+0x00007ff9215ff000 	/System/Library/PrivateFrameworks/IAP.framework/Versions/A/IAP
+0x00007ff9242b0000 	/System/Library/Frameworks/AuthenticationServices.framework/Versions/A/AuthenticationServices
+0x00007ff835216000 	/System/Library/PrivateFrameworks/SetupAssistantFramework.framework/Versions/A/SetupAssistantFramework
+0x00007ff91d26b000 	/System/Library/PrivateFrameworks/SafariCore.framework/Versions/A/SafariCore
+0x00007ff82fea3000 	/System/Library/PrivateFrameworks/AuthKitUI.framework/Versions/A/AuthKitUI
+0x00007ff923ddf000 	/System/Library/PrivateFrameworks/SafariFoundation.framework/Versions/A/SafariFoundation
+0x00007ff82f9d7000 	/System/Library/PrivateFrameworks/AppSSO.framework/Versions/A/AppSSO
+0x00007ffb1af59000 	/System/Library/PrivateFrameworks/AuthenticationServicesCore.framework/Versions/A/AuthenticationServicesCore
+0x00007ff920fa5000 	/System/Library/PrivateFrameworks/LocalAuthenticationUI.framework/Versions/A/LocalAuthenticationUI
+0x00007ffb27fa6000 	/System/Library/PrivateFrameworks/PlatformSSO.framework/Versions/A/PlatformSSO
+0x00007ff836a85000 	/System/Library/PrivateFrameworks/IASUtilities.framework/Versions/A/IASUtilities
+0x00007ffb23855000 	/System/Library/PrivateFrameworks/IASUtilitiesCore.framework/Versions/A/IASUtilitiesCore
+0x00007ff82f7af000 	/System/Library/PrivateFrameworks/DiskImages.framework/Versions/A/DiskImages
+0x00007ff82c6d6000 	/System/Library/PrivateFrameworks/SystemAdministration.framework/Versions/A/SystemAdministration
+0x00007ff82f91e000 	/usr/lib/libcurl.4.dylib
+0x00007ffb38258000 	/usr/lib/libcrypto.46.dylib
+0x00007ffb388f8000 	/usr/lib/libssl.48.dylib
+0x00007ff82f63d000 	/System/Library/Frameworks/LDAP.framework/Versions/A/LDAP
+0x00007ff82f679000 	/System/Library/PrivateFrameworks/TrustEvaluationAgent.framework/Versions/A/TrustEvaluationAgent
+0x00007ff828b6d000 	/usr/lib/libsasl2.2.dylib
+0x00007ff82bf7c000 	/System/Library/Frameworks/DirectoryService.framework/Versions/A/DirectoryService
+0x00007ff82f98f000 	/System/Library/PrivateFrameworks/LoginUIKit.framework/Versions/A/Frameworks/LoginUICore.framework/Versions/A/LoginUICore
+0x00007ff8270db000 	/usr/lib/libodfde.dylib
+0x00007ff82a1e2000 	/usr/lib/libxcselect.dylib
+0x00007ff91c76f000 	/System/Library/PrivateFrameworks/OnBoardingKit.framework/Versions/A/OnBoardingKit
+0x00007ff91bef1000 	/System/Library/Frameworks/LocalAuthentication.framework/Support/DaemonUtils.framework/Versions/A/DaemonUtils
+0x00007ff91e974000 	/System/Library/PrivateFrameworks/BridgeXPC.framework/Versions/A/BridgeXPC
+0x00007ff91c8cb000 	/System/Library/PrivateFrameworks/CoreKDL.framework/Versions/A/CoreKDL
+0x00007ff91b584000 	/System/Library/PrivateFrameworks/EmbeddedOSSupportHost.framework/Versions/A/EmbeddedOSSupportHost
+0x00007ff82675a000 	/System/Library/PrivateFrameworks/SharedWebCredentials.framework/Versions/A/SharedWebCredentials
+0x00007ffb1b5df000 	/System/Library/PrivateFrameworks/CBORLibrary.framework/Versions/A/CBORLibrary
+0x00007ffb1baa5000 	/System/Library/PrivateFrameworks/Chirp.framework/Versions/A/Chirp
+0x00007ffa38190000 	/System/Library/Frameworks/ScreenCaptureKit.framework/Versions/A/ScreenCaptureKit
+0x00007ff938a01000 	/System/Library/Frameworks/ReplayKit.framework/Versions/A/ReplayKit
+0x00007ff83200e000 	/System/Library/PrivateFrameworks/AppleMediaServices.framework/Versions/A/AppleMediaServices
+0x00007ff91cfe6000 	/System/Library/PrivateFrameworks/Symptoms.framework/Frameworks/SymptomPresentationFeed.framework/Versions/A/SymptomPresentationFeed
+0x00007ff91bcce000 	/System/Library/PrivateFrameworks/FeatureFlagsSupport.framework/Versions/A/FeatureFlagsSupport
+0x00007ff926df8000 	/usr/lib/swift/libswiftCompression.dylib
+0x00007ffb38b41000 	/usr/lib/swift/libswiftExtensionFoundation.dylib
+0x00007ff91b74d000 	/System/Library/PrivateFrameworks/Symptoms.framework/Frameworks/SymptomAnalytics.framework/Versions/A/SymptomAnalytics
+0x00007ff91d33f000 	/System/Library/Frameworks/MediaPlayer.framework/Versions/A/MediaPlayer
+0x00007ff91d593000 	/System/Library/PrivateFrameworks/iTunesCloud.framework/Versions/A/iTunesCloud
+0x00007ff82e002000 	/System/Library/PrivateFrameworks/AVFoundationCF.framework/Versions/A/AVFoundationCF
+0x00007ff924c05000 	/System/Library/PrivateFrameworks/DAAPKit.framework/Versions/A/DAAPKit
+0x00007ff8292d1000 	/System/Library/PrivateFrameworks/CacheDelete.framework/Versions/A/CacheDelete
+0x00007ffa1e8c3000 	/System/Library/Frameworks/ScreenTime.framework/Versions/A/ScreenTime
+0x00007ff9289a4000 	/System/Library/PrivateFrameworks/UsageTracking.framework/Versions/A/UsageTracking
+0x00007ff9278be000 	/System/Library/PrivateFrameworks/Categories.framework/Versions/A/Categories
+0x00007ff91d1b2000 	/System/Library/PrivateFrameworks/ScreenTimeCore.framework/Versions/A/ScreenTimeCore
+0x00007ff82edf6000 	/System/Library/PrivateFrameworks/CoreDuetContext.framework/Versions/A/CoreDuetContext
+0x00007ff91d24f000 	/System/Library/PrivateFrameworks/ContextKit.framework/Versions/A/ContextKit
+0x00007ffb1c319000 	/System/Library/PrivateFrameworks/ContextKitCore.framework/Versions/A/ContextKitCore
+0x00007ff926c99000 	/System/Library/PrivateFrameworks/ConfigurationEngineModel.framework/Versions/A/ConfigurationEngineModel
+0x00007ff91a080000 	/System/Library/PrivateFrameworks/DeviceManagement.framework/Versions/A/DeviceManagement
+0x00007ff82ce96000 	/System/Library/PrivateFrameworks/FamilyCircle.framework/Versions/A/FamilyCircle
+0x00007ff91be7c000 	/System/Library/PrivateFrameworks/Catalyst.framework/Versions/A/Catalyst
+0x00007ff828c30000 	/System/Library/PrivateFrameworks/CoreFollowUp.framework/Versions/A/CoreFollowUp
+0x00007ffa38e79000 	/System/Library/PrivateFrameworks/AAAFoundationSwift.framework/Versions/A/AAAFoundationSwift
+0x00007ffb38b71000 	/usr/lib/swift/libswiftFileProvider.dylib
+0x00007ff91c130000 	/usr/lib/swift/libswiftIntents.dylib
+0x00007ffb38c10000 	/usr/lib/swift/libswiftPrivate_BiomePubSub.dylib
+0x00007ffb38c1b000 	/usr/lib/swift/libswiftPrivate_BiomeStreams.dylib
+0x00007ffb1b272000 	/System/Library/PrivateFrameworks/BiomeSequence.framework/Versions/A/BiomeSequence
+0x00007ff926dec000 	/usr/lib/libpmenergy.dylib
+0x00007ff935b36000 	/usr/lib/libpmsample.dylib
+0x00007ff92a31d000 	/System/Library/PrivateFrameworks/NetworkStatistics.framework/Versions/A/NetworkStatistics
+0x000000015768d000 	/Applications/MATLAB_R2023a.app/bin/maci64/connector_plugins/registration_point_decoy_handlers/mwregistration_point_decoy_handlers.dylib
+0x000000015750f000 	/Applications/MATLAB_R2023a.app/bin/maci64/libnativemldrivedesktop.dylib
+0x0000000156cac000 	/Applications/MATLAB_R2023a.app/bin/maci64/foundation/httpproxy/matlab/httpproxy/libmwmatlabhttpproxy.dylib
+0x00000001576ba000 	/Applications/MATLAB_R2023a.app/bin/maci64/storage/matlabintegration/storage/mldrivepathenvvarimpl/mwmldrivepathenvvarimpl.dylib
+0x00000001576d5000 	/Applications/MATLAB_R2023a.app/bin/maci64/storage/matlabintegration/storage/mldrivesynccachingimpl/mwmldrivesynccachingimpl.dylib
+
+VM Arguments:
+jvm_args: -Xms64m -XX:NewRatio=3 -Xmx1728m -XX:MaxDirectMemorySize=2147400000 -XX:+AllowUserSignalHandlers -Djava.io.tmpdir=/var/folders/jm/5nmpvq810871_d25l8fw32zc0000gn/T/ -Djava.ext.dirs=/Applications/MATLAB_R2023a.app/sys/java/jre/maci64/jre/lib/ext -Djogamp.gluegen.UseTempJarCache=false -Djogl.disable.opengles=1 -Djogl.windows.cpu_affinity_mode=0 -Xrs -Djava.library.path=/Applications/MATLAB_R2023a.app/bin/maci64:/Applications/MATLAB_R2023a.app/sys/jxbrowser/maci64/lib vfprintf -XX:ErrorFile=/Users/page/hs_error_pid22934.log abort -Duser.language=zh -Duser.country=CN -Dfile.encoding=UTF-8 -XX:ParallelGCThreads=6 
+java_command: <unknown>
+java_class_path (initial): /Applications/MATLAB_R2023a.app/java/patch:/Applications/MATLAB_R2023a.app/java/jar/jmi.jar:/Applications/MATLAB_R2023a.app/java/jar/util.jar:/Applications/MATLAB_R2023a.app/java/jar/mvm.jar:/Applications/MATLAB_R2023a.app/java/jar/services.jar:/Applications/MATLAB_R2023a.app/java/jarext/commons-lang.jar:/Applications/MATLAB_R2023a.app/java/jar/cfbutils.jar:/Applications/MATLAB_R2023a.app/java/jarext/commons-io.jar:/Applications/MATLAB_R2023a.app/java/jar/mlwidgets.jar:/Applications/MATLAB_R2023a.app/java/jar/html.jar:/Applications/MATLAB_R2023a.app/java/jar/net.jar:/Applications/MATLAB_R2023a.app/java/jar/mwswing.jar:/Applications/MATLAB_R2023a.app/java/jar/common.jar:/Applications/MATLAB_R2023a.app/java/jarext/google-collect.jar:/Applications/MATLAB_R2023a.app/java/jarext/jide/jide-common.jar:/Applications/MATLAB_R2023a.app/java/jarext/jide/jide-dock.jar:/Applications/MATLAB_R2023a.app/java/jarext/jide/jide-action.jar:/Applications/MATLAB_R2023a.app/java/jarext/jide/jide-components.jar:/Applications/MATLAB_R2023a.app/java/jarext/jide/jide-grids.jar:/Applications/MATLAB_R2023a.app/java/jarext/jide/jide-dialogs.jar:/Applications/MATLAB_R2023a.app/java/jarext/jide/jide-shortcut.jar:/Applications/MATLAB_R2023a.app/java/jarext/jide/jide-charts.jar:/Applications/MATLAB_R2023a.app/java/jar/toolstrip.jar:/Applications/MATLAB_R2023a.app/java/jar/mlservices.jar:/Applications/MATLAB_R2023a.app/java/jar/widgets.jar:/Applications/MATLAB_R2023a.app/java/jar/mde.jar:/Applications/MATLAB_R2023a.app/java/jar/addon_service_management_api.jar:/Applications/MATLAB_R2023a.app/java/jar/appmanagement.jar:/Applications/MATLAB_R2023a.app/java/jar/explorer.jar:/Applications/MATLAB_R2023a.app/java/jar/project/impl.jar:/Applications/MATLAB_R2023a.app/java/jar/matlab.jar:/Applications/MATLAB_R2023a.app/java/jar/explorer_api.jar:/Applications/MATLAB_R2023a.app/java/jar/org/netbeans.jar:/Applications/MATLAB_R2023a.app/java/jar/desktop.jar:/Applications/MATLAB_R2023a
+Launcher Type: generic
+
+Environment Variables:
+PATH=/usr/bin:/bin:/usr/sbin:/sbin
+SHELL=/bin/zsh
+DISPLAY=/private/tmp/com.apple.launchd.MmR9jX4tVt/org.xquartz:0
+
+Signal Handlers:
+SIGSEGV: [libjvm.dylib+0x5b719d], sa_mask[0]=11111111011111110111111111111111, sa_flags=SA_ONSTACK|SA_RESTART|SA_SIGINFO
+SIGBUS: [libjvm.dylib+0x5b719d], sa_mask[0]=11111111011111110111111111111111, sa_flags=SA_RESTART|SA_SIGINFO
+SIGFPE: [libjvm.dylib+0x48c8fc], sa_mask[0]=11111111011111110111111111111111, sa_flags=SA_RESTART|SA_SIGINFO
+SIGPIPE: SIG_IGN, sa_mask[0]=00000000000000000000000000000000, sa_flags=SA_RESTART
+SIGXFSZ: [libjvm.dylib+0x48c8fc], sa_mask[0]=11111111011111110111111111111111, sa_flags=SA_RESTART|SA_SIGINFO
+SIGILL: [libjvm.dylib+0x48c8fc], sa_mask[0]=11111111011111110111111111111111, sa_flags=SA_RESTART|SA_SIGINFO
+SIGUSR1: SIG_DFL, sa_mask[0]=00000000000000000000000000000000, sa_flags=none
+SIGUSR2: [libjvm.dylib+0x48c41a], sa_mask[0]=01000000000000000100000000010000, sa_flags=SA_RESTART|SA_SIGINFO
+SIGHUP: SIG_DFL, sa_mask[0]=00000000000000000000000000000000, sa_flags=none
+SIGINT: SIG_DFL, sa_mask[0]=00000000000000000000000000000000, sa_flags=none
+SIGTERM: SIG_DFL, sa_mask[0]=00000000000000000000000000000000, sa_flags=none
+SIGQUIT: SIG_DFL, sa_mask[0]=00000000000000000000000000000000, sa_flags=none
+
+
+---------------  S Y S T E M  ---------------
+
+OS:Bsduname:Darwin 22.3.0 Darwin Kernel Version 22.3.0: Mon Jan 30 20:42:11 PST 2023; root:xnu-8792.81.3~2/RELEASE_X86_64 x86_64
+rlimit: STACK 8192k, CORE 0k, NPROC 5568, NOFILE 10240, AS infinity
+load average:2.23 2.05 1.84
+
+CPU:total 16 (initial active 16) (8 cores per cpu, 2 threads per core) family 6 model 158 stepping 13, cmov, cx8, fxsr, mmx, sse, sse2, sse3, ssse3, sse4.1, sse4.2, popcnt, avx, avx2, aes, clmul, erms, 3dnowpref, lzcnt, ht, tsc, tscinvbit, bmi1, bmi2, adx
+
+Memory: 4k page, physical 33554432k(1908224k free)
+
+/proc/meminfo:
+
+
+vm_info: Java HotSpot(TM) 64-Bit Server VM (25.202-b08) for bsd-amd64 JRE (1.8.0_202-b08), built on Dec 15 2018 20:16:16 by "java_re" with gcc 4.2.1 (Based on Apple Inc. build 5658) (LLVM build 2336.11.00)
+
+time: Wed May 10 22:35:01 2023
+timezone: CST
+elapsed time: 2 seconds (0d 0h 0m 2s)
+

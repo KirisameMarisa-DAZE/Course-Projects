@@ -1,0 +1,119 @@
+%实验数据处理-质量和密度的测量
+
+%文档类型
+\documentclass[a4paper]{article}%A4纸，文档类型为论文
+
+%宏包
+%文字设置
+\usepackage[UTF8]{ctex}%处理中文
+\usepackage{xeCJK}%处理中文
+\usepackage{fontspec,xunicode,xltxtra}%字体设置
+%文档&排版设置
+\usepackage{titlesec}%自定义章节标题样式
+\usepackage{multicol}%分栏
+\usepackage{hyperref}%超链接设置\daleth 
+\usepackage{multirow,makecell}%制作复杂表格
+\usepackage{booktabs}%画三线表要用
+\usepackage{float}%图片、表格等位置浮动排版
+\usepackage{indentfirst}%首行缩进
+\usepackage{graphicx,subfigure}%图片插入
+\usepackage{listings}%代码高亮
+\usepackage{xcolor}
+\usepackage{appendix}%附录
+\usepackage{fancyhdr}%页眉页脚
+\usepackage{geometry}%页边距
+\usepackage{caption}
+%数学
+\usepackage{amsmath,amssymb}%公式
+\usepackage{amsfonts,mathrsfs,txfonts}%数学字体
+\usepackage{array}%矩阵
+\usepackage{gensymb}%角度单位“度”的命令：\degree
+
+\geometry{a4paper,scale=0.8}%设置了纸张为a4，并且版心占页面长度的比例为80%；scale也可以改为ratio，表示版面边距占页面长度的比例.
+\hypersetup{colorlinks=true,linkcolor=black,citecolor=black}%去掉目录等超链接所带的红框，并让参考文献的引用颜色为黑色
+\setlength{\parindent}{2em}%首行缩进2字符
+\lstset{
+    columns=fixed,
+    numbers=left, % 在左侧显示行号
+    numberstyle=\footnotesize\color{darkgray},% 设定行号格式
+    backgroundcolor=\color[RGB]{245,245,244},% 设定背景颜色
+    keywordstyle=\color[RGB]{40,40,255},% 设定关键字颜色
+    numberstyle=\color[RGB]{0,192,192},%行号数字样式
+    commentstyle=\it\color[RGB]{0,96,96},% 设置代码注释的格式
+    stringstyle=\rmfamily\slshape\color[RGB]{128,0,0},% 设置字符串格式
+}
+\pagestyle{fancy}%页眉页脚
+\fancyhead{}%清空页眉
+\fancyhead[C]{\emph{实验数据处理：质量和密度的测量}}
+
+
+\newcommand{\kaiti}{\CJKfamily{STKaiti}} % 楷体：\kaiti或\emph
+\newcommand{\fs}{\CJKfamily{STFangsong}} % 仿宋：\fs或\fangsong
+%黑体：\heiti
+
+\newcommand{\suo}{\indent}%缩进2个字符
+
+\title{\heiti{实验报告}}%标题
+\author{{\emph{李佩哲}}}
+\date{\emph{\small\today}}
+
+\begin{document}
+\begin{center}
+\center{\bf{\LARGE{实验数据处理}\\\large{质量和密度的测量}}}\\
+\emph{李佩哲~~~PB21051049~~~\\\today}
+\end{center}
+\section{测量记录}
+原始数据见附件.\\整理如下
+
+\emph{称量金属圆柱的尺寸和质量：}$D=2.480~\text{cm},~H=3.990~\text{cm},~m=163.64~\text{g}$
+
+\emph{排水法测金属圆柱的体积：}$\frac{F_\text{浮}}{g}=19.23~\text{g}$
+
+\emph{弹簧振子法测金属片质量：}见表\ref{1}
+
+\emph{转动定律法测小圆柱质量：}小金属块$2m=29.92~$g，其余见表\ref{2}
+\begin{table}[H]
+    \begin{minipage}{0.5\linewidth}
+        \centering
+        \begin{tabular}{ccc}
+            \toprule
+            $m$/g & $t(30T)$/s\\
+            \midrule
+            $m_0$&37.21\\
+            $m_0+100.01$&52.75\\
+            $m_0+m_x$&45.74\\
+            \bottomrule
+        \end{tabular}
+        \caption{弹簧振子法测金属片质量}\label{1}
+    \end{minipage}
+    \begin{minipage}{0.5\linewidth}  
+        \centering
+        \begin{tabular}{ccc} 
+            \toprule
+            $r$/cm & $t(30T)$/s\\
+            \midrule
+            10.00&78.72\\
+            20.00&61.14\\
+            30.00&56.00\\
+            40.00&54.63\\
+            50.00&55.37\\
+            \midrule
+            $r_x=$40.00&$t_x=$48.74\\
+            \bottomrule
+        \end{tabular}
+        \caption{转动定律法测小圆柱质量}\label{2}
+    \end{minipage}
+\end{table}
+
+\section{分析与讨论}
+\subsection{金属圆柱}
+质量$m=0.16364~$kg，体积由$\rho gV=F_\text{浮}$得$V=1.9287\times 10^{-5}~\text{m}^3$。故密度$\rho =\frac{m}{V}=8.4845\times 10^{3}~$kg/m$^3$.
+
+另外卡尺法所测体积$V^\prime=\pi\left(\frac{D}{2}\right)^2H=1.9274\times 10^{-5}~\text{m}^3$。故此法所得密度$\rho^\prime=\frac{m}{V^\prime}=8.4903\times 10^{3}~$kg/m$^3$.
+\subsection{金属片}
+由$m_0+100.01=\left(\frac{52.75}{37.21}\right)^2m_0$得$m_0=99.05~$g，从而由$m_x+m_0=\left(\frac{45.74}{37.21}\right)^2m_0$得$m_x=50.92~$g.
+
+\subsection{小圆柱}
+由$\frac{gr}{4\pi^2}T^2=r^2+\frac{I_c}{2m}$得$I_c=0.005014$，故$m=\frac{I_c}{\frac{T^2}{4\pi^2}gR-\frac{1}{12}L^2-R^2}=49.59~$g.
+
+\end{document}

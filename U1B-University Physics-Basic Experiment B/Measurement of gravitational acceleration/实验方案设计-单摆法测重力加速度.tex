@@ -1,0 +1,102 @@
+%实验方案设计-单摆法测重力加速度
+
+%文档类型
+\documentclass[a4paper]{article}%A4纸，文档类型为论文
+
+%宏包
+%文字设置
+\usepackage[UTF8]{ctex}%处理中文
+\usepackage{xeCJK}%处理中文
+\usepackage{fontspec,xunicode,xltxtra}%字体设置
+%文档&排版设置
+\usepackage{titlesec}%自定义章节标题样式
+\usepackage{multicol}%分栏
+\usepackage{hyperref}%超链接设置\daleth 
+\usepackage{multirow,makecell}%制作复杂表格
+\usepackage{booktabs}%画三线表要用
+\usepackage{float}%图片、表格等位置浮动排版
+\usepackage{indentfirst}%首行缩进
+\usepackage{graphicx,subfigure}%图片插入
+\usepackage{listings}%代码高亮
+\usepackage{xcolor}
+\usepackage{appendix}%附录
+\usepackage{fancyhdr}%页眉页脚
+\usepackage{geometry}%页边距
+\usepackage{caption}
+%数学
+\usepackage{amsmath,amssymb}%公式
+\usepackage{amsfonts,mathrsfs,txfonts}%数学字体
+\usepackage{array}%矩阵
+\usepackage{gensymb}%角度单位“度”的命令：\degree
+
+\geometry{a4paper,scale=0.8}%设置了纸张为a4，并且版心占页面长度的比例为80%；scale也可以改为ratio，表示版面边距占页面长度的比例。
+\hypersetup{colorlinks=true,linkcolor=black,citecolor=black}%去掉目录等超链接所带的红框，并让参考文献的引用颜色为黑色
+\setlength{\parindent}{2em}%首行缩进2字符
+\lstset{
+    columns=fixed,
+    numbers=left, % 在左侧显示行号
+    numberstyle=\footnotesize\color{darkgray},% 设定行号格式
+    backgroundcolor=\color[RGB]{245,245,244},% 设定背景颜色
+    keywordstyle=\color[RGB]{40,40,255},% 设定关键字颜色
+    numberstyle=\color[RGB]{0,192,192},%行号数字样式
+    commentstyle=\it\color[RGB]{0,96,96},% 设置代码注释的格式
+    stringstyle=\rmfamily\slshape\color[RGB]{128,0,0},% 设置字符串格式
+}
+\pagestyle{fancy}%页眉页脚
+\fancyhead{}%清空页眉
+\fancyhead[C]{\emph{实验方案设计I：单摆法测重力加速度}}
+
+
+\newcommand{\kaiti}{\CJKfamily{STKaiti}} % 楷体：\kaiti或\emph
+\newcommand{\fs}{\CJKfamily{STFangsong}} % 仿宋：\fs或\fangsong
+%黑体：\heiti
+
+\newcommand{\suo}{\indent}%缩进2个字符
+
+\title{\heiti{实验方案设计}}%标题
+\author{{\emph{李佩哲}}}
+\date{\emph{\small\today}}
+
+\begin{document}
+\section*{附件2}
+\begin{center}
+\center{\bf{\LARGE{实验方案设计}\\\large{单摆法测重力加速度}}}\\
+\emph{李佩哲~~~PB21051049~~~\\\today}
+\end{center}
+\section*{原理}
+已知单摆的周期公式为$$T=2\pi\sqrt{\frac{l}{g}\left[1+\frac{d^2}{20l^2}-\frac{m_0}{12m}\left(1+\frac{d}{2l}+\frac{m_0}{m}\right)+\frac{\rho_0}{2\rho}+\frac{\theta^2}{16}\right]}$$
+其中误差量对T的修正均小于$10^{-3}$.根据要求$$\frac{\Delta g}{g}<1.0\%=10^{-2}$$由$10^{-2}>10^{-3}$可知，这些因素可以忽略，从而
+$$T=2\pi\sqrt{\frac{l}{g}}$$故$$g=l\left(\frac{2\pi}{T}\right)^2=\left(L_{\text{绳长}}+\frac{d_{\text{摆球直径}}}{2}\right)\left(\frac{2\pi}{T}\right)^2$$
+按求不确定度传递公式的方法估算，有
+$$\ln g=\ln\left[\left(L+\frac{d}{2}\right)\left(\frac{2\pi}{T}\right)^2\right]=\ln\left(L+\frac{d}{2}\right)+2\ln2\pi-2\ln T$$
+$$\therefore\frac{\text dg}{g}=\frac{\text d\left(L+\frac{d}{2}\right)}{L+\frac{d}{2}}+\frac{-2\text dT}{T}=\frac{\text dL}{L+\frac{d}{2}}+\frac{\text dd}{2L+d}+\frac{-2\text dT}{T}$$
+$$\therefore\frac{\Delta g}{g}=\frac{u_g}{g}=\sqrt{\frac{u_L^2}{\left(L+\frac{d}{2}\right)^2}+\frac{u_d^2}{\left(2L+d\right)^2}+\frac{4u_T^2}{T^2}}<1.0\%$$
+根据不确定度均分原理，有$$\frac{u_L^2}{\left(L+\frac{d}{2}\right)^2}=\frac{u_d^2}{\left(2L+d\right)^2}=\frac{4u_T^2}{T^2}<\frac{1}{30000}$$
+$$\therefore\frac{u_L}{L+\frac{d}{2}}=\frac{u_d}{2L+d}=\frac{4u_T}{T}<\frac{\sqrt{3}}{3}\%$$
+即$$\frac{\Delta L}{l}=\frac{1}{2}\frac{\Delta d}{l}=4\frac{\Delta T}{T}<\frac{\sqrt{3}}{3}\%\approx0.577\%$$
+\\\suo 了解到实验仪器最大允差为
+$\Delta_{\text{钢卷尺}}\approx0.2~\text{cm},~\Delta_{\text{游标卡尺}}\approx0.002~\text{cm},~\Delta_{\text{千分尺}}\approx0.001~\text{cm},~\Delta_{\text{秒表}}\approx0.01~\text s$，
+人员测量时间的估计误差为$\Delta_{\text{人}}\approx0.2~\text s$.由已知条件“……调节标尺高度，使其上沿中点距悬挂点$50~\text{cm}$”可知，$l>50～\text{cm}$.对于钢卷尺，有$\frac{\Delta L}{l}<0.4\%<\frac{\sqrt{3}}{3}\%$，因此对于符合要求的绳长，选用钢卷尺测量即可.
+同理可得，对$l>50~\text{cm}$，解$\frac{1}{2}\frac{\Delta d}{l}<\frac{\sqrt{3}}{3}\%$得$\Delta d<\frac{\sqrt{3}}{3}$即可，显然，使用钢卷尺测摆球直径即可.
+综上，测量摆长使用的仪器为钢卷尺，且容易看出$l$越大，相对误差越小，精度越高.
+\\\suo 对于周期的测量，与实际测量相比较，有$$T=\frac{t_{\text{测量时间}}\pm\sqrt{\left(t_Pu_A\right)^2+\left(k_P\frac{\sqrt{\Delta_{\text{秒表}}^2+\Delta_{\text{人}}^2}}{C}\right)^2}}{n}$$
+其中$n$为测量的周期数.可以看到，在测量$T$时，可以通过增加$n$来减小$U_P$的影响.按最大不确定度估计，有$$4\frac{\sqrt{\Delta_{\text{秒表}}^2+\Delta_{\text{人}}^2}}{t}\approx4\frac{\sqrt{\Delta_{\text{秒表}}^2+\Delta_{\text{人}}^2}}{nT}<\frac{\sqrt{3}}{3}\%$$
+解得$t>4\sqrt{1203}~\text s\approx138.7~\text s$，又因为求解条件为$t\approx nT$，故保险起见，应测$140~\text s$附近的完整的周期个数.
+
+\subsection*{结论}
+摆长至少$50~\text{cm}$，增加摆长可以提高测量精度.摆长应用钢卷尺测量，且不需要使用游标卡尺测量摆球直径.测量周期，应测$140~\text s$附近的完整的周期个数.
+
+\section*{实验步骤}
+\begin{enumerate}
+    \item 取仪器，调整至可用状态；
+    \item 调节螺栓使立柱竖直；
+    \item 调节标尺高度，使其上沿中点距悬挂点$50~\text{cm}$；
+    \item 测量摆线长度、小球直径，多次测量并记录原始数据；
+    \item 悬挂摆线，借助平面镜调整视角；
+    \item 将摆线拉开$\theta\left(\theta<5\degree\right)$角，松手，记录摆线第一次通过标尺中心线的时间；\label{6}
+    \item 持续计时，在经过$140~\text s$左右时记录摆线最后一次通过标尺中心线的时间，记录时间差，重复步骤\ref{6}、\ref{7}；\label{7}
+    \item 数据处理，计算$g$与$\frac{\Delta g}{g}$；
+    \item 整理器材，打乱支架平衡、标尺及平面镜位置.
+\end{enumerate}
+
+\end{document}

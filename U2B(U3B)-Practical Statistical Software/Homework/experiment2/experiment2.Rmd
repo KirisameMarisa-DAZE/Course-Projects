@@ -1,0 +1,121 @@
+---
+title: "experiment2"
+output: 
+  html_document: 
+    toc: true
+    number_sections: true
+date: "2024-03-24"
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(xfun)
+library(stringr)
+```
+
+# 统计软件第二次实验
+## R语言入门
+1. 用cat()函数将字符"8的平方是"和8^2的结果输出到"lab2.txt"文件中，中间无空格。
+```{r}
+cat('8的平方是', 8^2, file = 'lab2.txt', sep = '')
+```
+```{r, echo = FALSE}
+xfun::embed_file('lab2.txt')
+```
+2. 判断1的数据类型，并转换为字符型。
+```{r}
+typeof(1)
+str(1)
+```
+3. 分别计算5除以2的整数及余数部分。
+```{r}
+5%/%2
+5%%2
+```
+4. 计算$\arcsin 1$，并向上取整。
+```{r}
+asin(1)
+ceiling(asin(1))
+```
+5. 统计字符串"Applied Statistical Software"的长度，并将字母变为大写。
+```{r}
+str_count('Applied Statistical Software')
+toupper('Applied Statistical Software')
+```
+6. 计算向量c("22万", "30万", "50万", "120万", "11万")平均值。(先将‘万’替换为‘0000’,再计算平均值)
+```{r}
+x <- as.double(gsub('万', '0000', c("22万", "30万", "50万", "120万", "11万")))
+x
+mean(x)
+```
+7. 以逗号加空格连接"Spider", "Man", "does whatever"三个字符串。
+```{r}
+cat("Spider", "Man", "does whatever", sep=', ')
+```
+8. 拆分字符串"北京，上海，广州，深圳，合肥"得到5个城市名。
+```{r}
+strsplit("北京，上海，广州，深圳，合肥", '，')
+```
+9. 计算2020/9/9与2021/9/9相差天数。
+```{r}
+as.POSIXct('2021/9/9', format='%Y/%m/%d')-as.POSIXct('2020/9/9', format='%Y/%m/%d')
+```
+## R的数据结构
+1. 构建从5到25间隔为5的等差向量，并找出其中大于9小于20的元素。
+```{r}
+x <- seq(5, 25, by = 5)
+x
+x[x > 9 & x < 20]
+```
+2. 计算两个集合c(1, 2, 3, 2)的c(1, 2)交集、并集及差集。
+```{r}
+intersect(c(1, 2, 3, 2), c(1, 2))
+union(c(1, 2, 3, 2), c(1, 2))
+setdiff(c(1, 2, 3, 2), c(1, 2))
+```
+3. 将1:9按列生成一个$3\times 3$的矩阵A，将1:3作为作为对角元素生成$3\times 3$的对角矩阵B。再将矩阵B的逆分别按行和列合并矩阵A。
+```{r}
+a <- matrix(1:9, nrow = 3, ncol = 3, byrow = T)
+a
+b <- diag(1:3)
+b
+cbind(solve(b), a)
+rbind(solve(b), a)
+```
+4. 计算A和B矩阵的内积($\text{A}^{T}\text{B}$)赋值给矩阵C，并寻找矩阵C中的最小元素，并返回其位置的行号和列号。
+```{r}
+c <- a %*% b
+c
+which(c == max(c), arr.ind=TRUE)
+```
+5. 将1:24生成一个$2\times 3\times 4$的数组。取第一维度所有元素，第二个维度的第3个元素，第三个维度的2:3元素，并保持和原有数组同样的维度。
+```{r}
+x <- array(1:24, dim = c(2,3,4))
+x
+y <- array(NA, dim = c(2,3,4))
+y[,,1] <- x[,,1]
+y[,3,2] <- x[,3,2]
+y[,2:3,3] <- x[,2:3,3]
+y
+```
+6. 生成一个包含"exponential", 7, FALSE 3个元素的列表，并分别命名为"family", "mean", "is.symmetric"。再为列表增加一个取值为NULL的元素，命名为"was.estimated"。
+```{r}
+x <- list("family" = "exponential", "mean" = 7, "is.symmetric" = FALSE)
+x
+x <- append(x, list("was.estimated" = NULL))
+x
+```
+7. 生成如下数据框，并命名行名为"R1", "R2"。再增加一列命名为data的时间数据("2021/09/10", "2021/09/14")。最后显示男性的第3到第5列数据。
+
+X1    X2    X3    logicals    character
+
+1     3     5     TRUE        男
+
+2     4     6     FALSE       女
+```{r}
+x <- data.frame(X1 = c(1,2), X2 = c(3,4), X3 = c(5,6), logicals = c(TRUE, FALSE), character = c('男', '女'), row.names = c('R1','R2'))
+x
+x$data <- c(as.POSIXct('2021/9/10', format='%Y/%m/%d'), as.POSIXct('2021/9/14', format='%Y/%m/%d'))
+x
+x[x$character=='男',3:5]
+```
