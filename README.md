@@ -1,5 +1,6 @@
 # Course-Projects
-Program assignments for some courses
+Program assignments for some courses  
+*Note: Only the part containing computer language was uploaded*
 
 ## Description
 **U1** = First year of university  
